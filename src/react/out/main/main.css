@@ -4,9 +4,11 @@
     left: 25%;
     height: 100%;
     width: 75%;
+    z-index: 1;
 }
 
 .content {
     height: 100%;
     overflow: auto;
+    z-index: 1;
 }

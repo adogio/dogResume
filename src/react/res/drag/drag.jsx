@@ -20,10 +20,10 @@ class Drag extends Component {
 
     render() {
         return (
-            <div ref="dragger" draggable="true" className="component"
-                onDrag={this.startDrag}
-                onDragEnd={this.endDrag}
-                style={this.setStyleProperty()}>
+            <div ref="dragger" className="component"
+                onMouseDown={this.startDrag}
+                style={this.setStyleProperty()}
+            >
                 {this.props.children}
             </div>
         );
@@ -40,24 +40,28 @@ class Drag extends Component {
         }
     }
     startDrag(e) {
+        document.addEventListener('mousemove', this.move)
+        document.addEventListener('mouseup', this.endDrag)
         // console.log(e);
-        // this.setState({
-        //     isDrag: true,
-        //     height: this.refs.dragger.clientHeight,
-        //     width: this.refs.dragger.clientWidth
-        // })
+        this.setState({
+            isDrag: true,
+            height: this.refs.dragger.clientHeight,
+            width: this.refs.dragger.clientWidth
+        })
     }
     move(e) {
-        // console.log(e);
+        console.log(e);
         if (this.state.isDrag) {
             this.setState({
-                posX: this.refs.dragger.clientLeft,
-                posY: this.refs.dragger.clientTop
+                posX: e.clientX,
+                posY: e.clientY
             })
         }
     }
     endDrag(e) {
-        console.log(e);
+        console.log('12313')
+        document.removeEventListener('mousemove', this.move)
+        document.removeEventListener('mouseup', this.endDrag)
     }
 }
 

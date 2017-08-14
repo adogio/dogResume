@@ -1,6 +1,7 @@
 .main {
     padding-top: 45px;
     text-align: center;
+    z-index: 1;
 }
 
 .resume {

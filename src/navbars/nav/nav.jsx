@@ -27,7 +27,6 @@ class Nav extends Component {
                     {this.things.quote}
                 </Quote>
                 <hr />
-                <Drag>ceshi</Drag>
             </div>
         );
     }

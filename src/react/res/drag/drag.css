@@ -3,4 +3,5 @@
     font-size: 31px;
     border: 2px solid white;
     margin: 10px;
+    z-index: 99;
 }
