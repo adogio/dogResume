@@ -16,7 +16,8 @@ class template extends Component {
             <div className="main">
                 <h3>{this.things.resumeTopper}</h3>
                 <div className="resume">
-                    12
+                    <div className="resume-left"></div>
+                    <div className="resume-right"></div>
                 </div>
             </div>
         );

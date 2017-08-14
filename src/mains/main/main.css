@@ -9,3 +9,19 @@
     height: 891px;
     border: 5px solid;
 }
+
+.resume-left,
+.resume-right {
+    display: inline-block;
+    height: 100%;
+}
+
+.resume-left {
+    width: 220px;
+    background-color: #4c4c4c;
+}
+
+.resume-right {
+    width: 410px;
+    background-color: #d7d7d7;
+}

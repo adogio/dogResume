@@ -1,11 +1,11 @@
 import React, {
     Component
 } from 'react';
-import Button from '../../react/res/button/button';
 import Logo from '../../react/res/logo/logo';
 import Subtitle from '../../react/res/subtitle/subtitle';
 import Quote from '../../react/res/quote/quote';
 import strings from '../../strings.json';
+import './nav.css';
 
 class Nav extends Component {
     things;
@@ -27,8 +27,7 @@ class Nav extends Component {
                     {this.things.quote}
                 </Quote>
                 <hr />
-                <Button>
-                </Button>
+                <Drag>ceshi</Drag>
             </div>
         );
     }
