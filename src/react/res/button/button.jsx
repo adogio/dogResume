@@ -2,12 +2,16 @@ import React, {
     Component
 } from 'react';
 
-class template extends Component {
+class Button extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
-            <div>template</div>
+            <div>
+            </div>
         );
     }
 }
 
-export default template;
+export default Button;
