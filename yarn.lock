@@ -1229,6 +1229,10 @@ caniuse-lite@^1.0.30000697, caniuse-lite@^1.0.30000715:
   version "1.0.30000715"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000715.tgz#c327f5e6d907ebcec62cde598c3bf0dd793fb9a0"
 
+caperjs@^2.0.0, caperjs@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/caperjs/-/caperjs-2.0.5.tgz#edeb6db73a567dd237b9acc03994fba8ca58abb8"
+
 capture-stack-trace@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
@@ -1862,6 +1866,17 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
     isarray "^1.0.0"
+
+doglib@^1.0.7:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/doglib/-/doglib-1.0.8.tgz#590cbe6003a4bab796dc4f4f81033c6fc4b73ded"
+
+dogui-react@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/dogui-react/-/dogui-react-0.1.5.tgz#3dda4360a975971de309bd3f7705ad59f6c51e03"
+  dependencies:
+    caperjs "^2.0.0"
+    doglib "^1.0.7"
 
 dom-converter@~0.1:
   version "0.1.4"
@@ -4979,7 +4994,7 @@ react-dev-utils@^3.1.0:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@15.6.1:
+react-dom@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -5042,7 +5057,7 @@ react-scripts@1.0.11:
   optionalDependencies:
     fsevents "1.1.2"
 
-react@15.6.1:
+react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:

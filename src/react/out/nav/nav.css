@@ -1,0 +1,11 @@
+.nav-left {
+    width: 25%;
+    background-color: black;
+    color: white;
+    height: 100%;
+    display: inline-block;
+}
+
+.main-content {
+    padding-top: 30px;
+}
