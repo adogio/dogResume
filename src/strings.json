@@ -1,5 +1,10 @@
 {
     "chinese": {
-        "title": "YAHAHA"
+        "mainTitle": "dogResume 测试版",
+        "version": "版本号",
+        "title": "YAHAHA",
+        "subTitle": "生成美观, 快速, 合理的简历",
+        "quote": "我不写作, 我干! 我用dogResume.",
+        "quoteFrom": "斯大林"
     }
 }

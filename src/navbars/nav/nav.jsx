@@ -3,6 +3,8 @@ import React, {
 } from 'react';
 import Button from '../../react/res/button/button';
 import Logo from '../../react/res/logo/logo';
+import Subtitle from '../../react/res/subtitle/subtitle';
+import Quote from '../../react/res/quote/quote';
 import strings from '../../strings.json';
 
 class Nav extends Component {
@@ -14,8 +16,18 @@ class Nav extends Component {
     render() {
         return (
             <div>
-                <Logo>{this.things.title}</Logo>
-                <Button></Button>
+                <Logo>
+                    {this.things.title}
+                </Logo>
+                <Subtitle>
+                    {this.things.subTitle}
+                </Subtitle>
+                <Quote from={this.things.quoteFrom}>
+                    {this.things.quote}
+                </Quote>
+                <hr />
+                <Button>
+                </Button>
             </div>
         );
     }
