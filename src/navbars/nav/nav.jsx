@@ -16,6 +16,7 @@ class Nav extends Component {
     render() {
         return (
             <div>
+                <hr />
                 <Logo>
                     {this.things.title}
                 </Logo>

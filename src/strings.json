@@ -3,8 +3,9 @@
         "mainTitle": "dogResume 测试版",
         "version": "版本号",
         "title": "YAHAHA",
-        "subTitle": "生成美观, 快速, 合理的简历",
+        "subTitle": "快速生成美观, 合理, 可定制化的简历",
         "quote": "我不写作, 我干! 我用dogResume.",
-        "quoteFrom": "斯大林"
+        "quoteFrom": "斯大林",
+        "resumeTopper": "将组件移动到你的简历上就可以编辑了"
     }
 }

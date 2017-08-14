@@ -7,10 +7,10 @@ class Quote extends Component {
         return (
             <div>
                 <div className="quote">
-                    {this.props.children}
+                    <i>"{this.props.children}"</i>
                 </div>
                 <div className="from">
-                    ---{this.props.from}
+                    ---&nbsp;{this.props.from}
                 </div>
             </div>
         );

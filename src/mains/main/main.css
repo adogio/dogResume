@@ -1,0 +1,11 @@
+.main {
+    padding-top: 45px;
+    text-align: center;
+}
+
+.resume {
+    margin: auto;
+    width: 630px;
+    height: 891px;
+    border: 5px solid;
+}

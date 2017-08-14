@@ -3,6 +3,7 @@ import DogTitle from './react/out/title/title';
 import DogNav from './react/out/nav/nav';
 import DogMain from './react/out/main/main';
 import Nav from './navbars/nav/nav';
+import Main from './mains/main/main';
 import strings from './strings.json';
 import './App.css';
 
@@ -22,10 +23,11 @@ class App extends Component {
         <DogNav>
           <Nav />
         </DogNav>
-        <DogMain>123</DogMain>
+        <DogMain>
+          <Main />
+        </DogMain>
       </div>
     );
-
   }
 }
 
