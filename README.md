@@ -4,4 +4,4 @@
 
 ---
 
-I don't write, I code/ Degisn/ Think/ Analysis. I use dogResu,e.
+I don't write, I code/ Degisn/ Think/ Analysis. I use dogResume
