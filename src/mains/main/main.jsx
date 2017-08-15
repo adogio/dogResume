@@ -61,7 +61,7 @@ class template extends Component {
             case "space":
                 return <Space key={'l' + index} index={index} style={this.state.triggerdLeft} onClick={this.selectLeftTarget}></Space>;
             case "name":
-                return <Name key={'l' + index} />;
+                return <Name key={'l' + index} dev={true} />;
             default:
         }
     }
