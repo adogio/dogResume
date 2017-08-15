@@ -13,12 +13,13 @@
 
 .resume-left,
 .resume-right {
-    display: inline-block;
+    float: left;
     height: 100%;
 }
 
 .resume-left {
     width: 220px;
+    color: white;
     background-color: #4c4c4c;
 }
 

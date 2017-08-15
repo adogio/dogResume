@@ -6,6 +6,11 @@
         "subTitle": "快速生成美观, 合理, 可定制化的简历",
         "quote": "我不写作, 我干! 我用dogResume.",
         "quoteFrom": "斯大林",
-        "resumeTopper": "将组件移动到你的简历上就可以编辑了"
+        "resumeTopper": {
+            "default": "选择你需要的组件"
+        },
+        "education": "教育水平",
+        "putItHere": "放置在这里",
+        "cancel": "取消选择"
     }
 }

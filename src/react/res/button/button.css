@@ -1,0 +1,13 @@
+.buttons {
+    width: 100%;
+    height: 45px;
+    font-size: 21px;
+    font-family: 'ubuntu';
+    border: 0px;
+    background-color: #a5a5a5;
+    transition: 1s all;
+}
+
+.buttons:hover {
+    background-color: #e5e5e5;
+}

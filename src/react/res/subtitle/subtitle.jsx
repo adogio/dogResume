@@ -4,10 +4,6 @@ import React, {
 import './subtitle.css';
 class Subtitle extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="subtitle">

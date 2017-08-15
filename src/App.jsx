@@ -12,6 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.things = strings.chinese;
+    window.dogResume = {};
   }
 
   render() {
