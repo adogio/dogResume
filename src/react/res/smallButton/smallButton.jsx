@@ -10,8 +10,8 @@ class SmallButton extends Component {
 
     render() {
         return (
-            <button className="smlButton" onClick={this.props.click}>
-                <i className="fa fa-cog"></i>
+            <button className="smlButton" onClick={this.props.click} style={this.props.style}>
+                {this.props.children}
             </button>
         );
     }

@@ -21,11 +21,16 @@ class template extends Component {
         this.selectLeftTarget = this.selectLeftTarget.bind(this);
         this.selectRightTarget = this.selectRightTarget.bind(this);
         this.cancelSelect = this.cancelSelect.bind(this);
+        this.detailMode = this.detailMode.bind(this);
+        this.viewMode = this.viewMode.bind(this);
+        this.changeLeft = this.changeLeft.bind(this);
+        this.changeRight = this.changeRight.bind(this);
         this.state = {
-            leftComponents: ['space'],
-            rightComponents: ['space'],
+            leftComponents: [{ component: 'space', default: 'space' }],
+            rightComponents: [{ component: 'space', default: 'space' }],
             triggerdLeft: false,
-            triggerdRight: false
+            triggerdRight: false,
+            dev: false
         }
     }
 
@@ -35,6 +40,12 @@ class template extends Component {
         }
         window.dogResume.cancelSelect = () => {
             this.cancelSelect();
+        }
+        window.dogResume.detailMode = () => {
+            this.detailMode();
+        }
+        window.dogResume.viewMode = () => {
+            this.viewMode();
         }
     }
 
@@ -56,41 +67,70 @@ class template extends Component {
         );
     }
 
+    detailMode() {
+        this.setState({
+            dev: false
+        })
+    }
+
+    viewMode() {
+        this.setState({
+            dev: true
+        })
+    }
+
     leftRanderer(i, index) {
-        switch (i) {
+        switch (i.component) {
             case "space":
                 return <Space key={'l' + index} index={index} style={this.state.triggerdLeft} onClick={this.selectLeftTarget}></Space>;
             case "name":
-                return <Name key={'l' + index} dev={true} />;
+                return <Name onChange={this.changeLeft} index={index} key={'l' + index} dev={this.state.dev} default={i.default}/>;
             default:
         }
     }
 
     rightRanderer(i, index) {
-        switch (i) {
+        switch (i.component) {
             case "space":
                 return <Space key={'r' + index} index={index} style={this.state.triggerdRight} onClick={this.selectRightTarget}></Space>;
             case "name":
-                return <Name key={'r' + index} />;
+                return <Name onChange={this.changeRight} index={index} key={'r' + index} dev={this.state.dev} default={i.default}/>;
             default:
         }
     }
-
+    changeLeft(index, content) {
+        let b = this.state.leftComponents;
+        b[index].default = content;
+        this.setState({
+            leftComponents: b
+        })
+    }
+    changeRight(index, content) {
+        let b = this.state.rightComponents;
+        b[index].default = content;
+        this.setState({
+            rightComponents: b
+        })
+    }
     selectLeftTarget(index) {
-        console.log(index);
         this.cancelSelect();
         let b = this.state.leftComponents;
-        b.splice(index + 1, 0, this.selected, 'space');
+        b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+        this.setState({
+            leftComponents: []
+        })
         this.setState({
             leftComponents: b
         })
     }
 
     selectRightTarget(index) {
-        console.log(index);
         this.cancelSelect();
         let b = this.state.rightComponents;
-        b.splice(index + 1, 0, this.selected, 'space');
+        b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+        this.setState({
+            rightComponents: []
+        })
         this.setState({
             rightComponents: b
         })

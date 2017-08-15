@@ -7,6 +7,7 @@
         "components": "模块列表",
         "quote": "我不写作, 我干! 我用dogResume.",
         "quoteFrom": "斯大林",
+        "occupied": "请编辑",
         "resumeTopper": {
             "default": "选择你需要的组件"
         },
@@ -17,6 +18,8 @@
         "project": "项目经验",
         "name": "姓名版",
         "putItHere": "放置在这里",
+        "detailMode": "编辑模式",
+        "viewMode": "预览模式",
         "edit": "编辑",
         "cancel": "取消选择"
     }

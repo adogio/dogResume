@@ -26,7 +26,7 @@ class input extends Component {
             if (this.props.model) this._reactInternalInstance._currentElement._owner._instance.dog_handleInput(change, this.props.model);
         } else {
             if (this.props.onInput) this.props.onInput(change);
-            if (this.props.model) this.props.model(change);
+            if (this.props.model) this.props.model(change.target.value);
         }
     }
 }

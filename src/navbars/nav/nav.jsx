@@ -10,10 +10,16 @@ import './nav.css';
 
 class Nav extends Component {
     things;
+    detail;
 
     constructor(props) {
         super(props);
         this.things = strings.chinese;
+        this.detail = true;
+        this.changeMode = this.changeMode.bind(this);
+        this.state = {
+            detail: this.things.detailMode
+        }
     }
 
     render() {
@@ -38,7 +44,7 @@ class Nav extends Component {
                 <Button click={this.clickButton} type="project">{this.things.project}</Button>
                 <Button click={this.clickButton} type="name">{this.things.name}</Button>
                 <hr />
-                <Button click={this.cancelSelect}>{this.things.edit}</Button>
+                <Button click={this.changeMode}>{this.state.detail}</Button>
                 <Button click={this.cancelSelect}>{this.things.cancel}</Button>
             </div>
         );
@@ -51,6 +57,21 @@ class Nav extends Component {
 
     cancelSelect() {
         window.dogResume.cancelSelect();
+    }
+    changeMode() {
+        if (this.detail) {
+            window.dogResume.viewMode();
+            this.detail = false;
+            this.setState({
+                detail: this.things.viewMode
+            })
+        } else {
+            window.dogResume.detailMode();
+            this.detail = true;
+            this.setState({
+                detail: this.things.detailMode
+            })
+        }
     }
 }
 
