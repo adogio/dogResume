@@ -30,6 +30,7 @@ class Nav extends Component {
                     {this.things.quote}
                 </Quote>
                 <hr />
+                <Subtitle>{this.things.components}</Subtitle>
                 <Button click={this.clickButton} type="education">{this.things.education}</Button>
                 <Button click={this.clickButton} type="connect">{this.things.connect}</Button>
                 <Button click={this.clickButton} type="experience">{this.things.experience}</Button>
@@ -37,6 +38,7 @@ class Nav extends Component {
                 <Button click={this.clickButton} type="project">{this.things.project}</Button>
                 <Button click={this.clickButton} type="name">{this.things.name}</Button>
                 <hr />
+                <Button click={this.cancelSelect}>{this.things.edit}</Button>
                 <Button click={this.cancelSelect}>{this.things.cancel}</Button>
             </div>
         );
@@ -47,7 +49,7 @@ class Nav extends Component {
         window.dogResume.selectComponent(type);
     }
 
-    cancelSelect(){
+    cancelSelect() {
         window.dogResume.cancelSelect();
     }
 }

@@ -1,8 +1,8 @@
 import React, {
     Component
 } from 'react';
-import './education.css';
-class Education extends Component {
+import './name.css';
+class Name extends Component {
 
     // constructor(props) {
     //     super(props);
@@ -10,9 +10,11 @@ class Education extends Component {
 
     render() {
         return (
-            <div>{this.props.test}</div>
+            <div>
+                Name
+            </div>
         );
     }
 }
 
-export default Education;
+export default Name;

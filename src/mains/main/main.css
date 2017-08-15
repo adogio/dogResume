@@ -15,6 +15,7 @@
 .resume-right {
     float: left;
     height: 100%;
+    overflow: auto;
 }
 
 .resume-left {
