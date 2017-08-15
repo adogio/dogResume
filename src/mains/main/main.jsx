@@ -15,14 +15,14 @@ class template extends Component {
         this.leftRanderer = this.leftRanderer.bind(this);
         this.rightRanderer = this.rightRanderer.bind(this);
         this.selectComponent = this.selectComponent.bind(this);
-        this.selectTarget = this.selectTarget.bind(this);
+        this.selectLeftTarget = this.selectLeftTarget.bind(this);
+        this.selectRightTarget = this.selectRightTarget.bind(this);
         this.cancelSelect = this.cancelSelect.bind(this);
         this.state = {
             leftComponents: ['space'],
             rightComponents: ['space'],
-            triggerd: {
-                display: "none"
-            }
+            triggerdLeft: false,
+            triggerdRight: false
         }
     }
 
@@ -47,6 +47,7 @@ class template extends Component {
                     </div>
                     <div className="resume-right">
                         {this.state.rightComponents.map(this.rightRanderer)}
+                        
                     </div>
                 </div>
             </div>
@@ -56,7 +57,7 @@ class template extends Component {
     leftRanderer(i, index){
         switch(i){
             case "space":
-            return <Space key={'l'+index} index={'l'+index} style={this.state.triggerd} onClick={this.selectTarget}></Space>;
+            return <Space key={'l'+index} index={index} style={this.state.triggerdLeft} onClick={this.selectLeftTarget}></Space>;
             default:
         }
     }
@@ -64,12 +65,16 @@ class template extends Component {
     rightRanderer(i, index){
         switch(i){
             case "space":
-            return <Space key={'r'+index} index={'r'+index} style={this.state.triggerd} onClick={this.selectTarget}></Space>
+            return <Space key={'r'+index} index={index} style={this.state.triggerdRight} onClick={this.selectRightTarget}></Space>
             default:
         }
     }
 
-    selectTarget(index){
+    selectLeftTarget(index){
+        console.log(index);
+    }
+
+    selectRightTarget(index){
         console.log(index);
     }
 
@@ -78,14 +83,25 @@ class template extends Component {
     }
 
     selectComponent(type) {
-        this.setState({
-            triggerd: {}
-        })
+        switch(type){
+            case "education":
+            this.setState({
+                triggerdRight: true
+            })
+            break;
+            default:
+            this.setState({
+                triggerdLeft: true,
+                triggerdRight: true
+            })
+        }
+        
     }
 
     cancelSelect(){
         this.setState({
-            triggerd: {display: "none"}
+            triggerdLeft: false,
+            triggerdRight: false
         })
     }
 }

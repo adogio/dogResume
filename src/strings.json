@@ -9,7 +9,12 @@
         "resumeTopper": {
             "default": "选择你需要的组件"
         },
-        "education": "教育水平",
+        "education": "教育经历",
+        "connect": "联系方式",
+        "experience": "过往职位",
+        "skill": "技能",
+        "project": "项目经验",
+        "name": "姓名版",
         "putItHere": "放置在这里",
         "cancel": "取消选择"
     }
