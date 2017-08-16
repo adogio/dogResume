@@ -5,6 +5,7 @@ import Space from '../space/space';
 import Education from '../education/education';
 import Name from '../name/name';
 import './main.css';
+import '../printable.css';
 import strings from '../../strings.json';
 
 class template extends Component {
@@ -13,18 +14,6 @@ class template extends Component {
     form;
     constructor(props) {
         super(props);
-        this.form = {
-            left: {
-                up: this.upLeft,
-                down: this.downLeft,
-                del: this.delLeft,
-            }, right: {
-                up: this.upLeft,
-                down: this.downLeft,
-                del: this.delLeft,
-            }
-
-        }
         this.things = strings.chinese;
         this.selected = '';
         this.getTopper = this.getTopper.bind(this);
@@ -44,6 +33,18 @@ class template extends Component {
         this.upRight = this.upRight.bind(this);
         this.downRight = this.downRight.bind(this);
         this.delRight = this.delRight.bind(this);
+        this.form = {
+            left: {
+                up: this.upLeft,
+                down: this.downLeft,
+                del: this.delLeft,
+            }, right: {
+                up: this.upLeft,
+                down: this.downLeft,
+                del: this.delLeft,
+            }
+
+        }
         this.state = {
             leftComponents: [{ component: 'space', default: 'space' }],
             rightComponents: [{ component: 'space', default: 'space' }],
@@ -74,11 +75,11 @@ class template extends Component {
                 <h3>
                     {this.getTopper()}
                 </h3>
-                <div className="resume">
-                    <div className="resume-left">
+                <div className="resume" id="resume">
+                    <div className="resume-left centerer">
                         {this.state.leftComponents.map(this.leftRanderer)}
                     </div>
-                    <div className="resume-right">
+                    <div className="resume-right centerer">
                         {this.state.rightComponents.map(this.rightRanderer)}
                     </div>
                 </div>
@@ -143,26 +144,37 @@ class template extends Component {
     }
 
     upLeft(index) {
-        console.log(index);
+        if (index === 1) {
+            return 0;
+        }
+        let b = this.state.leftComponents;
+        let thing = b[index];
+        b.splice(index, 2);
+        b.splice(index - 2, 0, thing, { component: 'space', default: 'space' })
+        this.setState({
+            leftComponents: b
+        })
     }
 
-    downLeft() {
+    downLeft(index) {
+        if (index === this.state.leftComponents.length - 1) {
+            return 0;
+        }
+    }
+
+    delLeft(index) {
 
     }
 
-    delLeft() {
-
-    }
-
-    upRight() {
+    upRight(index) {
         console.log('up');
     }
 
-    downRight() {
+    downRight(index) {
 
     }
 
-    delRight() {
+    delRight(index) {
 
     }
 
@@ -170,9 +182,6 @@ class template extends Component {
         this.cancelSelect();
         let b = this.state.leftComponents;
         b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
-        this.setState({
-            leftComponents: []
-        })
         this.setState({
             leftComponents: b
         })
@@ -182,9 +191,6 @@ class template extends Component {
         this.cancelSelect();
         let b = this.state.rightComponents;
         b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
-        this.setState({
-            rightComponents: []
-        })
         this.setState({
             rightComponents: b
         })

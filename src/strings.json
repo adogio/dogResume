@@ -21,6 +21,7 @@
         "detailMode": "编辑模式",
         "viewMode": "预览模式",
         "edit": "编辑",
-        "cancel": "取消选择"
+        "cancel": "取消选择",
+        "print": "打印简历"
     }
 }

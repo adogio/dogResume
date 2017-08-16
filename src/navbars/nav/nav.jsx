@@ -7,6 +7,7 @@ import Quote from '../../react/res/quote/quote';
 import strings from '../../strings.json';
 import Button from '../../react/res/button/button';
 import './nav.css';
+import a from '../../mains/printable.json';
 
 class Nav extends Component {
     things;
@@ -17,6 +18,7 @@ class Nav extends Component {
         this.things = strings.chinese;
         this.detail = true;
         this.changeMode = this.changeMode.bind(this);
+        this.printResume = this.printResume.bind(this);
         this.state = {
             detail: this.things.detailMode
         }
@@ -46,6 +48,7 @@ class Nav extends Component {
                 <hr />
                 <Button click={this.changeMode}>{this.state.detail}</Button>
                 <Button click={this.cancelSelect}>{this.things.cancel}</Button>
+                <Button click={this.printResume}>{this.things.print}</Button>
             </div>
         );
     }
@@ -58,6 +61,18 @@ class Nav extends Component {
     cancelSelect() {
         window.dogResume.cancelSelect();
     }
+
+    printResume() {
+        let print = document.getElementById('resume').innerHTML;
+        print += "<style>"
+        print += a;
+        print += "</style>"
+        var f = document.getElementById('printf');
+        f.contentDocument.write(print);
+        f.contentDocument.close();
+        f.contentWindow.print();
+    }
+
     changeMode() {
         if (this.detail) {
             window.dogResume.viewMode();

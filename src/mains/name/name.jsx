@@ -1,7 +1,6 @@
 import React, {
     Component
 } from 'react';
-import './name.css';
 import strings from '../../strings.json';
 import Input from '../../react/out/input/input';
 import Group from '../group/group';
