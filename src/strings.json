@@ -7,7 +7,34 @@
         "components": "模块列表",
         "quote": "我不写作, 我干! 我用dogResume.",
         "quoteFrom": "斯大林",
-        "occupied": "请编辑",
+        "occupied": "编辑这里",
+        "resumeTopper": {
+            "default": "选择你需要的组件"
+        },
+        "education": "教育经历",
+        "connect": "联系方式",
+        "experience": "过往职位",
+        "skill": "技能",
+        "project": "项目经验",
+        "name": "姓名版",
+        "putItHere": "放置在这里",
+        "detailMode": "编辑模式",
+        "viewMode": "预览模式",
+        "edit": "编辑",
+        "cancel": "取消选择",
+        "print": "打印简历",
+        "toView": "请先退出编辑模式再打印",
+        "toUnselect": "请先退出选择模式再打印"
+    },
+    "english": {
+        "mainTitle": "dogResume 测试版",
+        "version": "版本号",
+        "title": "YAHAHA",
+        "subTitle": "快速生成美观, 合理, 可定制化的简历",
+        "components": "模块列表",
+        "quote": "我不写作, 我干! 我用dogResume.",
+        "quoteFrom": "斯大林",
+        "occupied": "编辑这里",
         "resumeTopper": {
             "default": "选择你需要的组件"
         },
