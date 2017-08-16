@@ -261,13 +261,13 @@ class template extends Component {
         let b = this.state.leftComponents;
         if (Boolean(this.cutting)) {
             b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
-            this.cutting = null;
         } else {
             b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
         }
         this.setState({
             leftComponents: b
         })
+        this.cutting = null;
     }
 
     selectRightTarget(index) {
@@ -276,13 +276,13 @@ class template extends Component {
         let b = this.state.rightComponents;
         if (Boolean(this.cutting)) {
             b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
-            this.cutting = null;
         } else {
             b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
         }
         this.setState({
             rightComponents: b
         })
+        this.cutting = null;
     }
 
     getTopper() {
