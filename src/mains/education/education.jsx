@@ -10,7 +10,7 @@ class Education extends Component {
 
     render() {
         return (
-            <div>{this.props.test}</div>
+            <div>education</div>
         );
     }
 }

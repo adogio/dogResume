@@ -116,6 +116,8 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left} />;
+            case "education":
+                return <Education></Education>;
             default:
         }
     }
@@ -131,6 +133,8 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right} />;
+            case "education":
+                return <Education></Education>;
             default:
         }
     }
@@ -177,7 +181,6 @@ class template extends Component {
 
     delLeft(index) {
         let b = this.state.leftComponents;
-        let thing = b[index];
         b.splice(index, 2);
         this.setState({
             leftComponents: b
@@ -212,7 +215,6 @@ class template extends Component {
 
     delRight(index) {
         let b = this.state.rightComponents;
-        let thing = b[index];
         b.splice(index, 2);
         this.setState({
             rightComponents: b
