@@ -33,6 +33,7 @@ class Name extends Component {
                     up={this.props.form.up}
                     down={this.props.form.down}
                     del={this.props.form.del}
+                    cut={this.props.form.cut}
                     isEdit={this.state.edit}
                     index={this.props.index}
                 ></Group> : null}

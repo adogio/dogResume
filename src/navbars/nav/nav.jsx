@@ -49,8 +49,12 @@ class Nav extends Component {
                 <Button click={this.clickButton} type="project">{this.things.project}</Button>
                 <Button click={this.clickButton} type="name">{this.things.name}</Button>
                 <hr />
+                <Subtitle>{this.things.componenetTool}</Subtitle>
                 <Button click={this.changeMode}>{this.state.detail}</Button>
                 <Button click={this.cancelSelect}>{this.things.cancel}</Button>
+                <Button click={this.printResume}>{this.things.style}</Button>
+                <hr />
+                <Subtitle>{this.things.complete}</Subtitle>
                 <Button click={this.printResume}>{this.things.print}</Button>
             </div>
         );

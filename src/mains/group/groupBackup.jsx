@@ -8,22 +8,26 @@ class Group extends Component {
     colorRed = {
         backgroundColor: "red",
         color: "white",
-        borderTopRightRadius: "10px",
+        borderBottomLeftRadius: "10px",
         borderBottomRightRadius: "10px",
-        width: "30px"
+        height: "30px"
     };
     colorGreen = {
         backgroundColor: "green",
         color: "white",
         borderTopLeftRadius: "10px",
-        borderBottomLeftRadius: "10px",
-        width: "45px"
+        borderTopRightRadius: "10px",
+        height: "45px"
     };
     colorCheck = {
         backgroundColor: "green",
         color: "white",
         borderRadius: "10px",
-        width: "80px"
+        height: "80px"
+    };
+    lefter = {
+        position: "absolute",
+        left: "15px"
     };
     allButtons;
     checkButton;
@@ -32,20 +36,19 @@ class Group extends Component {
         this.up = this.up.bind(this);
         this.down = this.down.bind(this);
         this.del = this.del.bind(this);
-        this.cut = this.cut.bind(this);
-        this.allButtons = <div>
+        this.allButtons = <div style={this.lefter}>
             <SmallButton click={this.props.edit} style={this.colorGreen}>
                 <i className="fa fa-cog"></i>
             </SmallButton>
+            <br />
             <SmallButton click={this.up}>
                 <i className="fa fa-arrow-up"></i>
             </SmallButton>
-            <SmallButton click={this.cut}>
-                <i className="fa fa-scissors"></i>
-            </SmallButton>
+            <br />
             <SmallButton click={this.down}>
                 <i className="fa fa-arrow-down"></i>
             </SmallButton>
+            <br />
             <SmallButton click={this.del} style={this.colorRed}>
                 <i className="fa fa-times"></i>
             </SmallButton>
@@ -64,9 +67,6 @@ class Group extends Component {
     }
     del() {
         this.props.del(this.props.index);
-    }
-    cut() {
-        this.props.cut(this.props.index);
     }
     render() {
         return (

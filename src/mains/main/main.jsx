@@ -12,6 +12,7 @@ class template extends Component {
     things;
     selected;
     form;
+    cutting;
     constructor(props) {
         super(props);
         this.things = strings.chinese;
@@ -33,15 +34,20 @@ class template extends Component {
         this.upRight = this.upRight.bind(this);
         this.downRight = this.downRight.bind(this);
         this.delRight = this.delRight.bind(this);
+        this.cutLeft = this.cutLeft.bind(this);
+        this.cutRight = this.cutRight.bind(this);
+        this.cutting = null;
         this.form = {
             left: {
                 up: this.upLeft,
                 down: this.downLeft,
                 del: this.delLeft,
+                cut: this.cutLeft
             }, right: {
                 up: this.upRight,
                 down: this.downRight,
                 del: this.delRight,
+                cut: this.cutRight
             }
 
         }
@@ -60,16 +66,24 @@ class template extends Component {
         window.dogResume.selectComponent = (type) => {
             this.selectComponent(type);
             window.dogResume.global.selected = true;
+            return 1;
         }
         window.dogResume.cancelSelect = () => {
-            this.cancelSelect();
+            if (this.cutting != null) {
+                alert(this.things.inCutting);
+                return 0;
+            }
             window.dogResume.global.selected = false;
+            this.cancelSelect();
+            return 1;
         }
         window.dogResume.detailMode = () => {
             this.detailMode();
+            return 1;
         }
         window.dogResume.viewMode = () => {
             this.viewMode();
+            return 1;
         }
     }
 
@@ -187,6 +201,16 @@ class template extends Component {
         })
     }
 
+    cutLeft(index) {
+        let b = this.state.leftComponents;
+        let c = b.splice(index, 2);
+        this.setState({
+            leftComponents: b
+        })
+        this.cutting = c[0].default;
+        this.selectComponent(c[0].component, true);
+    }
+
     upRight(index) {
         if (index === 1) {
             return 0;
@@ -221,11 +245,26 @@ class template extends Component {
         })
     }
 
+    cutRight(index) {
+        let b = this.state.rightComponents;
+        let c = b.splice(index, 2);
+        this.setState({
+            rightComponents: b
+        })
+        this.cutting = c[0].default;
+        this.selectComponent(c[0].component, true);
+    }
+
     selectLeftTarget(index) {
         this.cancelSelect();
         window.dogResume.global.selected = false;
         let b = this.state.leftComponents;
-        b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+        if (Boolean(this.cutting)) {
+            b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
+            this.cutting = null;
+        } else {
+            b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+        }
         this.setState({
             leftComponents: b
         })
@@ -235,7 +274,12 @@ class template extends Component {
         this.cancelSelect();
         window.dogResume.global.selected = false;
         let b = this.state.rightComponents;
-        b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+        if (Boolean(this.cutting)) {
+            b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
+            this.cutting = null;
+        } else {
+            b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+        }
         this.setState({
             rightComponents: b
         })
@@ -245,8 +289,10 @@ class template extends Component {
         return this.things.resumeTopper.default;
     }
 
-    selectComponent(type) {
-        this.selected = type;
+    selectComponent(type, cut) {
+        if (!Boolean(cut)) {
+            this.selected = type;
+        }
         switch (type) {
             case "education":
                 this.setState({
