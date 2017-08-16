@@ -17,6 +17,9 @@ class Nav extends Component {
         super(props);
         this.things = strings.chinese;
         this.detail = true;
+        this.selected = false;
+        this.clickButton = this.clickButton.bind(this);
+        this.cancelSelect = this.cancelSelect.bind(this);
         this.changeMode = this.changeMode.bind(this);
         this.printResume = this.printResume.bind(this);
         this.state = {
@@ -63,14 +66,21 @@ class Nav extends Component {
     }
 
     printResume() {
-        let print = document.getElementById('resume').innerHTML;
-        print += "<style>"
-        print += a;
-        print += "</style>"
-        var f = document.getElementById('printf');
-        f.contentDocument.write(print);
-        f.contentDocument.close();
-        f.contentWindow.print();
+        if (!this.detail) {
+            alert(this.things.toView);
+        } else if (window.dogResume.global.selected) {
+            alert(this.things.toUnselect);
+        } else {
+            let print = document.getElementById('resume').innerHTML;
+            print += "<style>"
+            print += a;
+            print += ".centerer{outline:3px dashed #8b8b8b;}"
+            print += "</style>"
+            var f = document.getElementById('printf');
+            f.contentDocument.write(print);
+            f.contentDocument.close();
+            f.contentWindow.print();
+        }
     }
 
     changeMode() {

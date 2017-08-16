@@ -22,6 +22,8 @@
         "viewMode": "预览模式",
         "edit": "编辑",
         "cancel": "取消选择",
-        "print": "打印简历"
+        "print": "打印简历",
+        "toView": "请先退出编辑模式再打印",
+        "toUnselect": "请先退出选择模式再打印"
     }
 }

@@ -39,9 +39,9 @@ class template extends Component {
                 down: this.downLeft,
                 del: this.delLeft,
             }, right: {
-                up: this.upLeft,
-                down: this.downLeft,
-                del: this.delLeft,
+                up: this.upRight,
+                down: this.downRight,
+                del: this.delRight,
             }
 
         }
@@ -55,11 +55,15 @@ class template extends Component {
     }
 
     componentDidMount() {
+        window.dogResume.global = {};
+        window.dogResume.global.selected = false;
         window.dogResume.selectComponent = (type) => {
             this.selectComponent(type);
+            window.dogResume.global.selected = true;
         }
         window.dogResume.cancelSelect = () => {
             this.cancelSelect();
+            window.dogResume.global.selected = false;
         }
         window.dogResume.detailMode = () => {
             this.detailMode();
@@ -76,11 +80,13 @@ class template extends Component {
                     {this.getTopper()}
                 </h3>
                 <div className="resume" id="resume">
-                    <div className="resume-left centerer">
-                        {this.state.leftComponents.map(this.leftRanderer)}
-                    </div>
-                    <div className="resume-right centerer">
-                        {this.state.rightComponents.map(this.rightRanderer)}
+                    <div className="centerer">
+                        <div className="resume-left">
+                            {this.state.leftComponents.map(this.leftRanderer)}
+                        </div>
+                        <div className="resume-right">
+                            {this.state.rightComponents.map(this.rightRanderer)}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -142,7 +148,7 @@ class template extends Component {
             rightComponents: b
         })
     }
-
+    // The reason to sperate left and right is in the future left and right have different logic(maybe)
     upLeft(index) {
         if (index === 1) {
             return 0;
@@ -160,26 +166,62 @@ class template extends Component {
         if (index === this.state.leftComponents.length - 1) {
             return 0;
         }
+        let b = this.state.leftComponents;
+        let thing = b[index];
+        b.splice(index, 2);
+        b.splice(index + 2, 0, thing, { component: 'space', default: 'space' })
+        this.setState({
+            leftComponents: b
+        })
     }
 
     delLeft(index) {
-
+        let b = this.state.leftComponents;
+        let thing = b[index];
+        b.splice(index, 2);
+        this.setState({
+            leftComponents: b
+        })
     }
 
     upRight(index) {
-        console.log('up');
+        if (index === 1) {
+            return 0;
+        }
+        let b = this.state.rightComponents;
+        let thing = b[index];
+        b.splice(index, 2);
+        b.splice(index - 2, 0, thing, { component: 'space', default: 'space' })
+        this.setState({
+            rightComponents: b
+        })
     }
 
     downRight(index) {
-
+        if (index === this.state.rightComponents.length - 1) {
+            return 0;
+        }
+        let b = this.state.rightComponents;
+        let thing = b[index];
+        b.splice(index, 2);
+        b.splice(index + 2, 0, thing, { component: 'space', default: 'space' })
+        this.setState({
+            rightComponents: b
+        })
     }
 
     delRight(index) {
-
+        let b = this.state.rightComponents;
+        let thing = b[index];
+        b.splice(index, 2);
+        this.setState({
+            rightComponents: b
+        })
     }
 
     selectLeftTarget(index) {
         this.cancelSelect();
+        window.dogResume.global.selected = false;
         let b = this.state.leftComponents;
         b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
         this.setState({
@@ -189,6 +231,7 @@ class template extends Component {
 
     selectRightTarget(index) {
         this.cancelSelect();
+        window.dogResume.global.selected = false;
         let b = this.state.rightComponents;
         b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
         this.setState({
