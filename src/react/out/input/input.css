@@ -1,0 +1,34 @@
+.thisInput {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 36px;
+    width: 100%;
+    border: 0px;
+    border-left: 7px solid #b30000;
+    font-size: 28px;
+    padding-top: 10px;
+    padding-left: 6px;
+    background-color: transparent;
+}
+
+.smallPlaceholder {
+    transition: all .2s;
+    font-size: 15px;
+    line-height: 16px;
+    margin-top: 6px;
+    margin-left: 13px;
+    position: absolute;
+    z-index: 4;
+    white-space: nowrap;
+}
+
+.bigPlaceholder {
+    font-size: 28px!important;
+    margin: 13px 5px 0 16px!important;
+    white-space: nowrap;
+}
+
+.description {
+    text-align: left;
+    font-family: 'ubuntu';
+}

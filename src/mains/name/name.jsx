@@ -24,7 +24,7 @@ class Name extends Component {
         return (
             <div>
                 {this.state.edit ?
-                    <Input model={this.happed}></Input>
+                    <Input model={this.happed} color="white" value={this.props.default}>name</Input>
                     : <div className="name-name">
                         {this.props.default ? this.props.default : this.things.occupied}
                     </div>
@@ -33,9 +33,11 @@ class Name extends Component {
             </div>
         );
     }
+
     happed(e) {
         this.inputer = e;
     }
+
     edit() {
         if (this.state.edit) {
             this.props.onChange(this.props.index, this.inputer);
