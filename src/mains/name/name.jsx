@@ -29,7 +29,7 @@ class Name extends Component {
                         {this.props.default ? this.props.default : this.things.occupied}
                     </div>
                 }
-                {this.props.dev ? <Group edit={this.edit}></Group> : null}
+                {this.props.dev ? <Group edit={this.edit} isEdit={this.state.edit}></Group> : null}
             </div>
         );
     }
