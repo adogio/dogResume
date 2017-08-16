@@ -10,8 +10,21 @@ import strings from '../../strings.json';
 class template extends Component {
     things;
     selected;
+    form;
     constructor(props) {
         super(props);
+        this.form = {
+            left: {
+                up: this.upLeft,
+                down: this.downLeft,
+                del: this.delLeft,
+            }, right: {
+                up: this.upLeft,
+                down: this.downLeft,
+                del: this.delLeft,
+            }
+
+        }
         this.things = strings.chinese;
         this.selected = '';
         this.getTopper = this.getTopper.bind(this);
@@ -25,6 +38,12 @@ class template extends Component {
         this.viewMode = this.viewMode.bind(this);
         this.changeLeft = this.changeLeft.bind(this);
         this.changeRight = this.changeRight.bind(this);
+        this.upLeft = this.upLeft.bind(this);
+        this.downLeft = this.downLeft.bind(this);
+        this.delLeft = this.delLeft.bind(this);
+        this.upRight = this.upRight.bind(this);
+        this.downRight = this.downRight.bind(this);
+        this.delRight = this.delRight.bind(this);
         this.state = {
             leftComponents: [{ component: 'space', default: 'space' }],
             rightComponents: [{ component: 'space', default: 'space' }],
@@ -84,7 +103,12 @@ class template extends Component {
             case "space":
                 return <Space key={'l' + index} index={index} style={this.state.triggerdLeft} onClick={this.selectLeftTarget}></Space>;
             case "name":
-                return <Name onChange={this.changeLeft} index={index} key={'l' + index} dev={this.state.dev} default={i.default}/>;
+                return <Name onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left} />;
             default:
         }
     }
@@ -94,7 +118,12 @@ class template extends Component {
             case "space":
                 return <Space key={'r' + index} index={index} style={this.state.triggerdRight} onClick={this.selectRightTarget}></Space>;
             case "name":
-                return <Name onChange={this.changeRight} index={index} key={'r' + index} dev={this.state.dev} default={i.default}/>;
+                return <Name onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
             default:
         }
     }
@@ -112,6 +141,31 @@ class template extends Component {
             rightComponents: b
         })
     }
+
+    upLeft(index) {
+        console.log(index);
+    }
+
+    downLeft() {
+
+    }
+
+    delLeft() {
+
+    }
+
+    upRight() {
+        console.log('up');
+    }
+
+    downRight() {
+
+    }
+
+    delRight() {
+
+    }
+
     selectLeftTarget(index) {
         this.cancelSelect();
         let b = this.state.leftComponents;

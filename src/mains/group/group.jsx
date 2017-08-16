@@ -25,29 +25,42 @@ class Group extends Component {
         borderRadius: "10px",
         width: "80px"
     };
-    allButtons = <div>
-        <SmallButton click={this.props.edit} style={this.colorGreen}>
-            <i className="fa fa-cog"></i>
-        </SmallButton>
-        <SmallButton click={this.props.edit}>
-            <i className="fa fa-arrow-up"></i>
-        </SmallButton>
-        <SmallButton click={this.props.edit}>
-            <i className="fa fa-arrow-down"></i>
-        </SmallButton>
-        <SmallButton click={this.props.edit} style={this.colorRed}>
-            <i className="fa fa-times"></i>
-        </SmallButton>
-    </div>;
-    checkButton = <div>
-        <SmallButton click={this.props.edit} style={this.colorCheck}>
-            <i className="fa fa-check"></i>
-        </SmallButton>
-    </div>;
+    allButtons;
+    checkButton;
     constructor(props) {
         super(props);
+        this.up = this.up.bind(this);
+        this.down = this.down.bind(this);
+        this.del = this.del.bind(this);
+        this.allButtons = <div>
+            <SmallButton click={this.props.edit} style={this.colorGreen}>
+                <i className="fa fa-cog"></i>
+            </SmallButton>
+            <SmallButton click={this.up}>
+                <i className="fa fa-arrow-up"></i>
+            </SmallButton>
+            <SmallButton click={this.down}>
+                <i className="fa fa-arrow-down"></i>
+            </SmallButton>
+            <SmallButton click={this.del} style={this.colorRed}>
+                <i className="fa fa-times"></i>
+            </SmallButton>
+        </div>;
+        this.checkButton = <div>
+            <SmallButton click={this.props.edit} style={this.colorCheck}>
+                <i className="fa fa-check"></i>
+            </SmallButton>
+        </div>;
     }
-
+    up() {
+        this.props.up(this.props.index);
+    }
+    down() {
+        this.props.down(this.props.index);
+    }
+    del() {
+        this.props.del(this.props.index);
+    }
     render() {
         return (
             this.props.isEdit ? this.checkButton : this.allButtons

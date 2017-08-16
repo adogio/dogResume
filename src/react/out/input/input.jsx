@@ -12,7 +12,6 @@ class input extends Component {
             value: props.value ? props.value : '',
             placeHolderStyle: this.props.value ? 'smallPlaceholder' : 'bigPlaceholder smallPlaceholder'
         };
-        console.log(this.props.value);
         this.color = {
             color: this.props.color ? this.props.color : 'black'
         };
