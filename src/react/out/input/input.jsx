@@ -35,6 +35,7 @@ class input extends Component {
                 </div>
                 <div style={this.outBorder}>
                     <input ref="input"
+                        type={this.props.type ? this.props.type : "text"}
                         value={this.state.value}
                         onChange={this.handleingChange}
                         onClick={this.handleingHolder}

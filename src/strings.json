@@ -1,6 +1,11 @@
 {
     "chinese": {
+        "login": "登录/注册 dogResume 测试版",
+        "loginButton": "登录",
+        "registerButton": "或者, 以这个用户名密码注册",
         "mainTitle": "dogResume 测试版",
+        "userName": "用户名",
+        "passWord": "密码",
         "version": "版本号",
         "title": "YAHAHA",
         "loginAndRegister": "登录/注册",
