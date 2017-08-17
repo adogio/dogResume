@@ -17,6 +17,7 @@ class Education extends Component {
         this.state = {
             edit: false
         }
+        console.log(props.default);
     }
 
     render() {
@@ -27,13 +28,12 @@ class Education extends Component {
                     :
                     <div>
                         <div className="common-header">
-                            <i className="fa fa-graduation-cap fa-fw common-icon"></i>
+                            <i className="fa fa-graduation-cap fa-fw"></i>
                             {this.things.educationInside.title}
                         </div>
+                        <Details detail={this.props.detail} isEdit={this.state.edit} onChange={this.changeDetail} />
                     </div>
                 }
-                <Details detail={this.props.default.detail ? this.props.default.detail : []} isEdit={this.state.edit} onChange={this.changeDetail} />
-
                 {this.props.dev ? <Group
                     edit={this.edit}
                     up={this.props.form.up}
@@ -48,13 +48,12 @@ class Education extends Component {
     }
 
     changeDetail(detail) {
-        let b = this.props.default;
-        b.detail = detail;
-        this.props.onChange(this.props.index, b);
+        this.inputer.detail = detail;
     }
 
     edit() {
         if (this.state.edit) {
+            this.props.onChange(this.props.index, this.inputer);
             this.setState({
                 edit: false
             })

@@ -157,7 +157,13 @@ class template extends Component {
                     default={i.default}
                     form={this.form.right} />;
             case "education":
-                return <Education></Education>;
+                return <Education
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
             default:
         }
     }
@@ -217,6 +223,7 @@ class template extends Component {
             leftComponents: b
         })
         this.cutting = c[0].default;
+        this.selected = c[0].component;
         this.selectComponent(c[0].component, true);
     }
 
@@ -261,6 +268,7 @@ class template extends Component {
             rightComponents: b
         })
         this.cutting = c[0].default;
+        this.selected = c[0].component;
         this.selectComponent(c[0].component, true);
     }
 
@@ -271,7 +279,7 @@ class template extends Component {
         if (Boolean(this.cutting)) {
             b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
         } else {
-            b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+            b.splice(index + 1, 0, { component: this.selected, default: {} }, { component: 'space', default: 'space' });
         }
         this.setState({
             leftComponents: b
@@ -286,7 +294,7 @@ class template extends Component {
         if (Boolean(this.cutting)) {
             b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
         } else {
-            b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+            b.splice(index + 1, 0, { component: this.selected, default: {} }, { component: 'space', default: 'space' });
         }
         this.setState({
             rightComponents: b
@@ -299,7 +307,7 @@ class template extends Component {
     }
 
     selectComponent(type, cut) {
-        if (!Boolean(cut)) {
+        if (!cut) {
             this.selected = type;
         }
         switch (type) {
@@ -333,7 +341,7 @@ class template extends Component {
         function removeSpace(componentStream) {
             let output = [];
             for (let i = 0; i < componentStream.length; i++) {
-                if (i % 2 != 0) {
+                if (i % 2 !== 0) {
                     output.push(componentStream[i]);
                 }
             }
