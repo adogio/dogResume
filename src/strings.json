@@ -3,6 +3,7 @@
         "mainTitle": "dogResume 测试版",
         "version": "版本号",
         "title": "YAHAHA",
+        "loginAndRegister": "登录/注册",
         "subTitle": "快速生成美观, 合理, 可定制化的简历",
         "components": "模块列表",
         "componenetTool": "视图模式",
