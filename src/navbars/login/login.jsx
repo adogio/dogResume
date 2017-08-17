@@ -1,6 +1,8 @@
 import React, {
     Component
 } from 'react';
+import Input from '../../react/out/input/input';
+
 class Login extends Component {
 
     constructor(props) {
@@ -9,7 +11,11 @@ class Login extends Component {
 
     render() {
         return (
-            <div>Login</div>
+            <div>
+
+                Login
+            <Input>123</Input>
+            </div>
         );
     }
 }

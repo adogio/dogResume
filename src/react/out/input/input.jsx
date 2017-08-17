@@ -6,6 +6,11 @@ import './input.css';
 
 class input extends Component {
     color;
+    outBorder = {
+        borderLeft: "7px solid #b30000",
+        width: "97%"
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -28,13 +33,15 @@ class input extends Component {
                         {this.props.children}
                     </span>
                 </div>
-                <input ref="input"
-                    value={this.state.value}
-                    onChange={this.handleingChange}
-                    onClick={this.handleingHolder}
-                    onBlur={this.handleingBlur}
-                    className="thisInput"
-                    style={this.color} />
+                <div style={this.outBorder}>
+                    <input ref="input"
+                        value={this.state.value}
+                        onChange={this.handleingChange}
+                        onClick={this.handleingHolder}
+                        onBlur={this.handleingBlur}
+                        className="thisInput"
+                        style={this.color} />
+                </div>
             </div>
         );
     }

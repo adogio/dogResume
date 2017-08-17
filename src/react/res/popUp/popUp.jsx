@@ -6,11 +6,11 @@ class PopUp extends Component {
     popUpStyle = {
         position: "fixed",
         top: "25%",
-        left: "30%",
-        width: "40%",
+        left: "28%",
+        width: "42%",
         backgroundColor: "#c7c7c7",
         height: "50%",
-        borderRadius: "10px",
+        borderLeft: "7px solid #b30000",
         padding: "10px"
     };
     xStyle = {

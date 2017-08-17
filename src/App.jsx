@@ -9,6 +9,7 @@ import Main from './mains/main/main';
 import Button from './react/res/smallButton/smallButton';
 import strings from './strings.json';
 import Login from './navbars/login/login';
+
 import './App.css';
 
 class App extends Component {
