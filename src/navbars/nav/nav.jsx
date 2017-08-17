@@ -56,6 +56,10 @@ class Nav extends Component {
                 <hr />
                 <Subtitle>{this.things.complete}</Subtitle>
                 <Button click={this.printResume}>{this.things.print}</Button>
+                <hr />
+                <Subtitle>{this.things.dogResume}</Subtitle>
+                <Button click={this.printResume}>{this.things.like}</Button>
+                <Button click={this.printResume} Title="123">{this.things.bug}</Button>
             </div>
         );
     }

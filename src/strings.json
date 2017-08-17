@@ -26,6 +26,9 @@
         "cancel": "取消选择",
         "style": "调整样式",
         "print": "打印简历",
+        "dogResume": "dogResume",
+        "like": "喜欢这个项目?",
+        "bug": "反馈bug",
         "toView": "请先退出编辑模式再打印",
         "toUnselect": "请先退出选择模式再打印",
         "inCutting": "剪切状态无法取消选择"
