@@ -6,6 +6,10 @@
 }
 
 .main {
-    padding-top: 45px;
+    padding-top: 20px;
     text-align: center;
+}
+
+h3 {
+    margin: 10px;
 }

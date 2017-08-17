@@ -13,6 +13,11 @@ class template extends Component {
     selected;
     form;
     cutting;
+    topperStyle = {
+        position: "fixed",
+        top: "50px",
+        left: "25%"
+    };
     constructor(props) {
         super(props);
         this.things = strings.chinese;
