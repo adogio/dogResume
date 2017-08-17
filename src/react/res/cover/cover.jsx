@@ -25,9 +25,7 @@ class Cover extends Component {
             this.unPop();
         }
     }
-    componentDidMount() {
-        this.popUp(123);
-    }
+
     render() {
         return (
             <div className="FullCover">

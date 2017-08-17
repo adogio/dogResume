@@ -14,7 +14,9 @@ class PopUp extends Component {
         padding: "10px"
     };
     xStyle = {
-        float: "right",
+        position: "absolute",
+        right: "10px",
+        top: "10px",
         fontSize: "21px",
         color: "purple"
     }
