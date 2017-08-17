@@ -223,6 +223,7 @@ class template extends Component {
             leftComponents: b
         })
         this.cutting = c[0].default;
+        this.selected = c[0].component;
         this.selectComponent(c[0].component, true);
     }
 
@@ -267,6 +268,7 @@ class template extends Component {
             rightComponents: b
         })
         this.cutting = c[0].default;
+        this.selected = c[0].component;
         this.selectComponent(c[0].component, true);
     }
 
@@ -305,7 +307,7 @@ class template extends Component {
     }
 
     selectComponent(type, cut) {
-        if (!Boolean(cut)) {
+        if (!cut) {
             this.selected = type;
         }
         switch (type) {
