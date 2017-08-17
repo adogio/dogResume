@@ -13,11 +13,6 @@ class template extends Component {
     selected;
     form;
     cutting;
-    topperStyle = {
-        position: "fixed",
-        top: "50px",
-        left: "25%"
-    };
     constructor(props) {
         super(props);
         this.things = strings.chinese;
@@ -41,6 +36,8 @@ class template extends Component {
         this.delRight = this.delRight.bind(this);
         this.cutLeft = this.cutLeft.bind(this);
         this.cutRight = this.cutRight.bind(this);
+        this.outputJson = this.outputJson.bind(this);
+        this.inputJson = this.inputJson.bind(this);
         this.cutting = null;
         this.form = {
             left: {
@@ -90,6 +87,12 @@ class template extends Component {
         window.dogResume.viewMode = () => {
             this.viewMode();
             return 1;
+        }
+        window.dogResume.outputJson = () => {
+            return this.outputJson();
+        }
+        window.dogResume.inputJson = (json) => {
+            return this.inputJson(json);
         }
     }
 
@@ -319,6 +322,43 @@ class template extends Component {
             triggerdLeft: false,
             triggerdRight: false
         })
+    }
+
+    outputJson() {
+        let left = removeSpace(this.state.leftComponents);
+        let right = removeSpace(this.state.rightComponents);
+
+        return JSON.stringify({ left: left, right: right });
+
+        function removeSpace(componentStream) {
+            let output = [];
+            for (let i = 0; i < componentStream.length; i++) {
+                if (i % 2 != 0) {
+                    output.push(componentStream[i]);
+                }
+            }
+            return output;
+        }
+    }
+
+    inputJson(json) {
+        let parsed = JSON.parse(json);
+
+        this.setState({
+            leftComponents: addSpace(parsed.left),
+            rightComponents: addSpace(parsed.right)
+        })
+
+        return 1;
+
+        function addSpace(componentStream) {
+            let output = [{ component: 'space', default: 'space' }];
+            for (let i = 0; i < componentStream.length; i++) {
+                output.push(componentStream[i]);
+                output.push({ component: 'space', default: 'space' });
+            }
+            return output;
+        }
     }
 }
 

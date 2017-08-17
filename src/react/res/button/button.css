@@ -8,6 +8,7 @@
     border: 0px;
     background-color: #a5a5a5;
     transition: 0.5s all;
+    user-select: none;
 }
 
 .buttons:hover {

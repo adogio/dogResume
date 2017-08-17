@@ -12,7 +12,8 @@ class Login extends Component {
     spanStyle = {
         cursor: "pointer",
         textDecoration: "underline",
-        color: "blue"
+        color: "blue",
+        userSelect: "none"
     }
     constructor(props) {
         super(props);
