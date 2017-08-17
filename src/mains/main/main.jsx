@@ -157,7 +157,13 @@ class template extends Component {
                     default={i.default}
                     form={this.form.right} />;
             case "education":
-                return <Education></Education>;
+                return <Education
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
             default:
         }
     }
@@ -271,7 +277,7 @@ class template extends Component {
         if (Boolean(this.cutting)) {
             b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
         } else {
-            b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+            b.splice(index + 1, 0, { component: this.selected, default: {} }, { component: 'space', default: 'space' });
         }
         this.setState({
             leftComponents: b
@@ -286,7 +292,7 @@ class template extends Component {
         if (Boolean(this.cutting)) {
             b.splice(index + 1, 0, { component: this.selected, default: this.cutting }, { component: 'space', default: 'space' });
         } else {
-            b.splice(index + 1, 0, { component: this.selected, default: "" }, { component: 'space', default: 'space' });
+            b.splice(index + 1, 0, { component: this.selected, default: {} }, { component: 'space', default: 'space' });
         }
         this.setState({
             rightComponents: b
@@ -333,7 +339,7 @@ class template extends Component {
         function removeSpace(componentStream) {
             let output = [];
             for (let i = 0; i < componentStream.length; i++) {
-                if (i % 2 != 0) {
+                if (i % 2 !== 0) {
                     output.push(componentStream[i]);
                 }
             }

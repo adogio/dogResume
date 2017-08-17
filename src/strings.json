@@ -20,6 +20,9 @@
             "default": "选择你需要的组件"
         },
         "education": "教育经历",
+        "educationInside": {
+            "title": "教育经历"
+        },
         "connect": "联系方式",
         "experience": "过往职位",
         "skill": "技能",

@@ -1,6 +1,7 @@
 .centerer {
     text-align: center;
     height: 100%;
+    font-family: 'ubuntu';
 }
 
 .resume-left,
@@ -24,4 +25,25 @@
 
 .name-name {
     font-size: 45px;
+}
+
+.common-header {
+    font-size: 25px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.common-detail {
+    text-align: left;
+}
+
+ul.common-detail {
+    margin: 0px;
+    padding-left: 30px;
+}
+
+.common-icon {
+    color: #FF2222;
+    padding-right: 10px;
+    font-size: 20px;
 }
