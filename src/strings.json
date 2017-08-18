@@ -24,9 +24,18 @@
             "title": "教育经历"
         },
         "connect": "联系方式",
+        "connectInside": {
+            "title": "联系方式"
+        },
         "experience": "过往职位",
+        "experienceInside": {
+            "title": "工作经历"
+        },
         "skill": "技能",
         "project": "项目经验",
+        "projectInside": {
+            "title": "项目经验"
+        },
         "name": "姓名版",
         "putItHere": "放置在这里",
         "detailMode": "编辑模式",

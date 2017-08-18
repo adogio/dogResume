@@ -3,6 +3,9 @@ import React, {
 } from 'react';
 import Space from '../space/space';
 import Education from '../education/education';
+import Connect from '../connect/connent';
+import Experience from '../experience/experience';
+import Project from '../project/project';
 import Name from '../name/name';
 import './main.css';
 import '../printable.css';
@@ -138,9 +141,17 @@ class template extends Component {
                     key={'l' + index}
                     dev={this.state.dev}
                     default={i.default}
-                    form={this.form.left} />;
-            case "education":
-                return <Education></Education>;
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "connect":
+                return <Connect
+                    onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
             default:
         }
     }
@@ -155,7 +166,8 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
-                    form={this.form.right} />;
+                    form={this.form.right}
+                    layout={'r'} />;
             case "education":
                 return <Education
                     onChange={this.changeRight}
@@ -164,6 +176,31 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right} />;
+            case "experience":
+                return <Experience
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
+            case "project":
+                return <Project
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
+            case "connect":
+                return <Connect
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
             default:
         }
     }
@@ -311,9 +348,16 @@ class template extends Component {
             this.selected = type;
         }
         switch (type) {
+            case "experience":
             case "education":
+            case "project":
                 this.setState({
                     triggerdRight: true
+                })
+                break;
+            case "connect":
+                this.setState({
+                    triggerdLeft: true
                 })
                 break;
             default:
