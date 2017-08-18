@@ -1,5 +1,11 @@
 .smlButton {
+    cursor: pointer;
     border: 0px;
     width: 25px;
     height: 25px;
+    user-select: none;
+}
+
+.smlButton:hover {
+    border: 1px solid black;
 }

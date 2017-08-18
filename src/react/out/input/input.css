@@ -1,12 +1,9 @@
 .thisInput {
-    margin-top: 8px;
-    margin-bottom: 8px;
     height: 36px;
     width: 100%;
     border: 0px;
-    border-left: 7px solid #b30000;
     font-size: 28px;
-    padding-top: 10px;
+    padding-top: 17px;
     padding-left: 6px;
     background-color: transparent;
 }

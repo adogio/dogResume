@@ -7,6 +7,7 @@ import Quote from '../../react/res/quote/quote';
 import strings from '../../strings.json';
 import Button from '../../react/res/button/button';
 import './nav.css';
+import a from '../../mains/printable.json';
 
 class Nav extends Component {
     things;
@@ -16,7 +17,11 @@ class Nav extends Component {
         super(props);
         this.things = strings.chinese;
         this.detail = true;
+        this.selected = false;
+        this.clickButton = this.clickButton.bind(this);
+        this.cancelSelect = this.cancelSelect.bind(this);
         this.changeMode = this.changeMode.bind(this);
+        this.printResume = this.printResume.bind(this);
         this.state = {
             detail: this.things.detailMode
         }
@@ -44,8 +49,17 @@ class Nav extends Component {
                 <Button click={this.clickButton} type="project">{this.things.project}</Button>
                 <Button click={this.clickButton} type="name">{this.things.name}</Button>
                 <hr />
+                <Subtitle>{this.things.componenetTool}</Subtitle>
                 <Button click={this.changeMode}>{this.state.detail}</Button>
                 <Button click={this.cancelSelect}>{this.things.cancel}</Button>
+                <Button click={this.printResume}>{this.things.style}</Button>
+                <hr />
+                <Subtitle>{this.things.complete}</Subtitle>
+                <Button click={this.printResume}>{this.things.print}</Button>
+                <hr />
+                <Subtitle>{this.things.dogResume}</Subtitle>
+                <Button click={this.printResume}>{this.things.like}</Button>
+                <Button click={this.printResume} Title="123">{this.things.bug}</Button>
             </div>
         );
     }
@@ -58,6 +72,25 @@ class Nav extends Component {
     cancelSelect() {
         window.dogResume.cancelSelect();
     }
+
+    printResume() {
+        if (!this.detail) {
+            alert(this.things.toView);
+        } else if (window.dogResume.global.selected) {
+            alert(this.things.toUnselect);
+        } else {
+            let print = document.getElementById('resume').innerHTML;
+            print += "<style>"
+            print += a;
+            print += ".centerer{outline:3px dashed #8b8b8b;}"
+            print += "</style>"
+            var f = document.getElementById('printf');
+            f.contentDocument.write(print);
+            f.contentDocument.close();
+            f.contentWindow.print();
+        }
+    }
+
     changeMode() {
         if (this.detail) {
             window.dogResume.viewMode();

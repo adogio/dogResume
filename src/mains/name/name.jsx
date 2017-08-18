@@ -1,14 +1,13 @@
 import React, {
     Component
 } from 'react';
-import './name.css';
 import strings from '../../strings.json';
 import Input from '../../react/out/input/input';
 import Group from '../group/group';
 
 class Name extends Component {
     things;
-    inputer;
+    inputer = {};
 
     constructor(props) {
         super(props);
@@ -24,9 +23,9 @@ class Name extends Component {
         return (
             <div>
                 {this.state.edit ?
-                    <Input model={this.happed} color="white" value={this.props.default}>name</Input>
+                    <Input model={this.happed} color="white" value={this.props.default.name}>name</Input>
                     : <div className="name-name">
-                        {this.props.default ? this.props.default : this.things.occupied}
+                        {this.props.default.name ? this.props.default.name : this.things.occupied}
                     </div>
                 }
                 {this.props.dev ? <Group
@@ -34,6 +33,7 @@ class Name extends Component {
                     up={this.props.form.up}
                     down={this.props.form.down}
                     del={this.props.form.del}
+                    cut={this.props.form.cut}
                     isEdit={this.state.edit}
                     index={this.props.index}
                 ></Group> : null}
@@ -42,7 +42,7 @@ class Name extends Component {
     }
 
     happed(e) {
-        this.inputer = e;
+        this.inputer.name = e;
     }
 
     edit() {
