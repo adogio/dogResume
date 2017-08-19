@@ -32,6 +32,10 @@
             "title": "工作经历"
         },
         "skill": "技能",
+        "skillInside": {
+            "leftTitle": "专业技能",
+            "rightTitle": "其他技能"
+        },
         "project": "项目经验",
         "projectInside": {
             "title": "项目经验"

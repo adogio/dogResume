@@ -7,6 +7,7 @@ import Connect from '../connect/connent';
 import Experience from '../experience/experience';
 import Project from '../project/project';
 import Name from '../name/name';
+import Skill from '../skill/skill';
 import './main.css';
 import '../printable.css';
 import strings from '../../strings.json';
@@ -152,6 +153,15 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     layout={'l'} />;
+            case "skill":
+                return <Skill
+                    onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
             default:
         }
     }
@@ -194,6 +204,15 @@ class template extends Component {
                     form={this.form.right} />;
             case "connect":
                 return <Connect
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
+            case "skill":
+                return <Skill
                     onChange={this.changeRight}
                     index={index}
                     key={'r' + index}
