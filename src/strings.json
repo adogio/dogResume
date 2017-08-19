@@ -36,6 +36,22 @@
             "leftTitle": "专业技能",
             "rightTitle": "其他技能"
         },
+        "description": "美丽分隔线",
+        "descriptionInside": {
+
+        },
+        "achivement": "荣誉证明",
+        "achivementInside": {
+
+        },
+        "publication": "发表文章",
+        "publicationInside": {
+
+        },
+        "summary": "介绍",
+        "summaryInside": {
+
+        },
         "project": "项目经验",
         "projectInside": {
             "title": "项目经验"

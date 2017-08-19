@@ -51,7 +51,7 @@ class SkillLeft extends Component {
 
     addBar() {
         let b = this.props.skill;
-        b.push({ skill: "", level: 3 });
+        b.push({ skill: "", level: 4 });
         this.props.onChange(b);
     }
 

@@ -1,5 +1,5 @@
 .FullCover {
     height: 100%;
     transition: all 1s;
-    overflow: auto;
+    overflow: hidden;
 }

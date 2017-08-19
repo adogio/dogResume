@@ -8,6 +8,10 @@ import Input from '../../react/res/smallInput/smallInput';
 
 class Connect extends Component {
     things;
+    contentStyle = {
+        lineHeight: "23px"
+    }
+
     constructor(props) {
         super(props);
         this.things = strings.chinese;
@@ -16,7 +20,6 @@ class Connect extends Component {
         this.state = {
             edit: false
         }
-        console.log(props.default);
     }
 
     render() {
@@ -30,7 +33,7 @@ class Connect extends Component {
                         </div>
                     </div>
                 }
-                <div className="common-detail">
+                <div className="common-detail" style={this.contentStyle}>
                     {this.props.default.tel || this.state.edit ? <i className="fa fa-mobile fa-fw" /> : null}
                     {this.state.edit ? <Input value={this.props.default.tel} args={'tel'} model={this.changeDetail} /> : this.props.default.tel}
                     {this.props.default.phone || this.state.edit ? <br /> : null}

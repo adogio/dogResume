@@ -8,12 +8,13 @@ import Button from '../../react/res/smallButton/smallButton';
 class Bar extends Component {
     things;
     barStyle = {
-        backgroundColor: "#ccc"
+        backgroundColor: "#ccc",
+        overflow: "hidden"
     };
     skillStyle = {
         textAlign: "left"
     }
-    levels = [1, 2, 3, 4, 5];
+    levels = [1, 2, 3, 4, 5, 6, 7];
     constructor(props) {
         super(props);
         this.things = strings.chinese;
@@ -37,7 +38,7 @@ class Bar extends Component {
                         {this.levels.map(this.mapLevelButtons)}
                     </div> :
                     <div className="common-bar-outer" style={this.barStyle}>
-                        <div className="common-bar-inner" style={{ width: this.props.skill.level * 20 + "%", backgroundColor: "#51c600", height: "10px" }}>
+                        <div className="common-bar-inner" style={{ width: this.props.skill.level * 15 + "%", backgroundColor: "#51c600", height: "10px" }}>
                         </div>
                     </div>
                 }
@@ -59,7 +60,7 @@ class Bar extends Component {
 
     mapLevelButtons(i, index) {
         let style = {};
-        if (this.props.skill.level == i) {
+        if (this.props.skill.level === i) {
             style = {
                 backgroundColor: "green",
                 fontWeight: "bold"

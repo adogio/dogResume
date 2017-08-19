@@ -18,7 +18,6 @@ class Skill extends Component {
         this.state = {
             edit: false
         }
-        console.log(props.default);
     }
 
     render() {

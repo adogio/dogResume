@@ -14,8 +14,8 @@
 
 .resume-left {
     width: 34%;
-    color: white;
-    background-color: #4c4c4c;
+    color: #222222;
+    background-color: #c7c7c7;
 }
 
 .component-topper {
@@ -56,5 +56,6 @@ ul.common-detail {
 
 .common-bar-inner,
 .common-bar-outer {
+    -webkit-print-color-adjust: exact;
     border-radius: 2px;
 }
