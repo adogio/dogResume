@@ -9,10 +9,11 @@ import Button from '../../react/res/smallButton/smallButton';
 class Description extends Component {
     things;
     mainStyle = {
-        width: "100%",
-        borderTop: "2px solid white",
+        marginLeft: "1%",
+        width: "96%",
         WebkitPrintColorAdjust: "exact",
-        borderBottom: "2px solid white",
+        border: "2px solid white",
+        overflow: "hidden",
         backgroundColor: "#ffd65c"
     };
     insiderStyle = {
