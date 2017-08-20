@@ -70,6 +70,12 @@
         "cancel": "取消选择",
         "style": "调整样式",
         "componenet": "编辑简历",
+        "styling": "样式调整",
+        "stylingInside": {
+            "leftBG": "左侧背景颜色",
+            "rightBG": "右侧背景颜色",
+            "border": "分隔线"
+        },
         "print": "打印简历",
         "dogResume": "dogResume",
         "like": "喜欢这个项目?",
