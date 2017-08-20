@@ -4,7 +4,7 @@ import React, {
 import Details from '../details/details';
 import strings from '../../strings.json';
 import Group from '../group/group';
-
+import RightLane from '../details/rightLane';
 
 class Project extends Component {
     things;
@@ -26,7 +26,7 @@ class Project extends Component {
                     "edit: " + this.things.projectInside.title :
                     <div>
                         <div className="common-header">
-                            <i className="fa fa-sitemap fa-fw common-icon"></i>
+                            <RightLane icon="sitemap" style={this.props.icon.style} type={this.props.icon.type} />
                             {this.things.projectInside.title}
                         </div>
                     </div>

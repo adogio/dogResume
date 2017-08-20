@@ -5,7 +5,6 @@ import Bar from '../group/bar';
 import Button from '../../react/res/smallButton/smallButton';
 import strings from '../../strings.json';
 
-
 class SkillRight extends Component {
     things;
 

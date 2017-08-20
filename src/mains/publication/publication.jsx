@@ -4,6 +4,7 @@ import React, {
 import strings from '../../strings.json';
 import Group from '../group/group';
 import Details from '../details/details';
+import RightLane from '../details/rightLane';
 
 class Publication extends Component {
     things;
@@ -27,7 +28,7 @@ class Publication extends Component {
                         {this.props.layout === 'l' ?
                             <div>{this.things.publicationInside.title}</div>
                             : <div>
-                                <i className="fa fa-globe fa-fw common-icon"></i>
+                                <RightLane icon="globe" style={this.props.icon.style} type={this.props.icon.type} />
                                 {this.things.publicationInside.title}
                             </div>
                         }
