@@ -41,7 +41,8 @@ class input extends Component {
                         onClick={this.handleingHolder}
                         onBlur={this.handleingBlur}
                         className="thisInput"
-                        style={this.color} />
+                        style={this.color}
+                        placeholder={this.props.placeholder} />
                 </div>
             </div>
         );

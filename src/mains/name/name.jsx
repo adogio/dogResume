@@ -21,7 +21,7 @@ class Name extends Component {
 
     render() {
         return (
-            <div>
+            <div className="component-topper">
                 {this.state.edit ?
                     <Input model={this.happed} color="white" value={this.props.default.name}>name</Input>
                     : <div className="name-name">

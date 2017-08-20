@@ -3,7 +3,15 @@ import React, {
 } from 'react';
 import Space from '../space/space';
 import Education from '../education/education';
+import Connect from '../connect/connent';
+import Experience from '../experience/experience';
+import Project from '../project/project';
 import Name from '../name/name';
+import Skill from '../skill/skill';
+import Achivement from '../achivement/achivement';
+import Publication from '../publication/publication';
+import Description from '../description/description';
+import Summary from '../summary/summary';
 import './main.css';
 import '../printable.css';
 import strings from '../../strings.json';
@@ -138,9 +146,50 @@ class template extends Component {
                     key={'l' + index}
                     dev={this.state.dev}
                     default={i.default}
-                    form={this.form.left} />;
-            case "education":
-                return <Education></Education>;
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "achivement":
+                return <Achivement onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "description":
+                return <Description onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "publication":
+                return <Publication onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "connect":
+                return <Connect
+                    onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "skill":
+                return <Skill
+                    onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
             default:
         }
     }
@@ -155,7 +204,8 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
-                    form={this.form.right} />;
+                    form={this.form.right}
+                    layout={'r'} />;
             case "education":
                 return <Education
                     onChange={this.changeRight}
@@ -164,6 +214,66 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right} />;
+            case "summary":
+                return <Summary
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
+            case "experience":
+                return <Experience
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
+            case "project":
+                return <Project
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
+            case "achivement":
+                return <Achivement
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
+            case "publication":
+                return <Publication
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
+            case "connect":
+                return <Connect
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
+            case "skill":
+                return <Skill
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
             default:
         }
     }
@@ -311,9 +421,18 @@ class template extends Component {
             this.selected = type;
         }
         switch (type) {
+            case "experience":
             case "education":
+            case "project":
+            case "summary":
                 this.setState({
                     triggerdRight: true
+                })
+                break;
+            case "connect":
+            case "description":
+                this.setState({
+                    triggerdLeft: true
                 })
                 break;
             default:

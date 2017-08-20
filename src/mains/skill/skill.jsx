@@ -1,12 +1,13 @@
 import React, {
     Component
 } from 'react';
-import Details from '../details/details';
 import strings from '../../strings.json';
 import Group from '../group/group';
+import SkillLeft from './skillLeft';
+import SkillRight from './skillRight';
 
 
-class Education extends Component {
+class Skill extends Component {
     things;
     inputer = {};
     constructor(props) {
@@ -23,16 +24,22 @@ class Education extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.educationInside.title :
-                    <div>
-                        <div className="common-header">
-                            <i className="fa fa-graduation-cap fa-fw common-icon"></i>
-                            {this.things.educationInside.title}
-                        </div>
+                    "edit: " + this.things.skill
+                    :
+                    <div className="common-header">
+                        {this.props.layout === 'l' ?
+                            <div>{this.things.skillInside.leftTitle}</div>
+                            : <div>
+                                <i className="fa fa-tasks fa-fw common-icon"></i>
+                                {this.things.skillInside.rightTitle}
+                            </div>
+                        }
                     </div>
                 }
-                <Details detail={this.props.default.detail ? this.props.default.detail : []} isEdit={this.state.edit} onChange={this.changeDetail} />
-
+                {this.props.layout === 'l' ?
+                    <SkillLeft skill={this.props.default.skill ? this.props.default.skill : []} isEdit={this.state.edit} onChange={this.changeDetail} /> :
+                    <SkillRight skill={this.props.default.skill ? this.props.default.skill : []} isEdit={this.state.edit} onChange={this.changeDetail} />
+                }
                 {this.props.dev ? <Group
                     edit={this.edit}
                     up={this.props.form.up}
@@ -48,8 +55,12 @@ class Education extends Component {
 
     changeDetail(detail) {
         let b = this.props.default;
-        b.detail = detail;
-        this.props.onChange(this.props.index, b);
+        b.skill = detail;
+        this.props.onChange(this.props.index, []);
+        setTimeout(() => {
+            this.props.onChange(this.props.index, b);
+        }, 0)
+
     }
 
     edit() {
@@ -65,4 +76,4 @@ class Education extends Component {
     }
 }
 
-export default Education;
+export default Skill;

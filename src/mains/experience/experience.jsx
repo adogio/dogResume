@@ -6,7 +6,7 @@ import strings from '../../strings.json';
 import Group from '../group/group';
 
 
-class Education extends Component {
+class Experience extends Component {
     things;
     inputer = {};
     constructor(props) {
@@ -23,11 +23,11 @@ class Education extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.educationInside.title :
+                    "edit: " + this.things.experienceInside.title :
                     <div>
                         <div className="common-header">
-                            <i className="fa fa-graduation-cap fa-fw common-icon"></i>
-                            {this.things.educationInside.title}
+                            <i className="fa fa-briefcase fa-fw common-icon"></i>
+                            {this.things.experienceInside.title}
                         </div>
                     </div>
                 }
@@ -65,4 +65,4 @@ class Education extends Component {
     }
 }
 
-export default Education;
+export default Experience;

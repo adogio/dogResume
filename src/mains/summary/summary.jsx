@@ -1,14 +1,12 @@
 import React, {
     Component
 } from 'react';
-import Details from '../details/details';
 import strings from '../../strings.json';
 import Group from '../group/group';
+import Details from '../details/details';
 
-
-class Education extends Component {
+class Summary extends Component {
     things;
-    inputer = {};
     constructor(props) {
         super(props);
         this.things = strings.chinese;
@@ -23,16 +21,19 @@ class Education extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.educationInside.title :
-                    <div>
-                        <div className="common-header">
-                            <i className="fa fa-graduation-cap fa-fw common-icon"></i>
-                            {this.things.educationInside.title}
-                        </div>
+                    "edit: " + this.things.summary
+                    :
+                    <div className="common-header">
+                        {this.props.layout === 'l' ?
+                            <div>{this.things.summaryInside.title}</div>
+                            : <div>
+                                <i className="fa fa-list-alt fa-fw common-icon"></i>
+                                {this.things.summaryInside.title}
+                            </div>
+                        }
                     </div>
                 }
-                <Details detail={this.props.default.detail ? this.props.default.detail : []} isEdit={this.state.edit} onChange={this.changeDetail} />
-
+                <Details sample detail={this.props.default.detail ? this.props.default.detail : []} isEdit={this.state.edit} onChange={this.changeDetail} />
                 {this.props.dev ? <Group
                     edit={this.edit}
                     up={this.props.form.up}
@@ -65,4 +66,4 @@ class Education extends Component {
     }
 }
 
-export default Education;
+export default Summary;

@@ -23,13 +23,12 @@ class SmallInput extends Component {
     }
     render() {
         return (
-            <div>
-                <input
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    style={this.inputStyle}
-                />
-            </div>
+            <input
+                value={this.state.value}
+                onChange={this.handleChange}
+                style={this.inputStyle}
+                placeholder={this.props.placeholder}
+            />
         );
     }
     handleChange(e) {
