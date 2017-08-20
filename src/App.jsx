@@ -14,6 +14,7 @@ import './App.css';
 
 class App extends Component {
 	things;
+	platform = navigator.userAgent;
 	floatRight = {
 		float: "right",
 		paddingRight: "15px"
@@ -27,31 +28,35 @@ class App extends Component {
 
 	render() {
 		return (
-			<Cover>
-				<DogTitle>
-					<span>{this.things.mainTitle}</span>
-					<div style={this.floatRight}>
-						<Button
-							click={this.loginRegister}
-							style={{ width: "100px" }}>
-							{this.things.loginAndRegister}
-						</Button>
-					</div>
-				</DogTitle>
-				<DogNav>
-					<Nav />
-				</DogNav>
-				<DogMain>
-					<BrowserRouter>
-						<div>
-							<Route exact={true} path="/" component={Main} />
-							<Route path="/:resumeId" component={Main} />
-						</div>
-					</BrowserRouter>
-				</DogMain>
-				<iframe title="printf" id="printf" src="" width="0" height="0" frameBorder="0">
-				</iframe>
-			</Cover>
+			<div>{
+				this.platform.indexOf("hone") != -1 || this.platform.indexOf("Android") != -1 ?
+					<Cover>{"Please use desktop for this site"}</Cover> :
+					<Cover>
+						<DogTitle>
+							<span>{this.things.mainTitle}</span>
+							<div style={this.floatRight}>
+								<Button
+									click={this.loginRegister}
+									style={{ width: "100px" }}>
+									{this.things.loginAndRegister}
+								</Button>
+							</div>
+						</DogTitle>
+						<DogNav>
+							<Nav />
+						</DogNav>
+						<DogMain>
+							<BrowserRouter>
+								<div>
+									<Route exact={true} path="/" component={Main} />
+									<Route path="/:resumeId" component={Main} />
+								</div>
+							</BrowserRouter>
+						</DogMain>
+						<iframe title="printf" id="printf" src="" width="0" height="0" frameBorder="0">
+						</iframe>
+					</Cover>
+			}</div>
 		);
 	}
 

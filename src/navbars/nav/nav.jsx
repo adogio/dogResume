@@ -57,7 +57,7 @@ class Nav extends Component {
         this.setIconStyle = this.setIconStyle.bind(this);
         this.setIconType = this.setIconType.bind(this);
         this.Styling = {
-            leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "浅蓝", id: 4 }],
+            leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "深蓝", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
             border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }],
             icon: [{ name: "图标", id: 1 }, { name: "横线", id: 2 }],
