@@ -45,8 +45,10 @@ class Nav extends Component {
         this.cancelSelect = this.cancelSelect.bind(this);
         this.changeMode = this.changeMode.bind(this);
         this.printResume = this.printResume.bind(this);
+        this.changeStyle = this.changeStyle.bind(this);
         this.state = {
-            detail: this.things.detailMode
+            detail: this.things.detailMode,
+            component: true
         }
     }
 
@@ -64,24 +66,30 @@ class Nav extends Component {
                     {this.things.quote}
                 </Quote>
                 <hr />
-                <Subtitle>{this.things.components}</Subtitle>
-                <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.things.education}</Button>
-                <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.things.connect}</Button>
-                <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.things.experience}</Button>
-                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.things.skill}</Button>
-                <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.things.project}</Button>
-                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.things.name}</Button>
-                <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.things.description}</Button>
-                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.things.achivement}</Button>
-                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.things.publication}</Button>
-                <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="summary">{this.things.summary}</Button>
-                <hr />
-                <Subtitle>{this.things.componenetTool}</Subtitle>
-                <Button style={this.buttonStyle} click={this.changeMode}>{this.state.detail}</Button>
-                <Button style={this.buttonStyle} click={this.cancelSelect}>{this.things.cancel}</Button>
-                <Button style={this.buttonStyle} click={this.printResume}>{this.things.style}</Button>
-                <hr />
+                {this.state.component ?
+                    <div>
+                        <Subtitle>{this.things.components}</Subtitle>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.things.education}</Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.things.connect}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.things.experience}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.things.skill}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.things.project}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.things.name}</Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.things.description}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.things.achivement}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.things.publication}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="summary">{this.things.summary}</Button>
+                        <hr />
+                        <Subtitle>{this.things.componenetTool}</Subtitle>
+                        <Button style={this.buttonStyle} click={this.changeMode}>{this.state.detail}</Button>
+                        <Button style={this.buttonStyle} click={this.cancelSelect}>{this.things.cancel}</Button>
+                        <hr />
+                    </div>
+                    :
+                    <div>Styleing</div>
+                }
                 <Subtitle>{this.things.complete}</Subtitle>
+                <Button style={this.buttonStyle} click={this.changeStyle}>{this.state.component ? this.things.style : this.things.componenet}</Button>
                 <Button style={this.buttonStyle} click={this.printResume}>{this.things.print}</Button>
                 <hr />
                 <Subtitle>{this.things.dogResume}</Subtitle>
@@ -99,6 +107,18 @@ class Nav extends Component {
 
     cancelSelect() {
         window.dogResume.cancelSelect();
+    }
+
+    changeStyle() {
+        if (this.state.component) {
+            this.setState({
+                component: false
+            })
+        } else {
+            this.setState({
+                component: true
+            })
+        }
     }
 
     printResume() {
