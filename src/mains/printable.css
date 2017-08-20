@@ -16,6 +16,8 @@
 .resume-left {
     width: 34%;
     color: #222222;
+    box-sizing: border-box;
+    border-right: 2px solid black;
     background-color: #c7c7c7;
 }
 

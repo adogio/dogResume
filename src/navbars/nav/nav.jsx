@@ -13,21 +13,25 @@ import a from '../../mains/printable.json';
 class Nav extends Component {
     things;
     detail;
+
     buttonStyleLeftOnly = {
         height: "38px",
         borderRight: "21px solid transparent",
         borderLeft: "21px solid #c8ffc9"
     };
+
     buttonStyleRightOnly = {
         height: "38px",
         borderLeft: "21px solid transparent",
         borderRight: "21px solid #c8ffc9"
     };
+
     buttonStyleLeftAndRight = {
         height: "38px",
         borderLeft: "21px solid #c8ffc9",
         borderRight: "21px solid #c8ffc9"
     };
+
     buttonStyle = {
         height: "38px"
     };
@@ -67,10 +71,10 @@ class Nav extends Component {
                 <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.things.skill}</Button>
                 <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.things.project}</Button>
                 <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.things.name}</Button>
-                <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="name">{this.things.description}</Button>
-                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.things.achivement}</Button>
-                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.things.publication}</Button>
-                <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="name">{this.things.summary}</Button>
+                <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.things.description}</Button>
+                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.things.achivement}</Button>
+                <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.things.publication}</Button>
+                <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="summary">{this.things.summary}</Button>
                 <hr />
                 <Subtitle>{this.things.componenetTool}</Subtitle>
                 <Button style={this.buttonStyle} click={this.changeMode}>{this.state.detail}</Button>

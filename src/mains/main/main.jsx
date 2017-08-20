@@ -8,6 +8,10 @@ import Experience from '../experience/experience';
 import Project from '../project/project';
 import Name from '../name/name';
 import Skill from '../skill/skill';
+import Achivement from '../achivement/achivement';
+import Publication from '../publication/publication';
+import Description from '../description/description';
+import Summary from '../summary/summary';
 import './main.css';
 import '../printable.css';
 import strings from '../../strings.json';
@@ -144,6 +148,30 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     layout={'l'} />;
+            case "achivement":
+                return <Achivement onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "description":
+                return <Description onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "publication":
+                return <Publication onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
             case "connect":
                 return <Connect
                     onChange={this.changeLeft}
@@ -186,6 +214,14 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right} />;
+            case "summary":
+                return <Summary
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right} />;
             case "experience":
                 return <Experience
                     onChange={this.changeRight}
@@ -202,6 +238,24 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right} />;
+            case "achivement":
+                return <Achivement
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
+            case "publication":
+                return <Publication
+                    onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
             case "connect":
                 return <Connect
                     onChange={this.changeRight}
@@ -370,11 +424,13 @@ class template extends Component {
             case "experience":
             case "education":
             case "project":
+            case "summary":
                 this.setState({
                     triggerdRight: true
                 })
                 break;
             case "connect":
+            case "description":
                 this.setState({
                     triggerdLeft: true
                 })

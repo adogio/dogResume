@@ -27,6 +27,7 @@ class SmallInput extends Component {
                 value={this.state.value}
                 onChange={this.handleChange}
                 style={this.inputStyle}
+                placeholder={this.props.placeholder}
             />
         );
     }

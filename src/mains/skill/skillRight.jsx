@@ -67,6 +67,9 @@ class SkillRight extends Component {
 
     renderQueueRight(i, index) {
         if (index % 2 === 0) {
+            if (index === this.props.skill.length - 1) {
+                return null;
+            }
             return null;
         }
         return <span key={index}>

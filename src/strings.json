@@ -36,21 +36,27 @@
             "leftTitle": "专业技能",
             "rightTitle": "其他技能"
         },
-        "description": "美丽分隔线",
+        "description": "求职意向",
         "descriptionInside": {
-
+            "title": "求职意向",
+            "company": "意向公司",
+            "position": "意向职位",
+            "fullTime": "全职",
+            "partTime": "兼职",
+            "internship": "实习",
+            "contractor": "外包"
         },
         "achivement": "荣誉证明",
         "achivementInside": {
-
+            "title": "荣誉证明"
         },
         "publication": "发表文章",
         "publicationInside": {
-
+            "title": "发表文章"
         },
         "summary": "介绍",
         "summaryInside": {
-
+            "title": "介绍"
         },
         "project": "项目经验",
         "projectInside": {

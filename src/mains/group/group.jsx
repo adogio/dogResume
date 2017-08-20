@@ -35,7 +35,7 @@ class Group extends Component {
         this.cut = this.cut.bind(this);
         this.allButtons = <div>
             <SmallButton click={this.props.edit} style={this.colorGreen}>
-                <i className="fa fa-cog"></i>
+                <i className="fa fa-pencil-square-o"></i>
             </SmallButton>
             <SmallButton click={this.up}>
                 <i className="fa fa-arrow-up"></i>

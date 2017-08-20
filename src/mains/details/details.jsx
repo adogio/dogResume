@@ -26,9 +26,6 @@ class Details extends Component {
         this.delOuter = this.delOuter.bind(this);
         this.delInner = this.delInner.bind(this);
         this.sendToParent = this.sendToParent.bind(this);
-        if (this.props.detail) {
-            // this.sendToParent([]);
-        }
     }
 
     render() {
@@ -49,12 +46,13 @@ class Details extends Component {
             {this.props.isEdit ? <span><SmallInput value={i.outer} args={index} model={this.change} />
                 <Button click={this.delOuter} args={index} style={this.delStyle}><i className="fa fa-times"></i></Button>
             </span> : i.outer}
-            <ul className="common-detail">
-                {i.inner.map((i, nextindex) => {
-                    return this.renderInner(i, nextindex, index);
-                })}
-                {this.props.isEdit ? <Button click={this.addInner} args={index} style={this.addStyle}><i className="fa fa-plus"></i></Button> : null}
-            </ul>
+            {this.props.sample ? null :
+                <ul className="common-detail">
+                    {i.inner.map((i, nextindex) => {
+                        return this.renderInner(i, nextindex, index);
+                    })}
+                    {this.props.isEdit ? <Button click={this.addInner} args={index} style={this.addStyle}><i className="fa fa-plus"></i></Button> : null}
+                </ul>}
         </li>;
     }
     renderInner(i, index, lastIndex) {

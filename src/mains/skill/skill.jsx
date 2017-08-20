@@ -56,7 +56,11 @@ class Skill extends Component {
     changeDetail(detail) {
         let b = this.props.default;
         b.skill = detail;
-        this.props.onChange(this.props.index, b);
+        this.props.onChange(this.props.index, []);
+        setTimeout(() => {
+            this.props.onChange(this.props.index, b);
+        }, 0)
+
     }
 
     edit() {
