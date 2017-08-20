@@ -5,7 +5,7 @@ import strings from '../../strings.json';
 import Group from '../group/group';
 import SkillLeft from './skillLeft';
 import SkillRight from './skillRight';
-
+import RightLane from '../details/rightLane';
 
 class Skill extends Component {
     things;
@@ -30,7 +30,7 @@ class Skill extends Component {
                         {this.props.layout === 'l' ?
                             <div>{this.things.skillInside.leftTitle}</div>
                             : <div>
-                                <i className="fa fa-tasks fa-fw common-icon"></i>
+                                <RightLane icon="tasks" style={this.props.icon.style} type={this.props.icon.type} />
                                 {this.things.skillInside.rightTitle}
                             </div>
                         }

@@ -74,7 +74,9 @@
         "stylingInside": {
             "leftBG": "左侧背景颜色",
             "rightBG": "右侧背景颜色",
-            "border": "分隔线"
+            "border": "分隔线",
+            "icon": "右侧图标",
+            "iconStyle": "图标颜色"
         },
         "print": "打印简历",
         "dogResume": "dogResume",

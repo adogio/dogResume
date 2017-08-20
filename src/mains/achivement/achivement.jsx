@@ -4,6 +4,7 @@ import React, {
 import strings from '../../strings.json';
 import Group from '../group/group';
 import Details from '../details/details';
+import RightLane from '../details/rightLane';
 
 class Achivement extends Component {
     things;
@@ -27,7 +28,7 @@ class Achivement extends Component {
                         {this.props.layout === 'l' ?
                             <div>{this.things.achivementInside.title}</div>
                             : <div>
-                                <i className="fa fa-trophy fa-fw common-icon"></i>
+                                <RightLane icon="trophy" style={this.props.icon.style} type={this.props.icon.type} />
                                 {this.things.achivementInside.title}
                             </div>
                         }

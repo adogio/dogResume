@@ -54,10 +54,14 @@ class Nav extends Component {
         this.setBorder = this.setBorder.bind(this);
         this.bindSelected = this.bindSelected.bind(this);
         this.changeSelected = this.changeSelected.bind(this);
+        this.setIconStyle = this.setIconStyle.bind(this);
+        this.setIconType = this.setIconType.bind(this);
         this.Styling = {
             leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "浅蓝", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
             border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }],
+            icon: [{ name: "图标", id: 1 }, { name: "横线", id: 2 }],
+            iconStyle: [{ name: "黑色", id: 1 }, { name: "红色", id: 2 }],
         };
         this.state = {
             detail: this.things.detailMode,
@@ -65,9 +69,11 @@ class Nav extends Component {
             selected: {
                 leftBG: 2,
                 rightBG: 2,
-                border: 2
+                border: 2,
+                icon: 1,
+                iconStyle: 1
             }
-        }
+        };
     }
 
     render() {
@@ -108,6 +114,8 @@ class Nav extends Component {
                         <ButtonBar buttons={this.Styling.leftBG} click={this.setLeftStyle} current={this.state.selected.leftBG}>{this.things.stylingInside.leftBG}</ButtonBar>
                         <ButtonBar buttons={this.Styling.rightBG} click={this.setRightStyle} current={this.state.selected.rightBG}>{this.things.stylingInside.rightBG}</ButtonBar>
                         <ButtonBar buttons={this.Styling.border} click={this.setBorder} current={this.state.selected.border}>{this.things.stylingInside.border}</ButtonBar>
+                        <ButtonBar buttons={this.Styling.icon} click={this.setIconType} current={this.state.selected.icon}>{this.things.stylingInside.icon}</ButtonBar>
+                        <ButtonBar buttons={this.Styling.iconStyle} click={this.setIconStyle} current={this.state.selected.iconStyle}>{this.things.stylingInside.iconStyle}</ButtonBar>
                     </div>
                 }
                 <hr />
@@ -131,22 +139,63 @@ class Nav extends Component {
         }
     }
 
+    setIconType(id) {
+        const b = window.dogResume.getStyling();
+        let { icon } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...icon, type: "font" };
+                break;
+            case 2:
+                newStyle = { ...icon, type: "line" };
+                break;
+            default:
+        }
+        const newB = { ...b, icon: newStyle };
+        this.changeSelected('icon', id);
+        window.dogResume.styling(newB);
+    }
+
+    setIconStyle(id) {
+        const b = window.dogResume.getStyling();
+        let { icon } = b;
+        let tempStyle;
+        switch (id) {
+            case 1:
+                tempStyle = { ...icon.style, color: "black" };
+                break;
+            case 2:
+                tempStyle = { ...icon.style, color: "red" };
+                break;
+            default:
+        }
+        const newStyle = { ...icon, style: tempStyle };
+        const newB = { ...b, icon: newStyle };
+        this.changeSelected('iconStyle', id);
+        window.dogResume.styling(newB);
+    }
+
     setLeftStyle(id) {
         const b = window.dogResume.getStyling();
         let { left } = b;
         let newStyle;
         switch (id) {
+            // white
             case 1:
                 newStyle = { ...left, backgroundColor: "transparent", color: "black" };
                 break;
+            // gray
             case 2:
                 newStyle = { ...left, backgroundColor: "#c7c7c7", color: "#222222" };
                 break;
+            // drak gray
             case 3:
                 newStyle = { ...left, backgroundColor: "#333", color: "white" };
                 break;
+            // blue
             case 4:
-                newStyle = { ...left, backgroundColor: "#72dfff", color: "#414141" };
+                newStyle = { ...left, backgroundColor: "#2c52ff", color: "white" };
                 break;
             default:
         }

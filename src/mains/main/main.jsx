@@ -77,7 +77,8 @@ class template extends Component {
                 right: {
                     color: "#040404",
                     backgroundColor: "#d7d7d7"
-                }
+                },
+                icon: { type: "font", style: {} }
             }
         }
     }
@@ -233,6 +234,7 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
+                    icon={this.state.styling.icon}
                     form={this.form.right} />;
             case "summary":
                 return <Summary
@@ -241,6 +243,7 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
+                    icon={this.state.styling.icon}
                     form={this.form.right} />;
             case "experience":
                 return <Experience
@@ -249,6 +252,7 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
+                    icon={this.state.styling.icon}
                     form={this.form.right} />;
             case "project":
                 return <Project
@@ -257,6 +261,7 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
+                    icon={this.state.styling.icon}
                     form={this.form.right} />;
             case "achivement":
                 return <Achivement
@@ -265,6 +270,7 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
+                    icon={this.state.styling.icon}
                     form={this.form.right}
                     layout={'r'} />;
             case "publication":
@@ -274,6 +280,7 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
+                    icon={this.state.styling.icon}
                     form={this.form.right}
                     layout={'r'} />;
             case "connect":
@@ -292,6 +299,7 @@ class template extends Component {
                     key={'r' + index}
                     dev={this.state.dev}
                     default={i.default}
+                    icon={this.state.styling.icon}
                     form={this.form.right}
                     layout={'r'} />;
             default:

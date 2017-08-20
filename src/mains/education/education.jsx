@@ -4,6 +4,7 @@ import React, {
 import Details from '../details/details';
 import strings from '../../strings.json';
 import Group from '../group/group';
+import RightLane from '../details/rightLane';
 
 
 class Education extends Component {
@@ -26,7 +27,7 @@ class Education extends Component {
                     "edit: " + this.things.educationInside.title :
                     <div>
                         <div className="common-header">
-                            <i className="fa fa-graduation-cap fa-fw common-icon"></i>
+                            <RightLane icon="graduation-cap" style={this.props.icon.style} type={this.props.icon.type} />
                             {this.things.educationInside.title}
                         </div>
                     </div>

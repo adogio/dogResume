@@ -4,7 +4,7 @@ import React, {
 import Details from '../details/details';
 import strings from '../../strings.json';
 import Group from '../group/group';
-
+import RightLane from '../details/rightLane';
 
 class Experience extends Component {
     things;
@@ -26,7 +26,7 @@ class Experience extends Component {
                     "edit: " + this.things.experienceInside.title :
                     <div>
                         <div className="common-header">
-                            <i className="fa fa-briefcase fa-fw common-icon"></i>
+                            <RightLane icon="briefcase" style={this.props.icon.style} type={this.props.icon.type} />
                             {this.things.experienceInside.title}
                         </div>
                     </div>

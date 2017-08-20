@@ -14,7 +14,8 @@ class Description extends Component {
         WebkitPrintColorAdjust: "exact",
         border: "2px solid white",
         overflow: "hidden",
-        backgroundColor: "#ffd65c"
+        backgroundColor: "#ffd65c",
+        color: "black"
     };
     insiderStyle = {
         textAlign: "center",
