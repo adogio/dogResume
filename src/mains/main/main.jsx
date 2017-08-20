@@ -66,7 +66,19 @@ class template extends Component {
             rightComponents: [{ component: 'space', default: 'space' }],
             triggerdLeft: false,
             triggerdRight: false,
-            dev: false
+            dev: false,
+            styling: {
+                left: {
+                    color: "#222222",
+                    boxSizing: "border-box",
+                    borderRight: "2px solid black",
+                    backgroundColor: "#c7c7c7"
+                },
+                right: {
+                    color: "#040404",
+                    backgroundColor: "#d7d7d7"
+                }
+            }
         }
     }
 
@@ -102,6 +114,14 @@ class template extends Component {
         window.dogResume.inputJson = (json) => {
             return this.inputJson(json);
         }
+        window.dogResume.styling = (style) => {
+            this.setState({
+                styling: style
+            });
+        }
+        window.dogResume.getStyling = () => {
+            return this.state.styling;
+        }
     }
 
     render() {
@@ -112,10 +132,10 @@ class template extends Component {
                 </h3>
                 <div className="resume" id="resume">
                     <div className="centerer">
-                        <div className="resume-left">
+                        <div className="resume-left" style={this.state.styling.left}>
                             {this.state.leftComponents.map(this.leftRanderer)}
                         </div>
-                        <div className="resume-right">
+                        <div className="resume-right" style={this.state.styling.right}>
                             {this.state.rightComponents.map(this.rightRanderer)}
                         </div>
                     </div>

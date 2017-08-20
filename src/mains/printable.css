@@ -10,15 +10,10 @@
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    color: #040404;
 }
 
 .resume-left {
     width: 34%;
-    color: #222222;
-    box-sizing: border-box;
-    border-right: 2px solid black;
-    background-color: #c7c7c7;
 }
 
 .component-topper {
@@ -29,7 +24,6 @@
 
 .resume-right {
     width: 66%;
-    background-color: #d7d7d7;
 }
 
 .name-name {

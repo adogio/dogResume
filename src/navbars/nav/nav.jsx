@@ -7,6 +7,7 @@ import Quote from '../../react/res/quote/quote';
 import strings from '../../strings.json';
 import Button from '../../react/res/button/button';
 import Credit from '../../react/res/credit/credit';
+import ButtonBar from '../../mains/group/buttonBar';
 import './nav.css';
 import a from '../../mains/printable.json';
 
@@ -36,6 +37,8 @@ class Nav extends Component {
         height: "38px"
     };
 
+    Styling;
+
     constructor(props) {
         super(props);
         this.things = strings.chinese;
@@ -46,9 +49,24 @@ class Nav extends Component {
         this.changeMode = this.changeMode.bind(this);
         this.printResume = this.printResume.bind(this);
         this.changeStyle = this.changeStyle.bind(this);
+        this.setLeftStyle = this.setLeftStyle.bind(this);
+        this.setRightStyle = this.setRightStyle.bind(this);
+        this.setBorder = this.setBorder.bind(this);
+        this.bindSelected = this.bindSelected.bind(this);
+        this.changeSelected = this.changeSelected.bind(this);
+        this.Styling = {
+            leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "浅蓝", id: 4 }],
+            rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
+            border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }],
+        };
         this.state = {
             detail: this.things.detailMode,
-            component: true
+            component: false,
+            selected: {
+                leftBG: 2,
+                rightBG: 2,
+                border: 2
+            }
         }
     }
 
@@ -83,11 +101,16 @@ class Nav extends Component {
                         <Subtitle>{this.things.componenetTool}</Subtitle>
                         <Button style={this.buttonStyle} click={this.changeMode}>{this.state.detail}</Button>
                         <Button style={this.buttonStyle} click={this.cancelSelect}>{this.things.cancel}</Button>
-                        <hr />
                     </div>
                     :
-                    <div>Styleing</div>
+                    <div>
+                        <Subtitle>{this.things.styling}</Subtitle>
+                        <ButtonBar buttons={this.Styling.leftBG} click={this.setLeftStyle} current={this.state.selected.leftBG}>{this.things.stylingInside.leftBG}</ButtonBar>
+                        <ButtonBar buttons={this.Styling.rightBG} click={this.setRightStyle} current={this.state.selected.rightBG}>{this.things.stylingInside.rightBG}</ButtonBar>
+                        <ButtonBar buttons={this.Styling.border} click={this.setBorder} current={this.state.selected.border}>{this.things.stylingInside.border}</ButtonBar>
+                    </div>
                 }
+                <hr />
                 <Subtitle>{this.things.complete}</Subtitle>
                 <Button style={this.buttonStyle} click={this.changeStyle}>{this.state.component ? this.things.style : this.things.componenet}</Button>
                 <Button style={this.buttonStyle} click={this.printResume}>{this.things.print}</Button>
@@ -98,6 +121,85 @@ class Nav extends Component {
                 <Credit>adog.io</Credit>
             </div>
         );
+    }
+
+    bindSelected(json) {
+        if (json) {
+            this.setState({
+                selected: json
+            });
+        }
+    }
+
+    setLeftStyle(id) {
+        const b = window.dogResume.getStyling();
+        let { left } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...left, backgroundColor: "transparent", color: "black" };
+                break;
+            case 2:
+                newStyle = { ...left, backgroundColor: "#c7c7c7", color: "#222222" };
+                break;
+            case 3:
+                newStyle = { ...left, backgroundColor: "#333", color: "white" };
+                break;
+            case 4:
+                newStyle = { ...left, backgroundColor: "#72dfff", color: "#414141" };
+                break;
+            default:
+        }
+        const newB = { ...b, left: newStyle };
+        this.changeSelected('leftBG', id);
+        window.dogResume.styling(newB);
+    }
+
+    setRightStyle(id) {
+        const b = window.dogResume.getStyling();
+        let { right } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...right, backgroundColor: "transparent", color: "black" };
+                break;
+            case 2:
+                newStyle = { ...right, backgroundColor: "#d7d7d7", color: "#040404" };
+                break;
+            default:
+        }
+        const newB = { ...b, right: newStyle };
+        this.changeSelected('rightBG', id);
+        window.dogResume.styling(newB);
+    }
+
+    setBorder(id) {
+        const b = window.dogResume.getStyling();
+        let { left } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...left, borderRight: "2px solid transparent" };
+                break;
+            case 2:
+                newStyle = { ...left, borderRight: "2px solid black" };
+                break;
+            case 3:
+                newStyle = { ...left, borderRight: "2px solid #ffbb3d" };
+                break;
+            default:
+        }
+        const newB = { ...b, left: newStyle };
+        this.changeSelected('border', id);
+        window.dogResume.styling(newB);
+    }
+
+    changeSelected(cate, id) {
+        let b = this.state.selected;
+        b[cate] = id;
+        this.setState({
+            selected: b
+        });
     }
 
     clickButton(type) {
