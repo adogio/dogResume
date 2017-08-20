@@ -61,7 +61,7 @@ class Nav extends Component {
         };
         this.state = {
             detail: this.things.detailMode,
-            component: false,
+            component: true,
             selected: {
                 leftBG: 2,
                 rightBG: 2,
