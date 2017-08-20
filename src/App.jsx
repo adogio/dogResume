@@ -29,7 +29,7 @@ class App extends Component {
 		return (
 			<Cover>
 				<DogTitle>
-					<span>{this.things.mainTitle}&nbsp;{this.things.version}: 0.1</span>
+					<span>{this.things.mainTitle}</span>
 					<div style={this.floatRight}>
 						<Button
 							click={this.loginRegister}

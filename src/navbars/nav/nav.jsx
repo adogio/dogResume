@@ -127,6 +127,7 @@ class Nav extends Component {
                 <Button style={this.buttonStyle} click={this.printResume}>{this.things.like}</Button>
                 <Button style={this.buttonStyle} click={this.printResume} Title="123">{this.things.bug}</Button>
                 <Credit>adog.io</Credit>
+                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"0.3.1-16800"}</span>
             </div>
         );
     }
