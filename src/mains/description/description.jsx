@@ -122,7 +122,7 @@ class Description extends Component {
         let style = {
             width: "48px"
         };
-        if (this.props.default.time == i.id) {
+        if (this.props.default.time === i.id) {
             style.backgroundColor = "green";
             style.fontWeight = "bold";
         }
