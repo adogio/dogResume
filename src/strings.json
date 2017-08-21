@@ -89,7 +89,9 @@
             "border": "分隔线",
             "icon": "右侧图标",
             "iconStyle": "图标颜色",
-            "bars": "技能条风格"
+            "bars": "技能条风格",
+            "photoBorder": "照片边框风格",
+            "photoColor": "照片边框颜色"
         },
         "print": "打印简历",
         "dogResume": "dogResume",

@@ -89,6 +89,12 @@ class template extends Component {
                     inner: {
                         backgroundColor: "#51c600"
                     }
+                },
+                photoBorder: {
+                    border: "0px solid white"
+                },
+                resume: {
+                    border: "5px solid black"
                 }
             }
         }
@@ -142,7 +148,7 @@ class template extends Component {
                 <h3>
                     {this.getTopper()}
                 </h3>
-                <div className="resume" id="resume">
+                <div className="resume" id="resume" style={this.state.styling.resume}>
                     <div className="centerer">
                         <div className="resume-left" style={this.state.styling.left}>
                             {this.state.leftComponents.map(this.leftRanderer)}
@@ -211,6 +217,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    photo={this.state.styling.photoBorder}
                     layout={'l'} />;
             case "publication":
                 return <Publication onChange={this.changeLeft}
