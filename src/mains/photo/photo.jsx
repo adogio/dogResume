@@ -35,7 +35,7 @@ class Photo extends Component {
                 {this.state.edit ?
                     "edit: " + this.things.photoInside.title :
                     <div>
-                        <img style={this.photoStyle} src={this.props.default.src ? this.props.default.src : this.defaultLink} />
+                        <img alt={this.things.photoInside.error} style={this.photoStyle} src={this.props.default.src ? this.props.default.src : this.defaultLink} />
                     </div>
                 }
                 {this.state.edit ?
