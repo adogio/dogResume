@@ -42,7 +42,8 @@ class Nav extends Component {
     };
 
     Styling;
-    TempPhotoColor = "red";
+    TempPhotoColor = "#9e0000";
+    TempPrintBorderColor = "#8b8b8b";
     printStyling = "3px dashed #8b8b8b";
 
     constructor(props) {
@@ -67,15 +68,19 @@ class Nav extends Component {
         this.likeProject = this.likeProject.bind(this);
         this.setPhotoBorder = this.setPhotoBorder.bind(this);
         this.setPhotoColor = this.setPhotoColor.bind(this);
+        this.setPrintBorder = this.setPrintBorder.bind(this);
+        this.setPrintBorderColor = this.setPrintBorderColor.bind(this);
         this.Styling = {
             leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "深蓝", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
-            border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }],
+            border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }, { name: "深红", id: 4 }],
             icon: [{ name: "图标", id: 1 }, { name: "横线", id: 2 }],
             iconStyle: [{ name: "黑色", id: 1 }, { name: "红色", id: 2 }],
             bars: [{ name: "橙灰", id: 1 }, { name: "绿灰", id: 2 }, { name: "黑白", id: 3 }],
             photoBorder: [{ name: "没有", id: 1 }, { name: "粗线", id: 2 }, { name: "细线", id: 3 }, { name: "虚线", id: 4 }],
-            photoColor: [{ name: "白色", id: 1 }, { name: "橙色", id: 2 }, { name: "黑色", id: 3 }]
+            photoColor: [{ name: "白色", id: 1 }, { name: "深红", id: 2 }, { name: "橙色", id: 3 }, { name: "黑色", id: 4 }],
+            printBorder: [{ name: "没有", id: 1 }, { name: "粗线", id: 2 }, { name: "细线", id: 3 }, { name: "虚线", id: 4 }],
+            printBorderColor: [{ name: "白色", id: 1 }, { name: "深红", id: 2 }, { name: "灰色", id: 3 }, { name: "黑色", id: 4 }]
         };
         this.state = {
             detail: this.things.detailMode,
@@ -88,7 +93,9 @@ class Nav extends Component {
                 iconStyle: 1,
                 bars: 2,
                 photoBorder: 1,
-                photoColor: 1
+                photoColor: 2,
+                printBorder: 4,
+                printBorderColor: 3
             }
         };
     }
@@ -129,14 +136,68 @@ class Nav extends Component {
                     :
                     <div>
                         <Subtitle>{this.things.styling}</Subtitle>
-                        <ButtonBar buttons={this.Styling.leftBG} click={this.setLeftStyle} current={this.state.selected.leftBG}>{this.things.stylingInside.leftBG}</ButtonBar>
-                        <ButtonBar buttons={this.Styling.rightBG} click={this.setRightStyle} current={this.state.selected.rightBG}>{this.things.stylingInside.rightBG}</ButtonBar>
-                        <ButtonBar buttons={this.Styling.border} click={this.setBorder} current={this.state.selected.border}>{this.things.stylingInside.border}</ButtonBar>
-                        <ButtonBar buttons={this.Styling.icon} click={this.setIconType} current={this.state.selected.icon}>{this.things.stylingInside.icon}</ButtonBar>
-                        <ButtonBar buttons={this.Styling.iconStyle} click={this.setIconStyle} current={this.state.selected.iconStyle}>{this.things.stylingInside.iconStyle}</ButtonBar>
-                        <ButtonBar buttons={this.Styling.bars} click={this.selectBars} current={this.state.selected.bars}>{this.things.stylingInside.bars}</ButtonBar>
-                        <ButtonBar buttons={this.Styling.photoBorder} click={this.setPhotoBorder} current={this.state.selected.photoBorder}>{this.things.stylingInside.photoBorder}</ButtonBar>
-                        <ButtonBar buttons={this.Styling.photoColor} click={this.setPhotoColor} current={this.state.selected.photoColor}>{this.things.stylingInside.photoColor}</ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.leftBG}
+                            click={this.setLeftStyle}
+                            current={this.state.selected.leftBG}>
+                            {this.things.stylingInside.leftBG}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.rightBG}
+                            click={this.setRightStyle}
+                            current={this.state.selected.rightBG}>
+                            {this.things.stylingInside.rightBG}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.icon}
+                            click={this.setIconType}
+                            current={this.state.selected.icon}>
+                            {this.things.stylingInside.icon}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.iconStyle}
+                            click={this.setIconStyle}
+                            current={this.state.selected.iconStyle}>
+                            {this.things.stylingInside.iconStyle}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.bars}
+                            click={this.selectBars}
+                            current={this.state.selected.bars}>
+                            {this.things.stylingInside.bars}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.photoBorder}
+                            click={this.setPhotoBorder}
+                            current={this.state.selected.photoBorder}>
+                            {this.things.stylingInside.photoBorder}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.photoColor}
+                            click={this.setPhotoColor}
+                            current={this.state.selected.photoColor}>
+                            {this.things.stylingInside.photoColor}
+                        </ButtonBar>
+                        <hr />
+                        <Subtitle>{this.things.pringStyling}</Subtitle>
+                        <ButtonBar
+                            buttons={this.Styling.border}
+                            click={this.setBorder}
+                            current={this.state.selected.border}>
+                            {this.things.stylingInside.border}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.printBorder}
+                            click={this.setPrintBorder}
+                            current={this.state.selected.printBorder}>
+                            {this.things.stylingInside.printBorder}
+                        </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.printBorderColor}
+                            click={this.setPrintBorderColor}
+                            current={this.state.selected.printBorderColor}>
+                            {this.things.stylingInside.printBorderColor}
+                        </ButtonBar>
                     </div>
                 }
                 <hr />
@@ -159,6 +220,51 @@ class Nav extends Component {
                 selected: json
             });
         }
+    }
+
+    setPrintBorder(id) {
+        const b = window.dogResume.getStyling();
+        let { resume } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...resume, border: "0px" };
+                break;
+            case 2:
+                newStyle = { ...resume, border: "5px solid " + this.TempPhotoColor };
+                break;
+            case 3:
+                newStyle = { ...resume, border: "2px solid " + this.TempPhotoColor };
+                break;
+            case 4:
+                newStyle = { ...resume, border: "3px dashed " + this.TempPhotoColor };
+                break;
+            default:
+        }
+        this.printStyling = newStyle.border;
+        const newB = { ...b, resume: newStyle };
+        this.changeSelected('printBorder', id);
+        window.dogResume.styling(newB);
+    }
+
+    setPrintBorderColor(id) {
+        switch (id) {
+            case 1:
+                this.TempPhotoColor = "white";
+                break;
+            case 2:
+                this.TempPhotoColor = "#9e0000";
+                break;
+            case 3:
+                this.TempPhotoColor = "#8b8b8b";
+                break;
+            case 4:
+                this.TempPhotoColor = "black";
+                break;
+            default:
+        }
+        this.changeSelected('printBorderColor', id);
+        this.setPrintBorder(this.state.selected.printBorder);
     }
 
     setPhotoBorder(id) {
@@ -191,13 +297,17 @@ class Nav extends Component {
                 this.TempPhotoColor = "white";
                 break;
             case 2:
-                this.TempPhotoColor = "#ffc20f";
+                this.TempPhotoColor = "#9e0000";
                 break;
             case 3:
+                this.TempPhotoColor = "#ffc20f";
+                break;
+            case 4:
                 this.TempPhotoColor = "black";
                 break;
             default:
         }
+        this.changeSelected('photoColor', id);
         this.setPhotoBorder(this.state.selected.photoBorder);
     }
 
@@ -249,7 +359,7 @@ class Nav extends Component {
                 tempStyle = { ...icon.style, color: "black" };
                 break;
             case 2:
-                tempStyle = { ...icon.style, color: "red" };
+                tempStyle = { ...icon.style, color: "#9e0000" };
                 break;
             default:
         }
@@ -319,6 +429,8 @@ class Nav extends Component {
             case 3:
                 newStyle = { ...left, borderRight: "2px solid #ffbb3d" };
                 break;
+            case 4:
+                newStyle = { ...left, borderRight: "2px solid #9e0000" };
             default:
         }
         const newB = { ...b, left: newStyle };
@@ -345,10 +457,12 @@ class Nav extends Component {
 
     changeStyle() {
         if (this.state.component) {
+            window.dogResume.printView();
             this.setState({
                 component: false
             })
         } else {
+            window.dogResume.editView();
             this.setState({
                 component: true
             })
