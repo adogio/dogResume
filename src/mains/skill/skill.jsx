@@ -37,8 +37,16 @@ class Skill extends Component {
                     </div>
                 }
                 {this.props.layout === 'l' ?
-                    <SkillLeft skill={this.props.default.skill ? this.props.default.skill : []} isEdit={this.state.edit} onChange={this.changeDetail} /> :
-                    <SkillRight skill={this.props.default.skill ? this.props.default.skill : []} isEdit={this.state.edit} onChange={this.changeDetail} />
+                    <SkillLeft
+                        bars={this.props.bars}
+                        skill={this.props.default.skill ? this.props.default.skill : []}
+                        isEdit={this.state.edit}
+                        onChange={this.changeDetail} /> :
+                    <SkillRight
+                        bars={this.props.bars}
+                        skill={this.props.default.skill ? this.props.default.skill : []}
+                        isEdit={this.state.edit}
+                        onChange={this.changeDetail} />
                 }
                 {this.props.dev ? <Group
                     edit={this.edit}

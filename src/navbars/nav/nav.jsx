@@ -32,9 +32,11 @@ class Nav extends Component {
         borderLeft: "21px solid #c8ffc9",
         borderRight: "21px solid #c8ffc9"
     };
+
     buttonNude = {
         height: "32px"
     };
+
     buttonStyle = {
         height: "38px"
     };
@@ -58,6 +60,7 @@ class Nav extends Component {
         this.changeSelected = this.changeSelected.bind(this);
         this.setIconStyle = this.setIconStyle.bind(this);
         this.setIconType = this.setIconType.bind(this);
+        this.selectBars = this.selectBars.bind(this);
         this.reportBug = this.reportBug.bind(this);
         this.likeProject = this.likeProject.bind(this);
         this.Styling = {
@@ -66,6 +69,7 @@ class Nav extends Component {
             border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }],
             icon: [{ name: "图标", id: 1 }, { name: "横线", id: 2 }],
             iconStyle: [{ name: "黑色", id: 1 }, { name: "红色", id: 2 }],
+            bars: [{ name: "橙灰", id: 1 }, { name: "绿灰", id: 2 }, { name: "黑白", id: 3 }],
         };
         this.state = {
             detail: this.things.detailMode,
@@ -75,7 +79,8 @@ class Nav extends Component {
                 rightBG: 2,
                 border: 2,
                 icon: 1,
-                iconStyle: 1
+                iconStyle: 1,
+                bars: 2
             }
         };
     }
@@ -121,6 +126,7 @@ class Nav extends Component {
                         <ButtonBar buttons={this.Styling.border} click={this.setBorder} current={this.state.selected.border}>{this.things.stylingInside.border}</ButtonBar>
                         <ButtonBar buttons={this.Styling.icon} click={this.setIconType} current={this.state.selected.icon}>{this.things.stylingInside.icon}</ButtonBar>
                         <ButtonBar buttons={this.Styling.iconStyle} click={this.setIconStyle} current={this.state.selected.iconStyle}>{this.things.stylingInside.iconStyle}</ButtonBar>
+                        <ButtonBar buttons={this.Styling.bars} click={this.selectBars} current={this.state.selected.bars}>{this.things.stylingInside.bars}</ButtonBar>
                     </div>
                 }
                 <hr />
@@ -132,7 +138,7 @@ class Nav extends Component {
                 <Button style={this.buttonNude} click={this.likeProject}>{this.things.like}</Button>
                 <Button style={this.buttonNude} click={this.reportBug}>{this.things.bug}</Button>
                 <Credit>adog.io</Credit>
-                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"0.3.2-16800"}</span>
+                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"beta 0.4.0-16800"}</span>
             </div>
         );
     }
@@ -143,6 +149,26 @@ class Nav extends Component {
                 selected: json
             });
         }
+    }
+    selectBars(id) {
+        const b = window.dogResume.getStyling();
+        let { bars } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...bars, outer: { backgroundColor: "#ccc" }, inner: { backgroundColor: "#ff923d" } };
+                break;
+            case 2:
+                newStyle = { ...bars, outer: { backgroundColor: "#ccc" }, inner: { backgroundColor: "#51c600" } };
+                break;
+            case 3:
+                newStyle = { ...bars, outer: { backgroundColor: "#fff" }, inner: { backgroundColor: "#000" } };
+                break;
+            default:
+        }
+        const newB = { ...b, bars: newStyle };
+        this.changeSelected('bars', id);
+        window.dogResume.styling(newB);
     }
 
     setIconType(id) {

@@ -39,12 +39,14 @@ class Photo extends Component {
                     </div>
                 }
                 {this.state.edit ?
-                    <div style={this.descriptionStyle}>
-                        <div>
+                    <div>
+                        <div style={this.descriptionStyle}>
                             <i className="fa fa-chevron-right fa-fw" />
                             {this.things.photoInside.description}
                         </div>
-                        <Input value={this.props.default.src} model={this.changeDetail} placeholder={this.photoInside.src} />
+                        <Input value={this.props.default.src ? this.props.default.src : ""}
+                            model={this.changeDetail}
+                            placeholder={this.things.photoInside.src} />
                     </div> :
                     null
                 }

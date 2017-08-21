@@ -9,6 +9,7 @@ class Thing extends Component {
     things;
     inputer = {};
     outputStyle = {
+        paddingTop: "6px",
         fontStyle: "italic",
         textAlign: "left",
         paddingLeft: "10px",

@@ -8,7 +8,6 @@ import Button from '../../react/res/smallButton/smallButton';
 class Bar extends Component {
     things;
     barStyle = {
-        backgroundColor: "#ccc",
         overflow: "hidden"
     };
     skillStyle = {
@@ -37,8 +36,8 @@ class Bar extends Component {
                     <div>
                         {this.levels.map(this.mapLevelButtons)}
                     </div> :
-                    <div className="common-bar-outer" style={this.barStyle}>
-                        <div className="common-bar-inner" style={{ width: this.props.skill.level * 15 + "%", backgroundColor: "#51c600", height: "10px" }}>
+                    <div className="common-bar-outer" style={{ ...this.barStyle, ...this.props.bars.outer }}>
+                        <div className="common-bar-inner" style={{ ...{ width: this.props.skill.level * 15 + "%", height: "10px" }, ...this.props.bars.inner }}>
                         </div>
                     </div>
                 }

@@ -81,7 +81,15 @@ class template extends Component {
                     color: "#040404",
                     backgroundColor: "#d7d7d7"
                 },
-                icon: { type: "font", style: {} }
+                icon: { type: "font", style: {} },
+                bars: {
+                    outer: {
+                        backgroundColor: "#ccc"
+                    },
+                    inner: {
+                        backgroundColor: "#51c600"
+                    }
+                }
             }
         }
     }
@@ -229,6 +237,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    bars={this.state.styling.bars}
                     layout={'l'} />;
             default:
         }
@@ -327,6 +336,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
+                    bars={this.state.styling.bars}
                     form={this.form.right}
                     layout={'r'} />;
             default:
