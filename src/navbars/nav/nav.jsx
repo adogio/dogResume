@@ -32,7 +32,9 @@ class Nav extends Component {
         borderLeft: "21px solid #c8ffc9",
         borderRight: "21px solid #c8ffc9"
     };
-
+    buttonNude = {
+        height: "32px"
+    };
     buttonStyle = {
         height: "38px"
     };
@@ -127,8 +129,8 @@ class Nav extends Component {
                 <Button style={this.buttonStyle} click={this.printResume}>{this.things.print}</Button>
                 <hr />
                 <Subtitle>{this.things.dogResume}</Subtitle>
-                <Button style={this.buttonStyle} click={this.likeProject}>{this.things.like}</Button>
-                <Button style={this.buttonStyle} click={this.reportBug}>{this.things.bug}</Button>
+                <Button style={this.buttonNude} click={this.likeProject}>{this.things.like}</Button>
+                <Button style={this.buttonNude} click={this.reportBug}>{this.things.bug}</Button>
                 <Credit>adog.io</Credit>
                 <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"0.3.2-16800"}</span>
             </div>

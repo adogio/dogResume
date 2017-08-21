@@ -31,10 +31,11 @@ class Thing extends Component {
                 {this.state.edit ?
                     <div>
                         <div>"edit: " + {this.things.thingInside.title}</div>
-                        <Input model={this.happed} color="white" value={this.props.default.name} />
+                        <Input model={this.happed} color="white" value={this.props.default.name} placeholder={this.things.thingInside.input} />
                     </div>
                     : <div style={this.outputStyle}>
-                        <i className="fa fa-chevron-right fa-fw" />{this.props.default.name ? this.props.default.name : this.things.occupied}
+                        <i className="fa fa-chevron-right fa-fw" />
+                        {this.props.default.name ? this.props.default.name : this.things.occupied}
                     </div>
                 }
                 {this.props.dev ? <Group
@@ -45,7 +46,8 @@ class Thing extends Component {
                     cut={this.props.form.cut}
                     isEdit={this.state.edit}
                     index={this.props.index}
-                ></Group> : null}
+                ></Group> : null
+                }
             </div>
         );
     }

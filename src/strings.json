@@ -65,9 +65,15 @@
         "name": "姓名版",
         "thing": "文字分割线",
         "thingInside": {
-            "title": "文字分隔线"
+            "title": "文字分隔线",
+            "input": "文字内容"
         },
         "photo": "照片",
+        "photoInside": {
+            "title": "个人照片",
+            "description": "请输入图片的地址, dogResume 无法为用户缓存图片, 请选择其它任意图床.",
+            "src": "图片链接"
+        },
         "putItHere": "放置在这里",
         "detailMode": "编辑模式",
         "viewMode": "预览模式",
