@@ -42,6 +42,8 @@ class Nav extends Component {
     };
 
     Styling;
+    TempPhotoColor = "red";
+    printStyling = "3px dashed #8b8b8b";
 
     constructor(props) {
         super(props);
@@ -63,6 +65,8 @@ class Nav extends Component {
         this.selectBars = this.selectBars.bind(this);
         this.reportBug = this.reportBug.bind(this);
         this.likeProject = this.likeProject.bind(this);
+        this.setPhotoBorder = this.setPhotoBorder.bind(this);
+        this.setPhotoColor = this.setPhotoColor.bind(this);
         this.Styling = {
             leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "深蓝", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
@@ -70,6 +74,8 @@ class Nav extends Component {
             icon: [{ name: "图标", id: 1 }, { name: "横线", id: 2 }],
             iconStyle: [{ name: "黑色", id: 1 }, { name: "红色", id: 2 }],
             bars: [{ name: "橙灰", id: 1 }, { name: "绿灰", id: 2 }, { name: "黑白", id: 3 }],
+            photoBorder: [{ name: "没有", id: 1 }, { name: "粗线", id: 2 }, { name: "细线", id: 3 }, { name: "虚线", id: 4 }],
+            photoColor: [{ name: "白色", id: 1 }, { name: "橙色", id: 2 }, { name: "黑色", id: 3 }]
         };
         this.state = {
             detail: this.things.detailMode,
@@ -80,7 +86,9 @@ class Nav extends Component {
                 border: 2,
                 icon: 1,
                 iconStyle: 1,
-                bars: 2
+                bars: 2,
+                photoBorder: 1,
+                photoColor: 1
             }
         };
     }
@@ -127,6 +135,8 @@ class Nav extends Component {
                         <ButtonBar buttons={this.Styling.icon} click={this.setIconType} current={this.state.selected.icon}>{this.things.stylingInside.icon}</ButtonBar>
                         <ButtonBar buttons={this.Styling.iconStyle} click={this.setIconStyle} current={this.state.selected.iconStyle}>{this.things.stylingInside.iconStyle}</ButtonBar>
                         <ButtonBar buttons={this.Styling.bars} click={this.selectBars} current={this.state.selected.bars}>{this.things.stylingInside.bars}</ButtonBar>
+                        <ButtonBar buttons={this.Styling.photoBorder} click={this.setPhotoBorder} current={this.state.selected.photoBorder}>{this.things.stylingInside.photoBorder}</ButtonBar>
+                        <ButtonBar buttons={this.Styling.photoColor} click={this.setPhotoColor} current={this.state.selected.photoColor}>{this.things.stylingInside.photoColor}</ButtonBar>
                     </div>
                 }
                 <hr />
@@ -150,6 +160,47 @@ class Nav extends Component {
             });
         }
     }
+
+    setPhotoBorder(id) {
+        const b = window.dogResume.getStyling();
+        let { photoBorder } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...photoBorder, border: "0px" };
+                break;
+            case 2:
+                newStyle = { ...photoBorder, border: "5px solid " + this.TempPhotoColor };
+                break;
+            case 3:
+                newStyle = { ...photoBorder, border: "2px solid " + this.TempPhotoColor };
+                break;
+            case 4:
+                newStyle = { ...photoBorder, border: "3px dashed " + this.TempPhotoColor };
+                break;
+            default:
+        }
+        const newB = { ...b, photoBorder: newStyle };
+        this.changeSelected('photoBorder', id);
+        window.dogResume.styling(newB);
+    }
+
+    setPhotoColor(id) {
+        switch (id) {
+            case 1:
+                this.TempPhotoColor = "white";
+                break;
+            case 2:
+                this.TempPhotoColor = "#ffc20f";
+                break;
+            case 3:
+                this.TempPhotoColor = "black";
+                break;
+            default:
+        }
+        this.setPhotoBorder(this.state.selected.photoBorder);
+    }
+
     selectBars(id) {
         const b = window.dogResume.getStyling();
         let { bars } = b;
@@ -319,7 +370,7 @@ class Nav extends Component {
             print += "<body>" + document.getElementById('resume').innerHTML + "</body>";
             print += "<style>"
             print += a;
-            print += ".centerer{outline:3px dashed #8b8b8b;}"
+            print += ".centerer{outline:" + this.printStyling + ";}"
             print += "</style></html>"
             var f = document.getElementById('printf');
             f.onload = function () {
