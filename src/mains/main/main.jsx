@@ -13,6 +13,7 @@ import Publication from '../publication/publication';
 import Description from '../description/description';
 import Summary from '../summary/summary';
 import Thing from '../thing/thing';
+import Photo from '../photo/photo';
 
 import './main.css';
 import '../printable.css';
@@ -189,6 +190,14 @@ class template extends Component {
                     layout={'l'} />;
             case "description":
                 return <Description onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
+            case "photo":
+                return <Photo onChange={this.changeLeft}
                     index={index}
                     key={'l' + index}
                     dev={this.state.dev}

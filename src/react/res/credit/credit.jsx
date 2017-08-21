@@ -9,7 +9,7 @@ class Credit extends Component {
         paddingBottom: "7px"
     }
     codeStyle = {
-        fontSize: "18px"
+        fontSize: "15px"
     };
     mainStyle = {
         color: "#c2c2c2",
