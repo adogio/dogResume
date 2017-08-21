@@ -431,6 +431,7 @@ class Nav extends Component {
                 break;
             case 4:
                 newStyle = { ...left, borderRight: "2px solid #9e0000" };
+                break;
             default:
         }
         const newB = { ...b, left: newStyle };
