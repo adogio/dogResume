@@ -92,7 +92,7 @@ class SkillRight extends Component {
     delBar(index) {
         let b = this.props.skill;
         b.splice(index, 1);
-        this.props.onChange(b);
+        this.props.onChange(b, true);
     }
 }
 

@@ -12,6 +12,8 @@ import Achivement from '../achivement/achivement';
 import Publication from '../publication/publication';
 import Description from '../description/description';
 import Summary from '../summary/summary';
+import Thing from '../thing/thing';
+
 import './main.css';
 import '../printable.css';
 import strings from '../../strings.json';
@@ -169,6 +171,14 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     layout={'l'} />;
+            case "thing":
+                return <Thing onChange={this.changeLeft}
+                    index={index}
+                    key={'l' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.left}
+                    layout={'l'} />;
             case "achivement":
                 return <Achivement onChange={this.changeLeft}
                     index={index}
@@ -221,6 +231,14 @@ class template extends Component {
                 return <Space key={'r' + index} index={index} style={this.state.triggerdRight} onClick={this.selectRightTarget}></Space>;
             case "name":
                 return <Name onChange={this.changeRight}
+                    index={index}
+                    key={'r' + index}
+                    dev={this.state.dev}
+                    default={i.default}
+                    form={this.form.right}
+                    layout={'r'} />;
+            case "thing":
+                return <Thing onChange={this.changeRight}
                     index={index}
                     key={'r' + index}
                     dev={this.state.dev}
@@ -459,6 +477,7 @@ class template extends Component {
                 break;
             case "connect":
             case "description":
+            case "photo":
                 this.setState({
                     triggerdLeft: true
                 })
