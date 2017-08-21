@@ -24,6 +24,7 @@ class template extends Component {
     selected;
     form;
     cutting;
+    notPrintViewBorderStyle = { border: "5px solid black" };
     constructor(props) {
         super(props);
         this.things = strings.chinese;
@@ -70,6 +71,7 @@ class template extends Component {
             triggerdLeft: false,
             triggerdRight: false,
             dev: false,
+            isPrintView: false,
             styling: {
                 left: {
                     color: "#222222",
@@ -94,7 +96,7 @@ class template extends Component {
                     border: "0px solid white"
                 },
                 resume: {
-                    border: "5px solid black"
+                    border: "3px dashed #8b8b8b"
                 }
             }
         }
@@ -140,6 +142,16 @@ class template extends Component {
         window.dogResume.getStyling = () => {
             return this.state.styling;
         }
+        window.dogResume.printView = () => {
+            this.setState({
+                isPrintView: true
+            })
+        }
+        window.dogResume.editView = () => {
+            this.setState({
+                isPrintView: false
+            })
+        }
     }
 
     render() {
@@ -148,7 +160,9 @@ class template extends Component {
                 <h3>
                     {this.getTopper()}
                 </h3>
-                <div className="resume" id="resume" style={this.state.styling.resume}>
+                <div className="resume" id="resume" style={
+                    this.state.isPrintView ? this.state.styling.resume : this.notPrintViewBorderStyle
+                }>
                     <div className="centerer">
                         <div className="resume-left" style={this.state.styling.left}>
                             {this.state.leftComponents.map(this.leftRanderer)}

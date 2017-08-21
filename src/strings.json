@@ -82,7 +82,8 @@
         "cancel": "取消选择",
         "style": "调整样式",
         "componenet": "编辑简历",
-        "styling": "样式调整",
+        "styling": "外观样式调整",
+        "pringStyling": "打印样式调整",
         "stylingInside": {
             "leftBG": "左侧背景颜色",
             "rightBG": "右侧背景颜色",
@@ -91,7 +92,9 @@
             "iconStyle": "图标颜色",
             "bars": "技能条风格",
             "photoBorder": "照片边框风格",
-            "photoColor": "照片边框颜色"
+            "photoColor": "照片边框颜色",
+            "printBorder": "打印边框样式",
+            "printBorderColor": "打印边框颜色"
         },
         "print": "打印简历",
         "dogResume": "dogResume",
