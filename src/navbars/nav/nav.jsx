@@ -16,19 +16,19 @@ class Nav extends Component {
     detail;
 
     buttonStyleLeftOnly = {
-        height: "38px",
+        height: "32px",
         borderRight: "21px solid transparent",
         borderLeft: "21px solid #c8ffc9"
     };
 
     buttonStyleRightOnly = {
-        height: "38px",
+        height: "32px",
         borderLeft: "21px solid transparent",
         borderRight: "21px solid #c8ffc9"
     };
 
     buttonStyleLeftAndRight = {
-        height: "38px",
+        height: "32px",
         borderLeft: "21px solid #c8ffc9",
         borderRight: "21px solid #c8ffc9"
     };
@@ -56,6 +56,8 @@ class Nav extends Component {
         this.changeSelected = this.changeSelected.bind(this);
         this.setIconStyle = this.setIconStyle.bind(this);
         this.setIconType = this.setIconType.bind(this);
+        this.reportBug = this.reportBug.bind(this);
+        this.likeProject = this.likeProject.bind(this);
         this.Styling = {
             leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "深蓝", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
@@ -93,16 +95,17 @@ class Nav extends Component {
                 {this.state.component ?
                     <div>
                         <Subtitle>{this.things.components}</Subtitle>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.things.education}</Button>
-                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.things.connect}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.things.experience}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.things.skill}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.things.project}</Button>
                         <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.things.name}</Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="photo">{this.things.photo}</Button>
                         <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.things.description}</Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.things.connect}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="thing">{this.things.thing}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.things.education}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.things.experience}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.things.project}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.things.skill}</Button>
                         <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.things.achivement}</Button>
                         <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.things.publication}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="summary">{this.things.summary}</Button>
                         <hr />
                         <Subtitle>{this.things.componenetTool}</Subtitle>
                         <Button style={this.buttonStyle} click={this.changeMode}>{this.state.detail}</Button>
@@ -124,10 +127,10 @@ class Nav extends Component {
                 <Button style={this.buttonStyle} click={this.printResume}>{this.things.print}</Button>
                 <hr />
                 <Subtitle>{this.things.dogResume}</Subtitle>
-                <Button style={this.buttonStyle} click={this.printResume}>{this.things.like}</Button>
-                <Button style={this.buttonStyle} click={this.printResume} Title="123">{this.things.bug}</Button>
+                <Button style={this.buttonStyle} click={this.likeProject}>{this.things.like}</Button>
+                <Button style={this.buttonStyle} click={this.reportBug}>{this.things.bug}</Button>
                 <Credit>adog.io</Credit>
-                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"0.3.1-16800"}</span>
+                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"0.3.2-16800"}</span>
             </div>
         );
     }
@@ -314,6 +317,14 @@ class Nav extends Component {
                 detail: this.things.detailMode
             })
         }
+    }
+
+    likeProject() {
+        window.location.href = "https://github.com/adogio/dogResume";
+    }
+
+    reportBug() {
+        window.location.href = "https://github.com/adogio/dogResume/issues";
     }
 }
 

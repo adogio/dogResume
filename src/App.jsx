@@ -29,7 +29,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>{
-				this.platform.indexOf("hone") != -1 || this.platform.indexOf("Android") != -1 ?
+				this.platform.indexOf("hone") !== -1 || this.platform.indexOf("Android") !== -1 ?
 					<Cover>{"Please use desktop for this site"}</Cover> :
 					<Cover>
 						<DogTitle>
