@@ -59,7 +59,7 @@ class SkillRight extends Component {
             return null;
         }
         return <span key={index}>
-            <Bar skill={i} index={index} isEdit={this.props.isEdit} onChange={this.changeBar} />
+            <Bar bars={this.props.bars} skill={i} index={index} isEdit={this.props.isEdit} onChange={this.changeBar} />
             {this.props.isEdit ? <Button click={this.delBar} args={index} style={this.delStyle}><i className="fa fa-times"></i></Button> : null}
         </span>;
     }
@@ -72,7 +72,7 @@ class SkillRight extends Component {
             return null;
         }
         return <span key={index}>
-            <Bar skill={i} index={index} isEdit={this.props.isEdit} onChange={this.changeBar} />
+            <Bar bars={this.props.bars} skill={i} index={index} isEdit={this.props.isEdit} onChange={this.changeBar} />
             {this.props.isEdit ? <Button click={this.delBar} args={index} style={this.delStyle}><i className="fa fa-times"></i></Button> : null}
         </span>;
     }

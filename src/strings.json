@@ -88,7 +88,8 @@
             "rightBG": "右侧背景颜色",
             "border": "分隔线",
             "icon": "右侧图标",
-            "iconStyle": "图标颜色"
+            "iconStyle": "图标颜色",
+            "bars": "技能条风格"
         },
         "print": "打印简历",
         "dogResume": "dogResume",
