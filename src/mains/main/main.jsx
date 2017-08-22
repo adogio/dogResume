@@ -15,7 +15,6 @@ import Summary from '../summary/summary';
 import Thing from '../thing/thing';
 import Photo from '../photo/photo';
 
-import './main.css';
 import '../printable.css';
 
 class template extends Component {
@@ -156,14 +155,20 @@ class template extends Component {
     }
 
     render() {
+        // <h3>
+        //     {this.getTopper()}
+        // </h3>
         return (
-            <div className="main">
-                <h3>
-                    {this.getTopper()}
-                </h3>
-                <div className="resume" id="resume" style={
-                    this.state.isPrintView ? this.state.styling.resume : this.notPrintViewBorderStyle
-                }>
+            <div style={{ margin: "0px", marginTop: "55px", marginBottom: "20px", textAlign: "center" }}>
+                <div
+                    id="resume"
+                    style={{
+                        ...this.state.isPrintView ? this.state.styling.resume : this.notPrintViewBorderStyle,
+                        margin: "auto",
+                        width: "630px",
+                        height: "891px"
+                    }}
+                >
                     <div className="centerer">
                         <div className="resume-left" style={this.state.styling.left}>
                             {this.state.leftComponents.map(this.leftRanderer)}
