@@ -91,9 +91,11 @@ class App extends Component {
 	loginRegister() {
 		window.dog.pop(<Login />)
 	}
+
 	startFromZero() {
 		window.dog.pop(<Zero from="click" />)
 	}
+
 	changeLanguage() {
 		window.dog.pop(<Zero from="language" />)
 	}

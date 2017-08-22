@@ -15,7 +15,7 @@ class Language extends Component {
         return (
             <div>
                 <br />
-                <Button click={this.props.next}>123</Button>
+                <Button>123</Button>
             </div>
         );
     }
