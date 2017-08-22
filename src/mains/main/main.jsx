@@ -547,8 +547,9 @@ class template extends Component {
     outputJson() {
         let left = removeSpace(this.state.leftComponents);
         let right = removeSpace(this.state.rightComponents);
+        let style = window.dogResume.getStylingSelected();
 
-        return JSON.stringify({ left: left, right: right });
+        return JSON.stringify({ left: left, right: right, style: style });
 
         function removeSpace(componentStream) {
             let output = [];
@@ -568,6 +569,9 @@ class template extends Component {
             leftComponents: addSpace(parsed.left),
             rightComponents: addSpace(parsed.right)
         })
+        if (parsed.style) {
+            window.dogResume.setStyling(parsed.style);
+        }
 
         return 1;
 
