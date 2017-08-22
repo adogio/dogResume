@@ -24,15 +24,23 @@ class App extends Component {
 		this.loginRegister = this.loginRegister.bind(this);
 		this.startFromZero = this.startFromZero.bind(this);
 		this.changeLanguage = this.changeLanguage.bind(this);
+		this.changeToChinese = this.changeToChinese.bind(this);
+		this.changeToEnglish = this.changeToEnglish.bind(this);
 		window.dogResume = {};
 		this.state = {
-			things: strings.chinese
+			things: strings.chinese,
+			language: strings.chinese,
+			currentUI: 0,
+			currentResume: 0
 		}
 	}
 
 	render() {
 		const MainWithProps = (props) => {
-			return <Main things={this.state.things} {...props} />
+			return <Main
+				things={this.state.things}
+				language={this.state.language}
+				{...props} />
 		}
 		return (
 			<div>{
@@ -66,7 +74,6 @@ class App extends Component {
 									}>
 									{this.state.things.startFromZero}
 								</Button>
-
 								<Button
 									click={this.loginRegister}
 									style={{ width: "100px" }}>
@@ -93,15 +100,64 @@ class App extends Component {
 	}
 
 	loginRegister() {
-		window.dog.pop(<Login />)
+		window.dog.pop(<Login
+			things={this.state.things} />)
 	}
 
 	startFromZero() {
-		window.dog.pop(<Zero from="click" things={this.state.things} />)
+		window.dog.pop(<Zero
+			from="click"
+			chinese={this.changeToChinese}
+			english={this.changeToEnglish}
+			currentUI={this.state.currentUI}
+			currentResume={this.state.currentResume}
+			things={this.state.things} />)
 	}
 
 	changeLanguage() {
-		window.dog.pop(<Zero from="language" things={this.state.things} />)
+		window.dog.pop(<Zero
+			from="language"
+			chinese={this.changeToChinese}
+			english={this.changeToEnglish}
+			currentUI={this.state.currentUI}
+			currentResume={this.state.currentResume}
+			things={this.state.things} />)
+	}
+
+	changeToChinese(isResume) {
+		let temp = window.dogResume.outputJson();
+		if (isResume) {
+			this.setState({
+				language: strings.chinese,
+				currentResume: 0
+			}, update);
+		} else {
+			this.setState({
+				things: strings.chinese,
+				currentUI: 0
+			}, update);
+		}
+		function update() {
+			window.dogResume.inputJson(temp);
+		}
+	}
+
+	changeToEnglish(isResume) {
+		let temp = window.dogResume.outputJson();
+		if (isResume) {
+			this.setState({
+				language: strings.english,
+				currentResume: 1
+			}, update);
+		} else {
+			this.setState({
+				things: strings.english,
+				currentUI: 1
+			}, update);
+		}
+		function update() {
+			window.dogResume.inputJson(temp);
+		}
 	}
 }
 

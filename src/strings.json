@@ -107,7 +107,12 @@
         "toUnselect": "请先退出选择模式再打印",
         "inCutting": "剪切状态无法取消选择",
         "language": {
-            "title": "切换语言"
+            "title": "切换语言/Switch language",
+            "resume": "简历/Resume",
+            "ui": "界面/Interface",
+            "chinese": "中文/Chinese",
+            "english": "英语/English",
+            "done": "完成/Done"
         }
     },
     "english": {
@@ -216,6 +221,14 @@
         "bug": "Issue bugs",
         "toView": "Please exit edit mode to print",
         "toUnselect": "Please exit select mode to print",
-        "inCutting": "Cannot cancel select during cutting"
+        "inCutting": "Cannot cancel select during cutting",
+        "language": {
+            "title": "切换语言/Switch language",
+            "resume": "简历/Resume",
+            "ui": "界面/Interface",
+            "chinese": "中文/Chinese",
+            "english": "英语/English",
+            "done": "完成/Done"
+        }
     }
 }
