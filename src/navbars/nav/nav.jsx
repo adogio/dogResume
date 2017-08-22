@@ -71,8 +71,10 @@ class Nav extends Component {
         this.setPrintBorder = this.setPrintBorder.bind(this);
         this.setPhotoBG = this.setPhotoBG.bind(this);
         this.setPrintBorderColor = this.setPrintBorderColor.bind(this);
+        this.inputSelected = this.inputSelected.bind(this);
+        this.outputSelected = this.outputSelected.bind(this);
         this.Styling = {
-            leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "深蓝", id: 4 }],
+            leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "暗紫", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
             border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }, { name: "深红", id: 4 }],
             icon: [{ name: "图标", id: 1 }, { name: "横线", id: 2 }],
@@ -101,6 +103,16 @@ class Nav extends Component {
                 printBorderColor: 3
             }
         };
+    }
+
+    componentDidMount() {
+        window.dogResume.setStyling = (selectQueue) => {
+            this.inputSelected(selectQueue);
+            return 1;
+        }
+        window.dogResume.getStylingSelected = () => {
+            return this.outputSelected();
+        }
     }
 
     render() {
@@ -418,7 +430,7 @@ class Nav extends Component {
                 break;
             // blue
             case 4:
-                newStyle = { ...left, backgroundColor: "#2c52ff", color: "white" };
+                newStyle = { ...left, backgroundColor: "#624c82", color: "white" };
                 break;
             default:
         }
@@ -541,6 +553,24 @@ class Nav extends Component {
                 detail: this.things.detailMode
             })
         }
+    }
+
+    outputSelected() {
+        return this.state.selected;
+    }
+
+    inputSelected(selectQueue) {
+        this.setLeftStyle(selectQueue.leftBG);
+        this.setRightStyle(selectQueue.rightBG);
+        this.setBorder(selectQueue.border);
+        this.setIconType(selectQueue.icon);
+        this.setIconStyle(selectQueue.iconStyle);
+        this.selectBars(selectQueue.bars);
+        this.setPhotoBorder(selectQueue.photoBorder);
+        this.setPhotoColor(selectQueue.photoColor);
+        this.setPhotoBG(selectQueue.photoBG);
+        this.setPrintBorder(selectQueue.printBorder);
+        this.setPrintBorderColor(selectQueue.printBorderColor);
     }
 
     likeProject() {
