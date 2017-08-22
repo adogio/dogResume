@@ -9,6 +9,7 @@ import Main from './mains/main/main';
 import Button from './react/res/smallButton/smallButton';
 import strings from './strings.json';
 import Login from './navbars/login/login';
+import Zero from './navbars/zero/zero';
 
 import './App.css';
 
@@ -23,6 +24,8 @@ class App extends Component {
 		super(props);
 		this.things = strings.chinese;
 		this.loginRegister = this.loginRegister.bind(this);
+		this.startFromZero = this.startFromZero.bind(this);
+		this.changeLanguage = this.changeLanguage.bind(this);
 		window.dogResume = {};
 	}
 
@@ -35,6 +38,31 @@ class App extends Component {
 						<DogTitle>
 							<span>{this.things.mainTitle}</span>
 							<div style={this.floatRight}>
+								<Button
+									click={this.changeLanguage}
+									style={
+										{
+											width: "100px",
+											backgroundColor: "red",
+											marginRight: "10px",
+											color: "white"
+										}
+									}>
+									{this.things.changeLanguage}
+								</Button>
+								<Button
+									click={this.startFromZero}
+									style={
+										{
+											width: "200px",
+											backgroundColor: "green",
+											marginRight: "10px",
+											color: "white"
+										}
+									}>
+									{this.things.startFromZero}
+								</Button>
+
 								<Button
 									click={this.loginRegister}
 									style={{ width: "100px" }}>
@@ -62,6 +90,12 @@ class App extends Component {
 
 	loginRegister() {
 		window.dog.pop(<Login />)
+	}
+	startFromZero() {
+		window.dog.pop(<Zero from="click" />)
+	}
+	changeLanguage() {
+		window.dog.pop(<Zero from="language" />)
 	}
 }
 
