@@ -95,6 +95,11 @@ class template extends Component {
                 photoBorder: {
                     border: "0px solid white"
                 },
+                photoBG: {
+                    backgroundColor: "#ffd65c",
+                    color: "black",
+                    border: "2px solid white"
+                },
                 resume: {
                     border: "3px dashed #8b8b8b"
                 }
@@ -223,6 +228,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    bg={this.state.styling.photoBG}
                     layout={'l'} />;
             case "photo":
                 return <Photo onChange={this.changeLeft}

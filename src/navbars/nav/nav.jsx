@@ -79,6 +79,7 @@ class Nav extends Component {
             bars: [{ name: "橙灰", id: 1 }, { name: "绿灰", id: 2 }, { name: "黑白", id: 3 }],
             photoBorder: [{ name: "没有", id: 1 }, { name: "粗线", id: 2 }, { name: "细线", id: 3 }, { name: "虚线", id: 4 }],
             photoColor: [{ name: "白色", id: 1 }, { name: "深红", id: 2 }, { name: "橙色", id: 3 }, { name: "黑色", id: 4 }],
+            photoBG: [{ name: "深灰", id: 1 }, { name: "浅灰", id: 2 }, { name: "浅黄", id: 3 }],
             printBorder: [{ name: "没有", id: 1 }, { name: "粗线", id: 2 }, { name: "细线", id: 3 }, { name: "虚线", id: 4 }],
             printBorderColor: [{ name: "白色", id: 1 }, { name: "深红", id: 2 }, { name: "灰色", id: 3 }, { name: "黑色", id: 4 }]
         };
@@ -94,6 +95,7 @@ class Nav extends Component {
                 bars: 2,
                 photoBorder: 1,
                 photoColor: 2,
+                photoBG: 3,
                 printBorder: 4,
                 printBorderColor: 3
             }
@@ -178,6 +180,12 @@ class Nav extends Component {
                             current={this.state.selected.photoColor}>
                             {this.things.stylingInside.photoColor}
                         </ButtonBar>
+                        <ButtonBar
+                            buttons={this.Styling.photoBG}
+                            click={this.setPhotoBG}
+                            current={this.state.selected.photoBG}>
+                            {this.things.stylingInside.photoBG}
+                        </ButtonBar>
                         <hr />
                         <Subtitle>{this.things.pringStyling}</Subtitle>
                         <ButtonBar
@@ -220,6 +228,10 @@ class Nav extends Component {
                 selected: json
             });
         }
+    }
+
+    setPhotoBG(id) {
+
     }
 
     setPrintBorder(id) {

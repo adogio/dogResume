@@ -12,10 +12,7 @@ class Description extends Component {
         marginLeft: "1%",
         width: "96%",
         WebkitPrintColorAdjust: "exact",
-        border: "2px solid white",
         overflow: "hidden",
-        backgroundColor: "#ffd65c",
-        color: "black"
     };
     insiderStyle = {
         textAlign: "center",
@@ -54,7 +51,7 @@ class Description extends Component {
     render() {
         return (
             <div>
-                <div style={this.mainStyle}>
+                <div style={{ ...this.mainStyle, ...this.props.bg }}>
                     {this.state.edit ?
                         "edit: " + this.things.descriptionInside.title :
                         <div>
