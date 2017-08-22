@@ -69,6 +69,7 @@ class Nav extends Component {
         this.setPhotoBorder = this.setPhotoBorder.bind(this);
         this.setPhotoColor = this.setPhotoColor.bind(this);
         this.setPrintBorder = this.setPrintBorder.bind(this);
+        this.setPhotoBG = this.setPhotoBG.bind(this);
         this.setPrintBorderColor = this.setPrintBorderColor.bind(this);
         this.Styling = {
             leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "深蓝", id: 4 }],
@@ -231,7 +232,24 @@ class Nav extends Component {
     }
 
     setPhotoBG(id) {
-
+        const b = window.dogResume.getStyling();
+        let { photoBG } = b;
+        let newStyle;
+        switch (id) {
+            case 1:
+                newStyle = { ...photoBG, backgroundColor: "#5a5a5a", color: "white", border: "2px solid #8b0000" };
+                break;
+            case 2:
+                newStyle = { ...photoBG, backgroundColor: "#c0c0c0", color: "black", border: "2px solid white" };
+                break;
+            case 3:
+                newStyle = { ...photoBG, backgroundColor: "#ffd65c", color: "black", border: "2px solid black" };
+                break;
+            default:
+        }
+        const newB = { ...b, photoBG: newStyle };
+        this.changeSelected('photoBG', id);
+        window.dogResume.styling(newB);
     }
 
     setPrintBorder(id) {
