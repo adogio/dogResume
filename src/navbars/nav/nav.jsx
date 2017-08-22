@@ -4,7 +4,6 @@ import React, {
 import Logo from '../../react/res/logo/logo';
 import Subtitle from '../../react/res/subtitle/subtitle';
 import Quote from '../../react/res/quote/quote';
-import strings from '../../strings.json';
 import Button from '../../react/res/button/button';
 import Credit from '../../react/res/credit/credit';
 import ButtonBar from '../../mains/group/buttonBar';
@@ -12,7 +11,6 @@ import './nav.css';
 import a from '../../mains/printable.json';
 
 class Nav extends Component {
-    things;
     detail;
 
     buttonStyleLeftOnly = {
@@ -48,7 +46,6 @@ class Nav extends Component {
 
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.detail = true;
         this.selected = false;
         this.clickButton = this.clickButton.bind(this);
@@ -88,7 +85,7 @@ class Nav extends Component {
             printBorderColor: [{ name: "白色", id: 1 }, { name: "深红", id: 2 }, { name: "灰色", id: 3 }, { name: "黑色", id: 4 }]
         };
         this.state = {
-            detail: this.things.detailMode,
+            detail: this.props.things.detailMode,
             component: true,
             selected: {
                 leftBG: 2,
@@ -124,117 +121,117 @@ class Nav extends Component {
             <div>
                 <hr />
                 <Logo>
-                    {this.things.title}
+                    {this.props.things.title}
                 </Logo>
                 <Subtitle>
-                    {this.things.subTitle}
+                    {this.props.things.subTitle}
                 </Subtitle>
-                <Quote from={this.things.quoteFrom}>
-                    {this.things.quote}
+                <Quote from={this.props.things.quoteFrom}>
+                    {this.props.things.quote}
                 </Quote>
                 <hr />
                 {this.state.component ?
                     <div>
-                        <Subtitle>{this.things.components}</Subtitle>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.things.name}</Button>
-                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="photo">{this.things.photo}</Button>
-                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.things.description}</Button>
-                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.things.connect}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="thing">{this.things.thing}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.things.education}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.things.experience}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.things.project}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.things.skill}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.things.achivement}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.things.publication}</Button>
+                        <Subtitle>{this.props.things.components}</Subtitle>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.props.things.name}</Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="photo">{this.props.things.photo}</Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.props.things.description}</Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.props.things.connect}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="thing">{this.props.things.thing}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.props.things.education}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.props.things.experience}</Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.props.things.project}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.props.things.skill}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.props.things.achivement}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.props.things.publication}</Button>
                         <hr />
-                        <Subtitle>{this.things.componenetTool}</Subtitle>
+                        <Subtitle>{this.props.things.componenetTool}</Subtitle>
                         <Button style={this.buttonStyle} click={this.changeMode}>{this.state.detail}</Button>
-                        <Button style={this.buttonStyle} click={this.cancelSelect}>{this.things.cancel}</Button>
+                        <Button style={this.buttonStyle} click={this.cancelSelect}>{this.props.things.cancel}</Button>
                     </div>
                     :
                     <div>
-                        <Subtitle>{this.things.styling}</Subtitle>
+                        <Subtitle>{this.props.things.styling}</Subtitle>
                         <ButtonBar
                             buttons={this.Styling.leftBG}
                             click={this.setLeftStyle}
                             current={this.state.selected.leftBG}>
-                            {this.things.stylingInside.leftBG}
+                            {this.props.things.stylingInside.leftBG}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.rightBG}
                             click={this.setRightStyle}
                             current={this.state.selected.rightBG}>
-                            {this.things.stylingInside.rightBG}
+                            {this.props.things.stylingInside.rightBG}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.icon}
                             click={this.setIconType}
                             current={this.state.selected.icon}>
-                            {this.things.stylingInside.icon}
+                            {this.props.things.stylingInside.icon}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.iconStyle}
                             click={this.setIconStyle}
                             current={this.state.selected.iconStyle}>
-                            {this.things.stylingInside.iconStyle}
+                            {this.props.things.stylingInside.iconStyle}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.bars}
                             click={this.selectBars}
                             current={this.state.selected.bars}>
-                            {this.things.stylingInside.bars}
+                            {this.props.things.stylingInside.bars}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.photoBorder}
                             click={this.setPhotoBorder}
                             current={this.state.selected.photoBorder}>
-                            {this.things.stylingInside.photoBorder}
+                            {this.props.things.stylingInside.photoBorder}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.photoColor}
                             click={this.setPhotoColor}
                             current={this.state.selected.photoColor}>
-                            {this.things.stylingInside.photoColor}
+                            {this.props.things.stylingInside.photoColor}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.photoBG}
                             click={this.setPhotoBG}
                             current={this.state.selected.photoBG}>
-                            {this.things.stylingInside.photoBG}
+                            {this.props.things.stylingInside.photoBG}
                         </ButtonBar>
                         <hr />
-                        <Subtitle>{this.things.pringStyling}</Subtitle>
+                        <Subtitle>{this.props.things.pringStyling}</Subtitle>
                         <ButtonBar
                             buttons={this.Styling.border}
                             click={this.setBorder}
                             current={this.state.selected.border}>
-                            {this.things.stylingInside.border}
+                            {this.props.things.stylingInside.border}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.printBorder}
                             click={this.setPrintBorder}
                             current={this.state.selected.printBorder}>
-                            {this.things.stylingInside.printBorder}
+                            {this.props.things.stylingInside.printBorder}
                         </ButtonBar>
                         <ButtonBar
                             buttons={this.Styling.printBorderColor}
                             click={this.setPrintBorderColor}
                             current={this.state.selected.printBorderColor}>
-                            {this.things.stylingInside.printBorderColor}
+                            {this.props.things.stylingInside.printBorderColor}
                         </ButtonBar>
                     </div>
                 }
                 <hr />
-                <Subtitle>{this.things.complete}</Subtitle>
-                <Button style={this.buttonStyle} click={this.changeStyle}>{this.state.component ? this.things.style : this.things.componenet}</Button>
-                <Button style={this.buttonStyle} click={this.printResume}>{this.things.print}</Button>
+                <Subtitle>{this.props.things.complete}</Subtitle>
+                <Button style={this.buttonStyle} click={this.changeStyle}>{this.state.component ? this.props.things.style : this.props.things.componenet}</Button>
+                <Button style={this.buttonStyle} click={this.printResume}>{this.props.things.print}</Button>
                 <hr />
-                <Subtitle>{this.things.dogResume}</Subtitle>
-                <Button style={this.buttonNude} click={this.likeProject}>{this.things.like}</Button>
-                <Button style={this.buttonNude} click={this.reportBug}>{this.things.bug}</Button>
+                <Subtitle>{this.props.things.dogResume}</Subtitle>
+                <Button style={this.buttonNude} click={this.likeProject}>{this.props.things.like}</Button>
+                <Button style={this.buttonNude} click={this.reportBug}>{this.props.things.bug}</Button>
                 <Credit>adog.io</Credit>
-                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"beta 0.5.0-16800"}</span>
+                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.props.things.version}: {"beta 0.5.0-16800"}</span>
             </div>
         );
     }
@@ -521,9 +518,9 @@ class Nav extends Component {
 
     printResume() {
         if (!this.detail) {
-            alert(this.things.toView);
+            alert(this.props.things.toView);
         } else if (window.dogResume.global.selected) {
-            alert(this.things.toUnselect);
+            alert(this.props.things.toUnselect);
         } else {
             let cssLink = document.createElement("link");
             cssLink.href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
@@ -559,13 +556,13 @@ class Nav extends Component {
             window.dogResume.viewMode();
             this.detail = false;
             this.setState({
-                detail: this.things.viewMode
+                detail: this.props.things.viewMode
             })
         } else {
             window.dogResume.detailMode();
             this.detail = true;
             this.setState({
-                detail: this.things.detailMode
+                detail: this.props.things.detailMode
             })
         }
     }

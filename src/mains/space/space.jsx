@@ -2,12 +2,9 @@ import React, {
     Component
 } from 'react';
 import './space.css';
-import strings from '../../strings.json';
 class Space extends Component {
-    things;
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.click = this.click.bind(this);
         this.triggerd = this.triggerd.bind(this);
     }
@@ -15,20 +12,20 @@ class Space extends Component {
     render() {
         return (
             <div className="space" style={this.triggerd()} onClick={this.click}>
-                {this.things.putItHere}
+                {this.props.things.putItHere}
             </div>
         );
     }
-    triggerd(){
-        if(!this.props.style){
+    triggerd() {
+        if (!this.props.style) {
             return {
                 display: "none"
             }
-        }else{
+        } else {
             return {}
         }
     }
-    click(){
+    click() {
         this.props.onClick(this.props.index);
     }
 }

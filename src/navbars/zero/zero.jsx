@@ -1,16 +1,13 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Language from '../language/language';
 import Button from '../../react/res/button/button';
 import ZeroGuide from './zeroGuide';
 
 class Zero extends Component {
-    things;
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.renderPage = this.renderPage.bind(this);
         this.switchToMainGuide = this.switchToMainGuide.bind(this);
         this.finish = this.finish.bind(this);
@@ -32,11 +29,11 @@ class Zero extends Component {
             case "click":
                 return null;
             case "language":
-                return <Language next={this.finish} />;
+                return <Language things={this.props.things} next={this.finish} />;
             case "guide":
-                return <Language next={this.switchToMainGuide} />;
+                return <Language things={this.props.things} next={this.switchToMainGuide} />;
             case "main":
-                return <ZeroGuide />
+                return <ZeroGuide things={this.props.things} />
             default:
         }
     }

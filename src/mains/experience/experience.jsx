@@ -2,16 +2,13 @@ import React, {
     Component
 } from 'react';
 import Details from '../details/details';
-import strings from '../../strings.json';
 import Group from '../group/group';
 import RightLane from '../details/rightLane';
 
 class Experience extends Component {
-    things;
     inputer = {};
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
         this.state = {
@@ -23,11 +20,11 @@ class Experience extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.experienceInside.title :
+                    "edit: " + this.props.things.experienceInside.title :
                     <div>
                         <div className="common-header">
                             <RightLane icon="briefcase" style={this.props.icon.style} type={this.props.icon.type} />
-                            {this.things.experienceInside.title}
+                            {this.props.things.experienceInside.title}
                         </div>
                     </div>
                 }

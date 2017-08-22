@@ -1,19 +1,19 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Button from '../../react/res/button/button';
+import Logo from '../../react/res/logo/logo';
 
 class Language extends Component {
-    things;
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
+        console.log('ter');
     }
 
     render() {
         return (
             <div>
+                <Logo>{this.props.things.language.title}</Logo>
                 <br />
                 <Button click={this.props.next}>123</Button>
             </div>

@@ -1,18 +1,15 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Group from '../group/group';
 import SkillLeft from './skillLeft';
 import SkillRight from './skillRight';
 import RightLane from '../details/rightLane';
 
 class Skill extends Component {
-    things;
     inputer = {};
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
         this.state = {
@@ -24,14 +21,14 @@ class Skill extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.skill
+                    "edit: " + this.props.things.skill
                     :
                     <div className="common-header">
                         {this.props.layout === 'l' ?
-                            <div>{this.things.skillInside.leftTitle}</div>
+                            <div>{this.props.things.skillInside.leftTitle}</div>
                             : <div>
                                 <RightLane icon="tasks" style={this.props.icon.style} type={this.props.icon.type} />
-                                {this.things.skillInside.rightTitle}
+                                {this.props.things.skillInside.rightTitle}
                             </div>
                         }
                     </div>

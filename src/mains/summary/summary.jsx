@@ -1,16 +1,13 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Group from '../group/group';
 import Details from '../details/details';
 import RightLane from '../details/rightLane';
 
 class Summary extends Component {
-    things;
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
         this.state = {
@@ -22,14 +19,14 @@ class Summary extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.summary
+                    "edit: " + this.props.things.summary
                     :
                     <div className="common-header">
                         {this.props.layout === 'l' ?
-                            <div>{this.things.summaryInside.title}</div>
+                            <div>{this.props.things.summaryInside.title}</div>
                             : <div>
                                 <RightLane icon="list-alt" style={this.props.icon.style} type={this.props.icon.type} />
-                                {this.things.summaryInside.title}
+                                {this.props.things.summaryInside.title}
                             </div>
                         }
                     </div>

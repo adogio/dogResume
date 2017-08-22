@@ -17,17 +17,14 @@ import Photo from '../photo/photo';
 
 import './main.css';
 import '../printable.css';
-import strings from '../../strings.json';
 
 class template extends Component {
-    things;
     selected;
     form;
     cutting;
     notPrintViewBorderStyle = { border: "5px solid black" };
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.selected = '';
         this.getTopper = this.getTopper.bind(this);
         this.leftRanderer = this.leftRanderer.bind(this);
@@ -118,7 +115,7 @@ class template extends Component {
         }
         window.dogResume.cancelSelect = () => {
             if (this.cutting != null) {
-                alert(this.things.inCutting);
+                alert(this.props.things.inCutting);
                 return 0;
             }
             window.dogResume.global.selected = false;
@@ -196,7 +193,12 @@ class template extends Component {
     leftRanderer(i, index) {
         switch (i.component) {
             case "space":
-                return <Space key={'l' + index} index={index} style={this.state.triggerdLeft} onClick={this.selectLeftTarget}></Space>;
+                return <Space
+                    key={'l' + index}
+                    index={index}
+                    style={this.state.triggerdLeft}
+                    things={this.props.things}
+                    onClick={this.selectLeftTarget} />;
             case "name":
                 return <Name onChange={this.changeLeft}
                     index={index}
@@ -204,6 +206,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    things={this.props.things}
                     layout={'l'} />;
             case "thing":
                 return <Thing onChange={this.changeLeft}
@@ -212,6 +215,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    things={this.props.things}
                     layout={'l'} />;
             case "achivement":
                 return <Achivement onChange={this.changeLeft}
@@ -220,6 +224,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    things={this.props.things}
                     layout={'l'} />;
             case "description":
                 return <Description onChange={this.changeLeft}
@@ -229,6 +234,7 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     bg={this.state.styling.photoBG}
+                    things={this.props.things}
                     layout={'l'} />;
             case "photo":
                 return <Photo onChange={this.changeLeft}
@@ -238,6 +244,7 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     photo={this.state.styling.photoBorder}
+                    things={this.props.things}
                     layout={'l'} />;
             case "publication":
                 return <Publication onChange={this.changeLeft}
@@ -246,6 +253,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    things={this.props.things}
                     layout={'l'} />;
             case "connect":
                 return <Connect
@@ -255,6 +263,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
+                    things={this.props.things}
                     layout={'l'} />;
             case "skill":
                 return <Skill
@@ -265,6 +274,7 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     bars={this.state.styling.bars}
+                    things={this.props.things}
                     layout={'l'} />;
             default:
         }
@@ -273,7 +283,12 @@ class template extends Component {
     rightRanderer(i, index) {
         switch (i.component) {
             case "space":
-                return <Space key={'r' + index} index={index} style={this.state.triggerdRight} onClick={this.selectRightTarget}></Space>;
+                return <Space
+                    key={'r' + index}
+                    index={index}
+                    style={this.state.triggerdRight}
+                    things={this.props.things}
+                    onClick={this.selectRightTarget} />;
             case "name":
                 return <Name onChange={this.changeRight}
                     index={index}
@@ -281,6 +296,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right}
+                    things={this.props.things}
                     layout={'r'} />;
             case "thing":
                 return <Thing onChange={this.changeRight}
@@ -289,6 +305,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right}
+                    things={this.props.things}
                     layout={'r'} />;
             case "education":
                 return <Education
@@ -298,6 +315,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
+                    things={this.props.things}
                     form={this.form.right} />;
             case "summary":
                 return <Summary
@@ -307,6 +325,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
+                    things={this.props.things}
                     form={this.form.right} />;
             case "experience":
                 return <Experience
@@ -316,6 +335,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
+                    things={this.props.things}
                     form={this.form.right} />;
             case "project":
                 return <Project
@@ -325,6 +345,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
+                    things={this.props.things}
                     form={this.form.right} />;
             case "achivement":
                 return <Achivement
@@ -335,6 +356,7 @@ class template extends Component {
                     default={i.default}
                     icon={this.state.styling.icon}
                     form={this.form.right}
+                    things={this.props.things}
                     layout={'r'} />;
             case "publication":
                 return <Publication
@@ -345,6 +367,7 @@ class template extends Component {
                     default={i.default}
                     icon={this.state.styling.icon}
                     form={this.form.right}
+                    things={this.props.things}
                     layout={'r'} />;
             case "connect":
                 return <Connect
@@ -354,6 +377,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right}
+                    things={this.props.things}
                     layout={'r'} />;
             case "skill":
                 return <Skill
@@ -365,6 +389,7 @@ class template extends Component {
                     icon={this.state.styling.icon}
                     bars={this.state.styling.bars}
                     form={this.form.right}
+                    things={this.props.things}
                     layout={'r'} />;
             default:
         }
@@ -505,7 +530,7 @@ class template extends Component {
     }
 
     getTopper() {
-        return this.things.resumeTopper.default;
+        return this.props.things.resumeTopper.default;
     }
 
     selectComponent(type, cut) {

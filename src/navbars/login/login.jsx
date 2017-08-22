@@ -2,11 +2,9 @@ import React, {
     Component
 } from 'react';
 import Input from '../../react/out/input/input';
-import strings from '../../strings.json';
 import Button from '../../react/res/button/button';
 
 class Login extends Component {
-    things;
     username;
     password;
     spanStyle = {
@@ -17,7 +15,6 @@ class Login extends Component {
     }
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.updateUsername = this.updateUsername.bind(this);
         this.updatePassword = this.updatePassword.bind(this);
         this.register = this.register.bind(this);
@@ -27,11 +24,11 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <h1>{this.things.login}</h1>
-                <Input model={this.updateUsername}>{this.things.userName}</Input>
-                <Input model={this.updatePassword} type="password">{this.things.passWord}</Input>
-                <Button click={this.register}>{this.things.loginButton}</Button>
-                <span style={this.spanStyle} onClick={this.register}>{this.things.registerButton}</span>
+                <h1>{this.props.things.login}</h1>
+                <Input model={this.updateUsername}>{this.props.things.userName}</Input>
+                <Input model={this.updatePassword} type="password">{this.props.things.passWord}</Input>
+                <Button click={this.register}>{this.props.things.loginButton}</Button>
+                <span style={this.spanStyle} onClick={this.register}>{this.props.things.registerButton}</span>
             </div>
         );
     }

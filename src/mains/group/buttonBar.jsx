@@ -1,15 +1,12 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Button from '../../react/res/smallButton/smallButton';
 import SubTitle from '../../react/res/subtitle/subtitle';
 
 class ButtonBar extends Component {
-    things;
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.mapButtons = this.mapButtons.bind(this);
     }
 
