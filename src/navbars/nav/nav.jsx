@@ -77,7 +77,7 @@ class Nav extends Component {
             leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "暗紫", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
             border: [{ name: "空白", id: 1 }, { name: "黑色", id: 2 }, { name: "橘黄", id: 3 }, { name: "深红", id: 4 }],
-            icon: [{ name: "图标", id: 1 }, { name: "横线", id: 2 }],
+            icon: [{ name: "角标", id: 1 }, { name: "图标", id: 2 }, { name: "横线", id: 3 }],
             iconStyle: [{ name: "黑色", id: 1 }, { name: "红色", id: 2 }],
             bars: [{ name: "橙灰", id: 1 }, { name: "绿灰", id: 2 }, { name: "黑白", id: 3 }],
             photoBorder: [{ name: "没有", id: 1 }, { name: "粗线", id: 2 }, { name: "细线", id: 3 }, { name: "虚线", id: 4 }],
@@ -93,7 +93,7 @@ class Nav extends Component {
                 leftBG: 2,
                 rightBG: 2,
                 border: 2,
-                icon: 1,
+                icon: 2,
                 iconStyle: 1,
                 bars: 2,
                 photoBorder: 1,
@@ -380,9 +380,12 @@ class Nav extends Component {
         let newStyle;
         switch (id) {
             case 1:
-                newStyle = { ...icon, type: "font" };
+                newStyle = { ...icon, type: "smallFont" };
                 break;
             case 2:
+                newStyle = { ...icon, type: "font" };
+                break;
+            case 3:
                 newStyle = { ...icon, type: "line" };
                 break;
             default:
