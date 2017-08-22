@@ -138,7 +138,9 @@ class App extends Component {
 			}, update);
 		}
 		function update() {
-			window.dogResume.inputJson(temp);
+			setTimeout(function () {
+				window.dogResume.inputJson(temp);
+			}, 0);
 		}
 	}
 
@@ -156,7 +158,9 @@ class App extends Component {
 			}, update);
 		}
 		function update() {
-			window.dogResume.inputJson(temp);
+			setTimeout(function () {
+				window.dogResume.inputJson(temp);
+			}, 0);
 		}
 	}
 }
