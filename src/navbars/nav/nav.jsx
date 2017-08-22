@@ -73,6 +73,7 @@ class Nav extends Component {
         this.setPrintBorderColor = this.setPrintBorderColor.bind(this);
         this.inputSelected = this.inputSelected.bind(this);
         this.outputSelected = this.outputSelected.bind(this);
+        this.startFromZero = this.startFromZero.bind(this);
         this.Styling = {
             leftBG: [{ name: "空白", id: 1 }, { name: "灰色", id: 2 }, { name: "深灰", id: 3 }, { name: "暗紫", id: 4 }],
             rightBG: [{ name: "空白", id: 1 }, { name: "浅灰", id: 2 }],
@@ -112,6 +113,9 @@ class Nav extends Component {
         }
         window.dogResume.getStylingSelected = () => {
             return this.outputSelected();
+        }
+        window.dogResume.startFromZero = (args) => {
+            return this.startFromZero(args);
         }
     }
 
@@ -230,7 +234,7 @@ class Nav extends Component {
                 <Button style={this.buttonNude} click={this.likeProject}>{this.things.like}</Button>
                 <Button style={this.buttonNude} click={this.reportBug}>{this.things.bug}</Button>
                 <Credit>adog.io</Credit>
-                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"beta 0.4.0-16800"}</span>
+                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.things.version}: {"beta 0.5.0-16800"}</span>
             </div>
         );
     }
@@ -590,6 +594,13 @@ class Nav extends Component {
 
     reportBug() {
         window.location.href = "https://github.com/adogio/dogResume/issues";
+    }
+
+    startFromZero(arg) {
+        switch (arg) {
+            default:
+                console.log(arg);
+        }
     }
 }
 

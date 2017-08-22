@@ -9,6 +9,8 @@
         "version": "版本号",
         "title": "YAHAHA",
         "loginAndRegister": "登录/注册",
+        "startFromZero": "获取帮助/从零开始",
+        "changeLanguage": "Language/语言",
         "subTitle": "快速生成美观, 合理, 可定制化的简历",
         "components": "模块列表",
         "componenetTool": "视图模式",
