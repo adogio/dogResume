@@ -8,7 +8,8 @@ import Input from '../../react/res/smallInput/smallInput';
 class Photo extends Component {
     things;
     photoStyle = {
-        paddingTop: "10px",
+        marginTop: "10px",
+        marginBottom: "10px",
         width: "80%"
     };
     descriptionStyle = {
@@ -35,7 +36,12 @@ class Photo extends Component {
                 {this.state.edit ?
                     "edit: " + this.things.photoInside.title :
                     <div>
-                        <img alt={this.things.photoInside.error} style={{ ...this.photoStyle, ...this.props.photo }} src={this.props.default.src ? this.props.default.src : this.defaultLink} />
+                        <img
+                            alt={this.things.photoInside.error}
+                            style={{ ...this.photoStyle, ...this.props.photo }}
+                            src={this.props.default.src ?
+                                this.props.default.src :
+                                this.defaultLink} />
                     </div>
                 }
                 {this.state.edit ?
@@ -57,8 +63,7 @@ class Photo extends Component {
                     del={this.props.form.del}
                     cut={this.props.form.cut}
                     isEdit={this.state.edit}
-                    index={this.props.index}
-                ></Group> : null}
+                    index={this.props.index} /> : null}
             </div>
         );
     }
