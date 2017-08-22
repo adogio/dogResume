@@ -11,7 +11,6 @@ import './nav.css';
 import a from '../../mains/printable.json';
 
 class Nav extends Component {
-    detail;
 
     buttonStyleLeftOnly = {
         height: "32px",
@@ -46,7 +45,6 @@ class Nav extends Component {
 
     constructor(props) {
         super(props);
-        this.detail = true;
         this.selected = false;
         this.clickButton = this.clickButton.bind(this);
         this.cancelSelect = this.cancelSelect.bind(this);
@@ -84,8 +82,9 @@ class Nav extends Component {
             printBorder: [{ name: "没有", id: 1 }, { name: "粗线", id: 2 }, { name: "细线", id: 3 }, { name: "虚线", id: 4 }],
             printBorderColor: [{ name: "白色", id: 1 }, { name: "深红", id: 2 }, { name: "灰色", id: 3 }, { name: "黑色", id: 4 }]
         };
+
         this.state = {
-            detail: this.props.things.detailMode,
+            detail: true,
             component: true,
             selected: {
                 leftBG: 2,
@@ -146,8 +145,12 @@ class Nav extends Component {
                         <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.props.things.publication}</Button>
                         <hr />
                         <Subtitle>{this.props.things.componenetTool}</Subtitle>
-                        <Button style={this.buttonStyle} click={this.changeMode}>{this.state.detail}</Button>
-                        <Button style={this.buttonStyle} click={this.cancelSelect}>{this.props.things.cancel}</Button>
+                        <Button style={this.buttonStyle} click={this.changeMode}>
+                            {this.state.detail ? this.props.things.detailMode : this.props.things.viewMode}
+                        </Button>
+                        <Button style={this.buttonStyle} click={this.cancelSelect}>
+                            {this.props.things.cancel}
+                        </Button>
                     </div>
                     :
                     <div>
@@ -517,7 +520,7 @@ class Nav extends Component {
     }
 
     printResume() {
-        if (!this.detail) {
+        if (!this.state.detail) {
             alert(this.props.things.toView);
         } else if (window.dogResume.global.selected) {
             alert(this.props.things.toUnselect);
@@ -552,18 +555,16 @@ class Nav extends Component {
     }
 
     changeMode() {
-        if (this.detail) {
+        if (this.state.detail) {
             window.dogResume.viewMode();
-            this.detail = false;
             this.setState({
-                detail: this.props.things.viewMode
-            })
+                detail: false
+            });
         } else {
             window.dogResume.detailMode();
-            this.detail = true;
             this.setState({
-                detail: this.props.things.detailMode
-            })
+                detail: true
+            });
         }
     }
 

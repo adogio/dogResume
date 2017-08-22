@@ -2,7 +2,6 @@ import React, {
     Component
 } from 'react';
 import Language from '../language/language';
-import Button from '../../react/res/button/button';
 import ZeroGuide from './zeroGuide';
 
 class Zero extends Component {
@@ -29,9 +28,21 @@ class Zero extends Component {
             case "click":
                 return null;
             case "language":
-                return <Language things={this.props.things} next={this.finish} />;
+                return <Language
+                    things={this.props.things}
+                    chinese={this.props.chinese}
+                    english={this.props.english}
+                    currentUI={this.props.currentUI}
+                    currentResume={this.props.currentResume}
+                    next={this.finish} />;
             case "guide":
-                return <Language things={this.props.things} next={this.switchToMainGuide} />;
+                return <Language
+                    things={this.props.things}
+                    chinese={this.props.chinese}
+                    english={this.props.english}
+                    currentUI={this.props.currentUI}
+                    currentResume={this.props.currentResume}
+                    next={this.switchToMainGuide} />;
             case "main":
                 return <ZeroGuide things={this.props.things} />
             default:

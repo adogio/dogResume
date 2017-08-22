@@ -6,6 +6,7 @@ import Button from '../../react/res/button/button';
 class Language extends Component {
     constructor(props) {
         super(props);
+        console.log('test');
     }
 
     render() {

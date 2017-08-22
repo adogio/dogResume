@@ -60,7 +60,6 @@ class template extends Component {
                 del: this.delRight,
                 cut: this.cutRight
             }
-
         }
         this.state = {
             leftComponents: [{ component: 'space', default: 'space' }],
@@ -197,7 +196,7 @@ class template extends Component {
                     key={'l' + index}
                     index={index}
                     style={this.state.triggerdLeft}
-                    things={this.props.things}
+                    things={this.props.language}
                     onClick={this.selectLeftTarget} />;
             case "name":
                 return <Name onChange={this.changeLeft}
@@ -206,7 +205,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             case "thing":
                 return <Thing onChange={this.changeLeft}
@@ -215,7 +214,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             case "achivement":
                 return <Achivement onChange={this.changeLeft}
@@ -224,7 +223,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             case "description":
                 return <Description onChange={this.changeLeft}
@@ -234,7 +233,7 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     bg={this.state.styling.photoBG}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             case "photo":
                 return <Photo onChange={this.changeLeft}
@@ -244,7 +243,7 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     photo={this.state.styling.photoBorder}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             case "publication":
                 return <Publication onChange={this.changeLeft}
@@ -253,7 +252,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             case "connect":
                 return <Connect
@@ -263,7 +262,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.left}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             case "skill":
                 return <Skill
@@ -274,7 +273,7 @@ class template extends Component {
                     default={i.default}
                     form={this.form.left}
                     bars={this.state.styling.bars}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'l'} />;
             default:
         }
@@ -287,7 +286,7 @@ class template extends Component {
                     key={'r' + index}
                     index={index}
                     style={this.state.triggerdRight}
-                    things={this.props.things}
+                    things={this.props.language}
                     onClick={this.selectRightTarget} />;
             case "name":
                 return <Name onChange={this.changeRight}
@@ -296,7 +295,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'r'} />;
             case "thing":
                 return <Thing onChange={this.changeRight}
@@ -305,7 +304,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'r'} />;
             case "education":
                 return <Education
@@ -315,7 +314,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
-                    things={this.props.things}
+                    things={this.props.language}
                     form={this.form.right} />;
             case "summary":
                 return <Summary
@@ -325,7 +324,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
-                    things={this.props.things}
+                    things={this.props.language}
                     form={this.form.right} />;
             case "experience":
                 return <Experience
@@ -335,7 +334,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
-                    things={this.props.things}
+                    things={this.props.language}
                     form={this.form.right} />;
             case "project":
                 return <Project
@@ -345,7 +344,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     icon={this.state.styling.icon}
-                    things={this.props.things}
+                    things={this.props.language}
                     form={this.form.right} />;
             case "achivement":
                 return <Achivement
@@ -356,7 +355,7 @@ class template extends Component {
                     default={i.default}
                     icon={this.state.styling.icon}
                     form={this.form.right}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'r'} />;
             case "publication":
                 return <Publication
@@ -367,7 +366,7 @@ class template extends Component {
                     default={i.default}
                     icon={this.state.styling.icon}
                     form={this.form.right}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'r'} />;
             case "connect":
                 return <Connect
@@ -377,7 +376,7 @@ class template extends Component {
                     dev={this.state.dev}
                     default={i.default}
                     form={this.form.right}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'r'} />;
             case "skill":
                 return <Skill
@@ -389,7 +388,7 @@ class template extends Component {
                     icon={this.state.styling.icon}
                     bars={this.state.styling.bars}
                     form={this.form.right}
-                    things={this.props.things}
+                    things={this.props.language}
                     layout={'r'} />;
             default:
         }
