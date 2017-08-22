@@ -6,9 +6,10 @@ import Input from '../../react/res/smallInput/smallInput';
 
 class Photo extends Component {
     photoStyle = {
-        marginTop: "10px",
-        marginBottom: "10px",
-        width: "80%"
+        marginTop: "6px",
+        marginBottom: "6px",
+        width: "80%",
+        maxHeight: "200px"
     };
     descriptionStyle = {
         fontStyle: "italic",

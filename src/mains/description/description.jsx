@@ -7,6 +7,8 @@ import Button from '../../react/res/smallButton/smallButton';
 
 class Description extends Component {
     mainStyle = {
+        marginTop: "6px",
+        marginBottom: "6px",
         marginLeft: "1%",
         width: "96%",
         WebkitPrintColorAdjust: "exact",
