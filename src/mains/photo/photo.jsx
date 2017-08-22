@@ -1,12 +1,10 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Group from '../group/group';
 import Input from '../../react/res/smallInput/smallInput';
 
 class Photo extends Component {
-    things;
     photoStyle = {
         marginTop: "10px",
         marginBottom: "10px",
@@ -22,7 +20,6 @@ class Photo extends Component {
 
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
         this.state = {
@@ -34,10 +31,10 @@ class Photo extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.photoInside.title :
+                    "edit: " + this.props.things.photoInside.title :
                     <div>
                         <img
-                            alt={this.things.photoInside.error}
+                            alt={this.props.things.photoInside.error}
                             style={{ ...this.photoStyle, ...this.props.photo }}
                             src={this.props.default.src ?
                                 this.props.default.src :
@@ -48,11 +45,11 @@ class Photo extends Component {
                     <div>
                         <div style={this.descriptionStyle}>
                             <i className="fa fa-chevron-right fa-fw" />
-                            {this.things.photoInside.description}
+                            {this.props.things.photoInside.description}
                         </div>
                         <Input value={this.props.default.src ? this.props.default.src : ""}
                             model={this.changeDetail}
-                            placeholder={this.things.photoInside.src} />
+                            placeholder={this.props.things.photoInside.src} />
                     </div> :
                     null
                 }

@@ -1,13 +1,11 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Group from '../group/group';
 import Input from '../../react/res/smallInput/smallInput';
 import Button from '../../react/res/smallButton/smallButton';
 
 class Description extends Component {
-    things;
     mainStyle = {
         marginLeft: "1%",
         width: "96%",
@@ -30,12 +28,11 @@ class Description extends Component {
     times;
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.times = [
-            { name: this.things.descriptionInside.fullTime, id: 1 },
-            { name: this.things.descriptionInside.partTime, id: 2 },
-            { name: this.things.descriptionInside.internship, id: 3 },
-            { name: this.things.descriptionInside.contractor, id: 4 }
+            { name: this.props.things.descriptionInside.fullTime, id: 1 },
+            { name: this.props.things.descriptionInside.partTime, id: 2 },
+            { name: this.props.things.descriptionInside.internship, id: 3 },
+            { name: this.props.things.descriptionInside.contractor, id: 4 }
         ];
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
@@ -53,10 +50,10 @@ class Description extends Component {
             <div>
                 <div style={{ ...this.mainStyle, ...this.props.bg }}>
                     {this.state.edit ?
-                        "edit: " + this.things.descriptionInside.title :
+                        "edit: " + this.props.things.descriptionInside.title :
                         <div>
                             <div style={this.insiderStyle}>
-                                {this.things.descriptionInside.title}
+                                {this.props.things.descriptionInside.title}
                             </div>
                         </div>
                     }
@@ -67,7 +64,7 @@ class Description extends Component {
                                 value={this.props.default.company}
                                 args={'company'}
                                 model={this.changeText}
-                                placeholder={this.things.descriptionInside.company} />
+                                placeholder={this.props.things.descriptionInside.company} />
                             : this.props.default.company
                         }
                         {this.props.default.position || this.state.edit ? <br /> : null}
@@ -79,7 +76,7 @@ class Description extends Component {
                             value={this.props.default.position}
                             args={'position'}
                             model={this.changeText}
-                            placeholder={this.things.descriptionInside.position} /> : this.switchTime()}
+                            placeholder={this.props.things.descriptionInside.position} /> : this.switchTime()}
                     </div>
                 </div>
                 {this.props.dev ? <Group
@@ -104,13 +101,13 @@ class Description extends Component {
     switchTime() {
         switch (this.props.default.time) {
             case 1:
-                return this.things.descriptionInside.fullTime + " - " + this.props.default.position;
+                return this.props.things.descriptionInside.fullTime + " - " + this.props.default.position;
             case 2:
-                return this.things.descriptionInside.partTime + " - " + this.props.default.position;
+                return this.props.things.descriptionInside.partTime + " - " + this.props.default.position;
             case 3:
-                return this.things.descriptionInside.internship + " - " + this.props.default.position;
+                return this.props.things.descriptionInside.internship + " - " + this.props.default.position;
             case 4:
-                return this.things.descriptionInside.contractor + " - " + this.props.default.position;
+                return this.props.things.descriptionInside.contractor + " - " + this.props.default.position;
             default:
                 return this.props.default.position;
         }

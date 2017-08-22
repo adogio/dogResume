@@ -1,12 +1,10 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Input from '../../react/res/smallInput/smallInput';
 import Group from '../group/group';
 
 class Thing extends Component {
-    things;
     inputer = {};
     outputStyle = {
         paddingTop: "6px",
@@ -18,7 +16,6 @@ class Thing extends Component {
 
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.edit = this.edit.bind(this);
         this.happed = this.happed.bind(this);
         this.state = {
@@ -31,12 +28,12 @@ class Thing extends Component {
             <div>
                 {this.state.edit ?
                     <div>
-                        <div>"edit: " + {this.things.thingInside.title}</div>
-                        <Input model={this.happed} color="white" value={this.props.default.name} placeholder={this.things.thingInside.input} />
+                        <div>"edit: " + {this.props.things.thingInside.title}</div>
+                        <Input model={this.happed} color="white" value={this.props.default.name} placeholder={this.props.things.thingInside.input} />
                     </div>
                     : <div style={this.outputStyle}>
                         <i className="fa fa-chevron-right fa-fw" />
-                        {this.props.default.name ? this.props.default.name : this.things.occupied}
+                        {this.props.default.name ? this.props.default.name : this.props.things.occupied}
                     </div>
                 }
                 {this.props.dev ? <Group

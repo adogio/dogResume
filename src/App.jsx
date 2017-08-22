@@ -14,7 +14,6 @@ import Zero from './navbars/zero/zero';
 import './App.css';
 
 class App extends Component {
-	things;
 	platform = navigator.userAgent;
 	floatRight = {
 		float: "right",
@@ -22,33 +21,38 @@ class App extends Component {
 	}
 	constructor(props) {
 		super(props);
-		this.things = strings.chinese;
 		this.loginRegister = this.loginRegister.bind(this);
 		this.startFromZero = this.startFromZero.bind(this);
 		this.changeLanguage = this.changeLanguage.bind(this);
 		window.dogResume = {};
+		this.state = {
+			things: strings.chinese
+		}
 	}
 
 	render() {
+		const MainWithProps = (props) => {
+			return <Main things={this.state.things} {...props} />
+		}
 		return (
 			<div>{
 				this.platform.indexOf("hone") !== -1 || this.platform.indexOf("Android") !== -1 ?
 					<Cover>{"Please use desktop for this site"}</Cover> :
 					<Cover>
 						<DogTitle>
-							<span>{this.things.mainTitle}</span>
+							<span>{this.state.things.mainTitle}</span>
 							<div style={this.floatRight}>
 								<Button
 									click={this.changeLanguage}
 									style={
 										{
-											width: "100px",
+											width: "135px",
 											backgroundColor: "red",
 											marginRight: "10px",
 											color: "white"
 										}
 									}>
-									{this.things.changeLanguage}
+									{this.state.things.changeLanguage}
 								</Button>
 								<Button
 									click={this.startFromZero}
@@ -60,24 +64,24 @@ class App extends Component {
 											color: "white"
 										}
 									}>
-									{this.things.startFromZero}
+									{this.state.things.startFromZero}
 								</Button>
 
 								<Button
 									click={this.loginRegister}
 									style={{ width: "100px" }}>
-									{this.things.loginAndRegister}
+									{this.state.things.loginAndRegister}
 								</Button>
 							</div>
 						</DogTitle>
 						<DogNav>
-							<Nav />
+							<Nav things={this.state.things} />
 						</DogNav>
 						<DogMain>
 							<BrowserRouter>
 								<div>
-									<Route exact={true} path="/" component={Main} />
-									<Route path="/:resumeId" component={Main} />
+									<Route exact={true} path="/" component={MainWithProps} />
+									<Route path="/:resumeId" component={MainWithProps} />
 								</div>
 							</BrowserRouter>
 						</DogMain>
@@ -93,11 +97,11 @@ class App extends Component {
 	}
 
 	startFromZero() {
-		window.dog.pop(<Zero from="click" />)
+		window.dog.pop(<Zero from="click" things={this.state.things} />)
 	}
 
 	changeLanguage() {
-		window.dog.pop(<Zero from="language" />)
+		window.dog.pop(<Zero from="language" things={this.state.things} />)
 	}
 }
 

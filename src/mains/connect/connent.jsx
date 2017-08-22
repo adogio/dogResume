@@ -1,20 +1,17 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Group from '../group/group';
 import Input from '../../react/res/smallInput/smallInput';
 
 
 class Connect extends Component {
-    things;
     contentStyle = {
         lineHeight: "23px"
     }
 
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
         this.state = {
@@ -26,10 +23,10 @@ class Connect extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.connectInside.title :
+                    "edit: " + this.props.things.connectInside.title :
                     <div>
                         <div className="common-header">
-                            {this.things.connectInside.title}
+                            {this.props.things.connectInside.title}
                         </div>
                     </div>
                 }

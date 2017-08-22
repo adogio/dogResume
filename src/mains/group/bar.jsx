@@ -1,12 +1,10 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Input from '../../react/res/smallInput/smallInput';
 import Button from '../../react/res/smallButton/smallButton';
 
 class Bar extends Component {
-    things;
     barStyle = {
         overflow: "hidden"
     };
@@ -16,7 +14,6 @@ class Bar extends Component {
     levels = [1, 2, 3, 4, 5, 6, 7];
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.updateBar = this.updateBar.bind(this);
         this.selectLevel = this.selectLevel.bind(this);
         this.mapLevelButtons = this.mapLevelButtons.bind(this);

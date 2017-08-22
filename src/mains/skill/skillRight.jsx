@@ -3,11 +3,8 @@ import React, {
 } from 'react';
 import Bar from '../group/bar';
 import Button from '../../react/res/smallButton/smallButton';
-import strings from '../../strings.json';
 
 class SkillRight extends Component {
-    things;
-
     addStyle = {
         backgroundColor: "#729672",
         color: "white",
@@ -32,7 +29,6 @@ class SkillRight extends Component {
 
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.renderQueueLeft = this.renderQueueLeft.bind(this);
         this.renderQueueRight = this.renderQueueRight.bind(this);
         this.changeBar = this.changeBar.bind(this);

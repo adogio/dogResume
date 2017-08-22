@@ -1,16 +1,13 @@
 import React, {
     Component
 } from 'react';
-import strings from '../../strings.json';
 import Group from '../group/group';
 import Details from '../details/details';
 import RightLane from '../details/rightLane';
 
 class Publication extends Component {
-    things;
     constructor(props) {
         super(props);
-        this.things = strings.chinese;
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
         this.state = {
@@ -22,14 +19,14 @@ class Publication extends Component {
         return (
             <div className="component-topper">
                 {this.state.edit ?
-                    "edit: " + this.things.publication
+                    "edit: " + this.props.things.publication
                     :
                     <div className="common-header">
                         {this.props.layout === 'l' ?
-                            <div>{this.things.publicationInside.title}</div>
+                            <div>{this.props.things.publicationInside.title}</div>
                             : <div>
                                 <RightLane icon="globe" style={this.props.icon.style} type={this.props.icon.type} />
-                                {this.things.publicationInside.title}
+                                {this.props.things.publicationInside.title}
                             </div>
                         }
                     </div>
