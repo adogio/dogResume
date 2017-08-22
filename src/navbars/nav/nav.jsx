@@ -526,18 +526,26 @@ class Nav extends Component {
             cssLink.rel = "stylesheet";
             cssLink.type = "text/css";
 
+            let cssLink2 = document.createElement("link");
+            cssLink2.href = " https://fonts.googleapis.com/css?family=Ubuntu";
+            cssLink2.rel = "stylesheet";
+            cssLink2.type = "text/css";
+
             let print = "<html><head></head>";
             print += "<body>" + document.getElementById('resume').innerHTML + "</body>";
             print += "<style>"
             print += a;
             print += ".centerer{outline:" + this.printStyling + ";}"
             print += "</style></html>"
+
             var f = document.getElementById('printf');
             f.onload = function () {
                 f.contentWindow.print();
             }
+
             f.contentDocument.write(print);
             f.contentDocument.body.appendChild(cssLink);
+            f.contentDocument.body.appendChild(cssLink2);
             f.contentDocument.close();
         }
     }
