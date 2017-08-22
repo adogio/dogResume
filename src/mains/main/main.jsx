@@ -598,9 +598,8 @@ class template extends Component {
             leftComponents: addSpace(parsed.left),
             rightComponents: addSpace(parsed.right)
         })
-        if (parsed.style) {
-            window.dogResume.setStyling(parsed.style);
-        }
+
+        if (parsed.style) window.dogResume.setStyling(parsed.style);
 
         return 1;
 
