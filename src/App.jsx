@@ -131,7 +131,11 @@ class App extends Component {
 		window.dog.pop(<Zero
 			from="guide"
 			currentUI={this.state.currentUI}
+			chinese={this.changeToChinese}
+			english={this.changeToEnglish}
 			currentResume={this.state.currentResume}
+			chineseThings={strings.chinese}
+			englishThings={strings.english}
 			things={this.state.things} />)
 	}
 	chooseTemplate() {
