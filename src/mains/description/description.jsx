@@ -123,7 +123,7 @@ class Description extends Component {
             style.backgroundColor = "green";
             style.fontWeight = "bold";
         }
-        return <Button key={index} click={this.selectTime} style={style} args={i.id}>{i.name}</Button>
+        return <Button key={index + Math.random()} click={this.selectTime} style={style} args={i.id}>{i.name}</Button>
     }
 
     selectTime(arg) {

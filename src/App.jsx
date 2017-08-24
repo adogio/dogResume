@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 import Cover from './react/res/cover/cover';
 import DogTitle from './react/out/title/title';
 import DogNav from './react/out/nav/nav';
@@ -85,12 +85,12 @@ class App extends Component {
 							<Nav things={this.state.things} />
 						</DogNav>
 						<DogMain>
-							<BrowserRouter>
+							<HashRouter>
 								<div>
 									<Route exact={true} path="/" component={MainWithProps} />
 									<Route path="/:resumeId" component={MainWithProps} />
 								</div>
-							</BrowserRouter>
+							</HashRouter>
 						</DogMain>
 						<iframe title="printf" id="printf" src="" width="0" height="0" frameBorder="0">
 						</iframe>

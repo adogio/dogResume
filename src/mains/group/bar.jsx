@@ -62,7 +62,7 @@ class Bar extends Component {
                 fontWeight: "bold"
             };
         }
-        return <Button key={index} click={this.selectLevel} style={style} args={i}>{i}</Button>;
+        return <Button key={index + Math.random()} click={this.selectLevel} style={style} args={i}>{i}</Button>;
     }
 }
 

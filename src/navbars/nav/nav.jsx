@@ -125,9 +125,6 @@ class Nav extends Component {
                 <Subtitle>
                     {this.props.things.subTitle}
                 </Subtitle>
-                <Quote from={this.props.things.quoteFrom}>
-                    {this.props.things.quote}
-                </Quote>
                 <hr />
                 {this.state.component ?
                     <div>
