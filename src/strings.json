@@ -116,11 +116,18 @@
         },
         "zero": {
             "next": "下一步",
+            "previous": "上一步",
             "welcome": "欢迎使用 dogResume 简历助手",
             "welcome2": "这个教程会一步一步指导你制作一份简单实用的简历",
             "clickNext": "点击'下一步'继续",
             "pickStyle": "我们先从选择样式开始",
-            "pickStyle2": "你喜欢哪种颜色配置? 稍后你可以在'调整样式'菜单中修改"
+            "pickStyle2": "你喜欢哪种颜色配置? 稍后你可以在'调整样式'菜单中修改",
+            "styles": {
+                "grayWhite": "灰色和白色",
+                "purpleGray": "暗紫和灰色",
+                "drakGrayWhite": "深灰和白色",
+                "noneBG": "没有底色"
+            }
         }
     },
     "english": {

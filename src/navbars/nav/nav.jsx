@@ -331,6 +331,7 @@ class Nav extends Component {
         const newB = { ...b, photoBorder: newStyle };
         this.changeSelected('photoBorder', id);
         window.dogResume.styling(newB);
+
     }
 
     setPhotoColor(id) {
@@ -372,6 +373,7 @@ class Nav extends Component {
         const newB = { ...b, bars: newStyle };
         this.changeSelected('bars', id);
         window.dogResume.styling(newB);
+
     }
 
     setIconType(id) {
@@ -393,6 +395,7 @@ class Nav extends Component {
         const newB = { ...b, icon: newStyle };
         this.changeSelected('icon', id);
         window.dogResume.styling(newB);
+
     }
 
     setIconStyle(id) {
@@ -412,6 +415,7 @@ class Nav extends Component {
         const newB = { ...b, icon: newStyle };
         this.changeSelected('iconStyle', id);
         window.dogResume.styling(newB);
+
     }
 
     setLeftStyle(id) {
@@ -431,7 +435,7 @@ class Nav extends Component {
             case 3:
                 newStyle = { ...left, backgroundColor: "#333", color: "white" };
                 break;
-            // blue
+            // purple
             case 4:
                 newStyle = { ...left, backgroundColor: "#624c82", color: "white" };
                 break;
@@ -569,17 +573,39 @@ class Nav extends Component {
     }
 
     inputSelected(selectQueue) {
-        this.setLeftStyle(selectQueue.leftBG);
-        this.setRightStyle(selectQueue.rightBG);
-        this.setBorder(selectQueue.border);
-        this.setIconType(selectQueue.icon);
-        this.setIconStyle(selectQueue.iconStyle);
-        this.selectBars(selectQueue.bars);
-        this.setPhotoBorder(selectQueue.photoBorder);
-        this.setPhotoColor(selectQueue.photoColor);
-        this.setPhotoBG(selectQueue.photoBG);
-        this.setPrintBorder(selectQueue.printBorder);
-        this.setPrintBorderColor(selectQueue.printBorderColor);
+        setTimeout(() => {
+            this.setLeftStyle(selectQueue.leftBG);
+        }, 0);
+        setTimeout(() => {
+            this.setRightStyle(selectQueue.rightBG);
+        }, 1);
+        setTimeout(() => {
+            this.setBorder(selectQueue.border);
+        }, 2);
+        setTimeout(() => {
+            this.setIconType(selectQueue.icon);
+        }, 3);
+        setTimeout(() => {
+            this.setIconStyle(selectQueue.iconStyle);
+        }, 4);
+        setTimeout(() => {
+            this.selectBars(selectQueue.bars);
+        }, 5);
+        setTimeout(() => {
+            this.setPhotoBorder(selectQueue.photoBorder);
+        }, 6);
+        setTimeout(() => {
+            this.setPhotoColor(selectQueue.photoColor);
+        }, 7);
+        setTimeout(() => {
+            this.setPhotoBG(selectQueue.photoBG);
+        }, 8);
+        setTimeout(() => {
+            this.setPrintBorder(selectQueue.printBorder);
+        }, 9);
+        setTimeout(() => {
+            this.setPrintBorderColor(selectQueue.printBorderColor);
+        }, 10);
     }
 
     likeProject() {

@@ -134,10 +134,10 @@ class template extends Component {
         window.dogResume.inputJson = (json) => {
             return this.inputJson(json);
         }
-        window.dogResume.styling = (style) => {
+        window.dogResume.styling = (style, next) => {
             this.setState({
                 styling: style
-            });
+            }, next ? next : undefined);
         }
         window.dogResume.getStyling = () => {
             return this.state.styling;
@@ -599,7 +599,9 @@ class template extends Component {
             rightComponents: addSpace(parsed.right)
         })
 
-        if (parsed.style) window.dogResume.setStyling(parsed.style);
+        if (parsed.style) {
+            window.dogResume.setStyling(parsed.style);
+        }
 
         return 1;
 
