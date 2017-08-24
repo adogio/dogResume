@@ -61,16 +61,7 @@ class Skill extends Component {
     changeDetail(detail, isDel) {
         let b = this.props.default;
         b.skill = detail;
-        this.props.onChange(this.props.index, []);
-        if (isDel) {
-            // this is dumb, i hate myself too
-            // not going to change it due to the function is in props
-            setTimeout(() => {
-                this.props.onChange(this.props.index, b);
-            }, 0)
-        } else {
-            this.props.onChange(this.props.index, b);
-        }
+        this.props.onChange(this.props.index, b);
     }
 
     edit() {

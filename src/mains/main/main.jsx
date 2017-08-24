@@ -103,7 +103,7 @@ class template extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.match.params.resumeId);
+        console.log(this.props.match.params.resumeId);
         window.dogResume.global = {};
         window.dogResume.global.selected = false;
         window.dogResume.selectComponent = (type) => {
