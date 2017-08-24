@@ -47,7 +47,7 @@ class Zero extends Component {
                     currentResume={this.props.currentResume}
                     next={this.switchToMainGuide} />;
             case "main":
-                return <ZeroGuide things={this.props.things} />;
+                return <ZeroGuide things={this.props.things} template={this.toTemplate} />;
             case "template":
                 return <ChooseTemplate things={this.props.things} />;
             default:
@@ -55,7 +55,9 @@ class Zero extends Component {
     }
 
     switchToMainGuide() {
-
+        this.setState({
+            currentPage: "main"
+        })
     }
     toTemplate() {
         this.setState({
