@@ -26,7 +26,7 @@ class Zero extends Component {
     renderPage() {
         switch (this.state.currentPage) {
             case "click":
-                return null;
+                return <ZeroGuide things={this.props.things} />;
             case "language":
                 return <Language
                     things={this.props.things}

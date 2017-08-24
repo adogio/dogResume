@@ -34,7 +34,9 @@ class App extends Component {
 			currentResume: 0
 		}
 	}
-
+	componentDidMount() {
+		this.startFromZero();
+	}
 	render() {
 		const MainWithProps = (props) => {
 			return <Main

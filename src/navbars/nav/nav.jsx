@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import Logo from '../../react/res/logo/logo';
 import Subtitle from '../../react/res/subtitle/subtitle';
-import Quote from '../../react/res/quote/quote';
 import Button from '../../react/res/button/button';
 import Credit from '../../react/res/credit/credit';
 import ButtonBar from '../../mains/group/buttonBar';
