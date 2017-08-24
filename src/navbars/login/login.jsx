@@ -22,7 +22,6 @@ class Login extends Component {
         this.register = this.register.bind(this);
         this.login = this.login.bind(this);
         this.request = new ajax('POST');
-        console.log(this.request);
     }
 
     render() {
