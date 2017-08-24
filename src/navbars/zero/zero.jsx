@@ -17,7 +17,7 @@ class Zero extends Component {
         this.english = this.english.bind(this);
         this.state = {
             currentPage: this.props.from,
-            things: this.props.chineseThings
+            things: this.props.chineseThings ? this.props.chineseThings : this.props.things
         }
     }
 
