@@ -128,17 +128,28 @@ class Nav extends Component {
                 {this.state.component ?
                     <div>
                         <Subtitle>{this.props.things.components}</Subtitle>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.props.things.name}</Button>
-                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="photo">{this.props.things.photo}</Button>
-                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.props.things.description}</Button>
-                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.props.things.connect}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="thing">{this.props.things.thing}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.props.things.education}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.props.things.experience}</Button>
-                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.props.things.project}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.props.things.skill}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.props.things.achivement}</Button>
-                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.props.things.publication}</Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="name">{this.props.things.name}
+                        </Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="photo">{this.props.things.photo}
+                        </Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="description">{this.props.things.description}
+                        </Button>
+                        <Button style={this.buttonStyleLeftOnly} click={this.clickButton} type="connect">{this.props.things.connect}
+                        </Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="thing">{this.props.things.thing}
+                        </Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.props.things.education}
+                        </Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.props.things.experience}
+                        </Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.props.things.project}
+                        </Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="skill">{this.props.things.skill}
+                        </Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="achivement">{this.props.things.achivement}
+                        </Button>
+                        <Button style={this.buttonStyleLeftAndRight} click={this.clickButton} type="publication">{this.props.things.publication}
+                        </Button>
                         <hr />
                         <Subtitle>{this.props.things.componenetTool}</Subtitle>
                         <Button style={this.buttonStyle} click={this.changeMode}>

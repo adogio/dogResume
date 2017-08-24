@@ -35,7 +35,7 @@ class App extends Component {
 		}
 	}
 	componentDidMount() {
-		// this.startFromZero();
+		this.startFromZero();
 	}
 	render() {
 		const MainWithProps = (props) => {

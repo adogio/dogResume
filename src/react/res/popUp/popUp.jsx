@@ -9,9 +9,10 @@ class PopUp extends Component {
         left: "28%",
         width: "42%",
         backgroundColor: "#c7c7c7",
-        height: "50%",
+        height: "60%",
         borderRadius: "5px",
-        padding: "10px"
+        padding: "10px",
+        overflow: "auto"
     };
     xStyle = {
         cursor: "pointer",
