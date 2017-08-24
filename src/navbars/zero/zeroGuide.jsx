@@ -21,6 +21,11 @@ class ZeroGuide extends Component {
         WebkitAnimationDuration: "1.5s",
         AnimationDuration: "1.5s"
     };
+    lergeStyle = {
+        width: "110px",
+        height: "110px",
+        fontSize: "21px"
+    };
     currentJson = JSON.parse(window.dogResume.outputJson());
     form = {
 
@@ -37,8 +42,9 @@ class ZeroGuide extends Component {
         this.cutTest = this.cutTest.bind(this);
         this.editTest = this.editTest.bind(this);
         this.devAble = this.devAble.bind(this);
+        this.template = this.template.bind(this);
         this.state = {
-            currentStep: 6,
+            currentStep: 1,
             name: { default: { name: "" } },
             dev: false,
             cutting: false
@@ -195,26 +201,45 @@ class ZeroGuide extends Component {
                                 things={this.props.things}
                                 layout={'l'} />
                         }
+                        <Logo left size="18">{this.state.name.default.name ? this.props.things.zero.editDone : null}</Logo>
                     </div>
                     {this.state.name.default.name ? <Button click={this.next}>{this.props.things.zero.next}</Button> : null}
                 </div>
             case 6:
-                return <div style={this.navStyle}>
-                    <FackButton things={this.props.things} />
-                    <FackButton things={this.props.things} />
-                    <FackButton things={this.props.things} />
-                    <hr />
-                    <FackButton things={this.props.things} />
-                    <FackButton things={this.props.things} />
-                    <hr />
-                    <div className="animated tada infinite" style={this.animateSlow}>
+                return <div>
+                    <Logo size="18" left>
+                        {this.props.things.zero.clickStyle}
+                    </Logo>
+                    <div style={this.navStyle}>
+                        <FackButton things={this.props.things} />
+                        <FackButton things={this.props.things} />
+                        <FackButton things={this.props.things} />
+                        <hr />
+                        <FackButton things={this.props.things} />
+                        <FackButton things={this.props.things} />
+                        <hr />
                         <Small style={{
-                            width: "100%"
+                            width: "100%", backgroundColor: "green"
                         }}>
                             {this.props.things.style}
                         </Small>
+                        <FackButton things={this.props.things} />
                     </div>
-                    <FackButton things={this.props.things} />
+                    <div style={{ textAlign: "center", width: "60%", float: "left" }}>
+                        <Logo size="18" left>
+                            {this.props.things.zero.clickFinish}
+                        </Logo>
+                        <Small
+                            style={{ ...this.lergeStyle, backgroundColor: "#9ae19a" }}
+                            click={this.template}>
+                            {this.props.things.zero.template}
+                        </Small>
+                        <Small
+                            style={{ ...this.lergeStyle, backgroundColor: "#b3b3fd" }}
+                            click={this.finish}>
+                            {this.props.things.zero.work}
+                        </Small>
+                    </div>
                 </div>
             default:
                 return null;
@@ -243,6 +268,12 @@ class ZeroGuide extends Component {
     }
     nothingToDo() {
 
+    }
+    template() {
+        this.props.template();
+    }
+    finish() {
+        window.dog.unPop();
     }
     stopSo() {
         alert(this.props.things.zero.noDel);

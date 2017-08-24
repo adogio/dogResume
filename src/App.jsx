@@ -26,6 +26,7 @@ class App extends Component {
 		this.changeLanguage = this.changeLanguage.bind(this);
 		this.changeToChinese = this.changeToChinese.bind(this);
 		this.changeToEnglish = this.changeToEnglish.bind(this);
+		this.chooseTemplate = this.chooseTemplate.bind(this);
 		window.dogResume = {};
 		this.state = {
 			things: strings.chinese,
@@ -35,7 +36,7 @@ class App extends Component {
 		}
 	}
 	componentDidMount() {
-		this.startFromZero();
+		this.chooseTemplate();
 	}
 	render() {
 		const MainWithProps = (props) => {
@@ -109,13 +110,17 @@ class App extends Component {
 	startFromZero() {
 		window.dog.pop(<Zero
 			from="click"
-			chinese={this.changeToChinese}
-			english={this.changeToEnglish}
 			currentUI={this.state.currentUI}
 			currentResume={this.state.currentResume}
 			things={this.state.things} />)
 	}
-
+	chooseTemplate() {
+		window.dog.pop(<Zero
+			from="template"
+			currentUI={this.state.currentUI}
+			currentResume={this.state.currentResume}
+			things={this.state.things} />)
+	}
 	changeLanguage() {
 		window.dog.pop(<Zero
 			from="language"
