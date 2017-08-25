@@ -60,7 +60,7 @@ class Description extends Component {
                         </div>
                     }
                     {this.props.default.company || this.props.default.position ? <div style={this.switcher} /> : null}
-                    <div className="common-detail" style={this.contentStyle}>
+                    <div className="common-detail" style={this.contentStyle} id="mutiPrint">
                         {this.state.edit ?
                             <Input
                                 value={this.props.default.company}

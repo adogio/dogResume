@@ -236,6 +236,7 @@ class Nav extends Component {
                 <Subtitle>{this.props.things.complete}</Subtitle>
                 <Button style={this.buttonStyle} click={this.changeStyle}>{this.state.component ? this.props.things.style : this.props.things.componenet}</Button>
                 <Button style={this.buttonStyle} click={this.printResume}>{this.props.things.print}</Button>
+                <Button style={this.buttonStyle} click={this.printResume}>{this.props.things.mutiPrint}</Button>
                 <hr />
                 <Subtitle>{this.props.things.dogResume}</Subtitle>
                 <Button style={this.buttonNude} click={this.likeProject}>{this.props.things.like}</Button>
@@ -546,18 +547,31 @@ class Nav extends Component {
             cssLink2.rel = "stylesheet";
             cssLink2.type = "text/css";
 
+            var temp = document.getElementById('printTemp');
+            temp.contentDocument.write(document.getElementById('resume').innerHTML);
             let print = "<html><head></head>";
-            print += "<body>" + document.getElementById('resume').innerHTML + "</body>";
-            print += "<style>"
+            print += "<body>"
+            print += temp.contentDocument.documentElement.innerHTML;
+            temp.contentDocument.getElementById("mutiPrint").innerHTML = 1;
+            print += "<div style='height: 15px'></div>";
+            print += temp.contentDocument.documentElement.innerHTML;
+            temp.contentDocument.getElementById("mutiPrint").innerHTML = 2;
+            print += "<div style='height: 15px'></div>";
+            print += temp.contentDocument.documentElement.innerHTML;
+            temp.contentDocument.getElementById("mutiPrint").innerHTML = 3;
+            print += "<div style='height: 15px'></div>";
+            print += temp.contentDocument.documentElement.innerHTML;
+            print += "</body>";
+            print += "<style>";
             print += a;
-            print += ".centerer{outline:" + this.printStyling + ";}"
-            print += "</style></html>"
+            print += ".centerer{outline:" + this.printStyling + ";}";
+            print += "</style></html>";
 
             var f = document.getElementById('printf');
             f.onload = function () {
                 f.contentWindow.print();
+                temp.contentDocument.documentElement.innerHTML = "";
             }
-
             f.contentDocument.write(print);
             f.contentDocument.body.appendChild(cssLink);
             f.contentDocument.body.appendChild(cssLink2);

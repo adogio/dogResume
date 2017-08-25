@@ -108,8 +108,8 @@ class App extends Component {
 								</div>
 							</HashRouter>
 						</DogMain>
-						<iframe title="printf" id="printf" src="" width="0" height="0" frameBorder="0">
-						</iframe>
+						<iframe title="printf" id="printf" src="" width="0" height="0" frameBorder="0" />
+						<iframe title="printTemp" id="printTemp" src="" width="0" height="0" frameBorder="0" />
 					</Cover>
 			}</div>
 		);
