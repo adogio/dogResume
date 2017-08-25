@@ -1,0 +1,115 @@
+[{
+    "text": {
+        "cn": "普通简历",
+        "en": "Normal Resume"
+    },
+    "template": {
+        "left": [{
+            "component": "name",
+            "default": {}
+        }, {
+            "component": "connect",
+            "default": {}
+        }, {
+            "component": "description",
+            "default": {}
+        }, {
+            "component": "thing",
+            "default": {}
+        }, {
+            "component": "skill",
+            "default": {}
+        }],
+        "right": [{
+            "component": "education",
+            "default": {}
+        }, {
+            "component": "experience",
+            "default": {}
+        }, {
+            "component": "thing",
+            "default": {}
+        }, {
+            "component": "project",
+            "default": {}
+        }]
+    }
+}, {
+    "text": {
+        "cn": "带照片的简历",
+        "en": "Photoed Resume"
+    },
+    "template": {
+        "left": [{
+            "component": "photo",
+            "default": {}
+        }, {
+            "component": "description",
+            "default": {}
+        }, {
+            "component": "connect",
+            "default": {}
+        }, {
+            "component": "thing",
+            "default": {}
+        }, {
+            "component": "skill",
+            "default": {}
+        }],
+        "right": [{
+            "component": "name",
+            "default": {}
+        }, {
+            "component": "thing",
+            "default": {}
+        }, {
+            "component": "project",
+            "default": {}
+        }, {
+            "component": "education",
+            "default": {}
+        }, {
+            "component": "experience",
+            "default": {}
+        }, {
+            "component": "skill",
+            "default": {}
+        }]
+    }
+}, {
+    "text": {
+        "cn": "学术类简历",
+        "en": "Publish Resume"
+    },
+    "template": {
+        "left": [{
+            "component": "name",
+            "default": {}
+        }, {
+            "component": "description",
+            "default": {}
+        }, {
+            "component": "connect",
+            "default": {}
+        }, {
+            "component": "publication",
+            "default": {}
+        }, {
+            "component": "skill",
+            "default": {}
+        }],
+        "right": [{
+            "component": "education",
+            "default": {}
+        }, {
+            "component": "publication",
+            "default": {}
+        }, {
+            "component": "achivement",
+            "default": {}
+        }, {
+            "component": "project",
+            "default": {}
+        }]
+    }
+}]

@@ -1,5 +1,6 @@
 {
     "chinese": {
+        "id": "cn",
         "login": "登录/注册 dogResume 测试版",
         "loginButton": "登录",
         "registerButton": "或者, 以这个用户名密码注册",
@@ -11,12 +12,13 @@
         "loginAndRegister": "登录/注册",
         "startFromZero": "获取帮助/从零开始",
         "changeLanguage": "Language/语言",
+        "chooseResume": "选择简历模板",
         "subTitle": "快速生成美观, 合理, 可定制化的简历",
         "components": "模块列表",
         "componenetTool": "视图模式",
         "complete": "YEAH!",
-        "quote": "我不是文案, 我干! 我用dogResume.",
-        "quoteFrom": "斯大林",
+        "quote": "测试",
+        "quoteFrom": "测试",
         "occupied": "编辑这里",
         "resumeTopper": {
             "default": "选择你需要的组件"
@@ -122,15 +124,32 @@
             "clickNext": "点击'下一步'继续",
             "pickStyle": "我们先从选择样式开始",
             "pickStyle2": "你喜欢哪种颜色配置? 稍后你可以在'调整样式'菜单中修改",
+            "pickComponenet": "点击左侧任意模块按钮创建一个简历模块, 模块左右侧的边框代表它是否可以被放置在边框所在侧, 比如姓名版就可以放置在任何一侧.",
+            "clickName": "点击左侧的'姓名版'",
+            "otherComponent": "其他组件",
+            "pickName": "先试试姓名版吧 :D",
+            "putItHere": "当出现'放置在这里'的时候, 说明你手上有一个可用的组件, 点击'放置在这里'就可以将组件置于其位置, 每一个组件的可能位置都会显示一个'放置在这里'.",
+            "putName": "你刚刚选中了姓名版, 点击它, 把姓名版放在这里吧!",
+            "clickDetail": "这就是你刚刚插入的姓名版, 点击左侧的'编辑模式'就可以显示<编辑菜单栏>, 实战中你可以先设计框架再进行编辑.",
+            "clickEdit": "这是<编辑菜单栏>, 由左到右依次是'编辑','上移','剪切','下移','删除', 点击'编辑', 输入你的名字, 然后点击保存!",
+            "editDone": "这样你就完成了编辑模块, 实战中几乎每一个模块都可以编辑, 让他们符合你的喜好. 点击'下一步'就快要完成了.",
+            "clickStyle": "现在不用, 但是, 当你在实战中点击<调整样式>有超多样式可以选择!!!",
+            "clickFinish": "现在, 你想选择一个 dogResume 提供的简历模板? 还是直接开搞!!!",
+            "template": "简历模板",
+            "work": "直接开搞",
+            "noDel": "删了这个就没得测试了:(",
             "styles": {
                 "grayWhite": "灰色和白色",
                 "purpleGray": "暗紫和灰色",
                 "drakGrayWhite": "深灰和白色",
                 "noneBG": "没有底色"
             }
-        }
+        },
+        "done": "完成",
+        "template": "点击选择模板"
     },
     "english": {
+        "id": "en",
         "login": "Login/Register dogResume Beta",
         "loginButton": "Login",
         "registerButton": "or, register with this username and password",
@@ -142,6 +161,7 @@
         "loginAndRegister": "Login/Register",
         "startFromZero": "Help/Guide",
         "changeLanguage": "Language/语言",
+        "chooseResume": "Resume Template",
         "subTitle": "Get resume, Fast, Beautiful, Making sense",
         "components": "Module list",
         "componenetTool": "View mode",
@@ -233,7 +253,7 @@
         "print": "Print Resume",
         "dogResume": "dogResume",
         "like": "Like this project?",
-        "bug": "Issue bugs",
+        "bug": "Report bugs",
         "toView": "Please exit edit mode to print",
         "toUnselect": "Please exit select mode to print",
         "inCutting": "Cannot cancel select during cutting",
@@ -244,6 +264,37 @@
             "chinese": "中文/Chinese",
             "english": "英语/English",
             "done": "完成/Done"
-        }
+        },
+        "zero": {
+            "next": "Next Step",
+            "previous": "Last Step",
+            "welcome": "Welcome to dogResume",
+            "welcome2": "This guide will help you create your resume step by step",
+            "clickNext": "Click 'Next Step' to continue",
+            "pickStyle": "Let's start with pick a style",
+            "pickStyle2": "Which color style do you like? You can edit in 'Edit Style' menu later",
+            "pickComponenet": "Click on a module on the left to put them on the resume, the border of buttom means where could it be putted, for exa,ple, Name can be put on either side of resume.",
+            "clickName": "Click the 'Name' module on the left",
+            "otherComponent": "Bla Bla..",
+            "pickName": "Try the Name module first :D",
+            "putItHere": "When 'Put It Here' showing up, means you have a module in your hand, click 'Put It Here' to put it on the position of label, Every possiable position will have a 'Put It Here' label.",
+            "putName": "You just picked up Name module, click the label to leave Name module here!",
+            "clickDetail": "This is the Name module you just inserted, click 'Edit Mode' on the left the <Edit Menu> will show up, you can create content before enter <Edit Menu> to edit them later.",
+            "clickEdit": "This is <Edit Menu>, from left to right are 'edit','move up','cut','move down','delete', click 'edit', input your name and click SAVE!",
+            "editDone": "You just finished edit a module, every module could be enter Edit mode in the system. Click 'Next Step', we are almost done.",
+            "clickStyle": "You don't have to do it now, there will be a lots of style to edit in real editing process!!!",
+            "clickFinish": "Now, do you want to pick a dogResume provided resume template? Or do it yourself!!!",
+            "template": "Template",
+            "work": "DIY!",
+            "noDel": "We cannot contine if you delete this :(",
+            "styles": {
+                "grayWhite": "Gray - White",
+                "purpleGray": "Purple - White",
+                "drakGrayWhite": "Dark - White",
+                "noneBG": "No background"
+            }
+        },
+        "done": "Done",
+        "template": "Click to pick template"
     }
 }

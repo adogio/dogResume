@@ -26,6 +26,8 @@ class App extends Component {
 		this.changeLanguage = this.changeLanguage.bind(this);
 		this.changeToChinese = this.changeToChinese.bind(this);
 		this.changeToEnglish = this.changeToEnglish.bind(this);
+		this.chooseTemplate = this.chooseTemplate.bind(this);
+		this.startFromReallyZero = this.startFromReallyZero.bind(this);
 		window.dogResume = {};
 		this.state = {
 			things: strings.chinese,
@@ -35,7 +37,7 @@ class App extends Component {
 		}
 	}
 	componentDidMount() {
-		// this.startFromZero();
+		this.startFromReallyZero();
 	}
 	render() {
 		const MainWithProps = (props) => {
@@ -65,10 +67,22 @@ class App extends Component {
 									{this.state.things.changeLanguage}
 								</Button>
 								<Button
+									click={this.chooseTemplate}
+									style={
+										{
+											width: "135px",
+											backgroundColor: "blue",
+											marginRight: "10px",
+											color: "white"
+										}
+									}>
+									{this.state.things.chooseResume}
+								</Button>
+								<Button
 									click={this.startFromZero}
 									style={
 										{
-											width: "200px",
+											width: "180px",
 											backgroundColor: "green",
 											marginRight: "10px",
 											color: "white"
@@ -109,8 +123,24 @@ class App extends Component {
 	startFromZero() {
 		window.dog.pop(<Zero
 			from="click"
+			currentUI={this.state.currentUI}
+			currentResume={this.state.currentResume}
+			things={this.state.things} />)
+	}
+	startFromReallyZero() {
+		window.dog.pop(<Zero
+			from="guide"
+			currentUI={this.state.currentUI}
 			chinese={this.changeToChinese}
 			english={this.changeToEnglish}
+			currentResume={this.state.currentResume}
+			chineseThings={strings.chinese}
+			englishThings={strings.english}
+			things={this.state.things} />)
+	}
+	chooseTemplate() {
+		window.dog.pop(<Zero
+			from="template"
 			currentUI={this.state.currentUI}
 			currentResume={this.state.currentResume}
 			things={this.state.things} />)
