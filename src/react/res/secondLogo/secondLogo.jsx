@@ -21,7 +21,7 @@ class Logo extends Component {
 
     render() {
         return (
-            <div style={this.logoStyle}>
+            <div style={{ ...this.logoStyle, ...this.props.style }}>
                 {this.props.children}
             </div>
         );

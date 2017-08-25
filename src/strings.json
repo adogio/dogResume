@@ -150,7 +150,15 @@
         "muti": {
             "description": "欢迎使用这项测试中的功能, 渐进式打印可以帮助你将多份简历加上不同的目标公司名称, 实现一步到位的简历编辑.",
             "request": "首先你需要已经放置了一个'求职意向'模块, 如果你有多个求职意向模块, 只有第一个会起作用",
-            "input": "在这里建立多个公司和对应职位名, 点击打印按钮就可以查看效果了."
+            "input": "在这里建立多个公司和对应职位名, 点击打印按钮就可以查看效果了.",
+            "empty": "请注意! 你的简历中没有需要的'求职意向'模块, 需要 dogResume 帮你建立一个吗?",
+            "create": "dogResume 帮你在建立左侧的最下方建立了一个'求职意向'模块",
+            "bug": "没有'求职意向'模块",
+            "createButton": "创建一个'求职意向'",
+            "noButton": "我自己搞一搞",
+            "also": "当然你已经编辑的 ",
+            "also2": " 公司的建立版本也依然会打印.",
+            "veryEmpty": "未设置"
         },
         "done": "完成",
         "beta": "测试",
@@ -307,7 +315,15 @@
         "muti": {
             "description": "Welcome to use this beta feature, this feature help you print simular resume with different company name, to help you write and print resume in one step.",
             "request": "First of all, you must have a 'Seeking' module to use this function, if you have more than 1 'Seeking', only the first one will change.",
-            "input": "Create a list of company name and position name, click 'print' for result."
+            "input": "Create a list of company name and position name, click 'print' for result.",
+            "empty": "Warning! There is not a 'Seeking' module on your resume, do you need dogResume create on for you?",
+            "create": "dogResume created a 'Seeking' module on the bottom on the left part of your resume",
+            "bug": "'Sekking' module not found",
+            "createButton": "Create a 'Seeking'",
+            "noButton": "I'll do something myself",
+            "also": "Ofcourse, the original version of ",
+            "also2": " company will also be printed out.",
+            "veryEmpty": "not setted"
         },
         "done": "Done",
         "beta": "Beta",
