@@ -103,7 +103,7 @@
             "printBorderColor": "打印边框颜色"
         },
         "print": "打印简历",
-        "mutiPrint": "渐进式打印",
+        "mutiPrint": "微调打印",
         "dogResume": "dogResume",
         "like": "喜欢这个项目?",
         "bug": "反馈bug",
@@ -148,7 +148,9 @@
             }
         },
         "muti": {
-            "description": "欢迎使用这项测试中的功能, 渐进式打印可以帮助你将多份简历加上不同的目标公司名称, 实现一步到位的简历编辑."
+            "description": "欢迎使用这项测试中的功能, 渐进式打印可以帮助你将多份简历加上不同的目标公司名称, 实现一步到位的简历编辑.",
+            "request": "首先你需要已经放置了一个'求职意向'模块, 如果你有多个求职意向模块, 只有第一个会起作用",
+            "input": "在这里建立多个公司和对应职位名, 点击打印按钮就可以查看效果了."
         },
         "done": "完成",
         "beta": "测试",
@@ -258,7 +260,7 @@
             "printBorderColor": "Print border color"
         },
         "print": "Print Resume",
-        "mutiPrint": "Step Forword Print",
+        "mutiPrint": "Modify Print",
         "dogResume": "dogResume",
         "like": "Like this project?",
         "bug": "Report bugs",
@@ -303,7 +305,9 @@
             }
         },
         "muti": {
-            "description": "Welcome to use this beta feature, this feature help you print simular resume with different company name, to help you write and print resume in one step."
+            "description": "Welcome to use this beta feature, this feature help you print simular resume with different company name, to help you write and print resume in one step.",
+            "request": "First of all, you must have a 'Seeking' module to use this function, if you have more than 1 'Seeking', only the first one will change.",
+            "input": "Create a list of company name and position name, click 'print' for result."
         },
         "done": "Done",
         "beta": "Beta",
