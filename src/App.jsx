@@ -10,6 +10,7 @@ import Button from './react/res/smallButton/smallButton';
 import strings from './strings.json';
 import Login from './navbars/login/login';
 import Zero from './navbars/zero/zero';
+import fastCookie from 'fast-cookie';
 
 import './App.css';
 
@@ -19,8 +20,10 @@ class App extends Component {
 		float: "right",
 		paddingRight: "15px"
 	}
+	fastCookie;
 	constructor(props) {
 		super(props);
+		this.fastCookie = new fastCookie();
 		this.loginRegister = this.loginRegister.bind(this);
 		this.startFromZero = this.startFromZero.bind(this);
 		this.changeLanguage = this.changeLanguage.bind(this);
@@ -37,7 +40,19 @@ class App extends Component {
 		}
 	}
 	componentDidMount() {
-		this.startFromReallyZero();
+		let Rlanguage = this.fastCookie.getCookie('resumeLanguage');
+		let Ulanguage = this.fastCookie.getCookie('UILanguage');
+		if (Rlanguage === "english") {
+			this.changeToEnglish(true);
+		}
+		if (Ulanguage === "english") {
+			this.changeToEnglish(false);
+		}
+		if (Rlanguage == null && Ulanguage == null) {
+			this.startFromReallyZero();
+			this.fastCookie.setCookie("resumeLanguage", "chinese", "d5");
+			this.fastCookie.setCookie("UILanguage", "chinese", "d5")
+		}
 	}
 	render() {
 		const MainWithProps = (props) => {
@@ -159,11 +174,13 @@ class App extends Component {
 	changeToChinese(isResume) {
 		let temp = window.dogResume.outputJson();
 		if (isResume) {
+			this.fastCookie.setCookie("resumeLanguage", "chinese", "d5");
 			this.setState({
 				language: strings.chinese,
 				currentResume: 0
 			}, update);
 		} else {
+			this.fastCookie.setCookie("UILanguage", "chinese", "d5");
 			this.setState({
 				things: strings.chinese,
 				currentUI: 0
@@ -179,11 +196,13 @@ class App extends Component {
 	changeToEnglish(isResume) {
 		let temp = window.dogResume.outputJson();
 		if (isResume) {
+			this.fastCookie.setCookie("resumeLanguage", "english", "d5");
 			this.setState({
 				language: strings.english,
 				currentResume: 1
 			}, update);
 		} else {
+			this.fastCookie.setCookie("UILanguage", "english", "d5");
 			this.setState({
 				things: strings.english,
 				currentUI: 1

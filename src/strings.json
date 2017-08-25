@@ -48,6 +48,7 @@
             "fullTime": "全职",
             "partTime": "兼职",
             "internship": "实习",
+            "none": "无",
             "contractor": "外包"
         },
         "achivement": "荣誉证明",
@@ -102,7 +103,7 @@
             "printBorderColor": "打印边框颜色"
         },
         "print": "打印简历",
-        "mutiPrint": "复合打印",
+        "mutiPrint": "渐进式打印",
         "dogResume": "dogResume",
         "like": "喜欢这个项目?",
         "bug": "反馈bug",
@@ -146,7 +147,11 @@
                 "noneBG": "没有底色"
             }
         },
+        "muti": {
+            "description": "欢迎使用这项测试中的功能, 渐进式打印可以帮助你将多份简历加上不同的目标公司名称, 实现一步到位的简历编辑."
+        },
         "done": "完成",
+        "beta": "测试",
         "template": "点击选择模板"
     },
     "english": {
@@ -198,6 +203,7 @@
             "fullTime": "Full-time",
             "partTime": "Part-time",
             "internship": "Intern",
+            "none": "none",
             "contractor": "Contract"
         },
         "achivement": "Proofs",
@@ -252,7 +258,7 @@
             "printBorderColor": "Print border color"
         },
         "print": "Print Resume",
-        "mutiPrint": "Complex Print",
+        "mutiPrint": "Step Forword Print",
         "dogResume": "dogResume",
         "like": "Like this project?",
         "bug": "Report bugs",
@@ -296,7 +302,11 @@
                 "noneBG": "No background"
             }
         },
+        "muti": {
+            "description": "Welcome to use this beta feature, this feature help you print simular resume with different company name, to help you write and print resume in one step."
+        },
         "done": "Done",
+        "beta": "Beta",
         "template": "Click to pick template"
     }
 }

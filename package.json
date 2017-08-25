@@ -17,6 +17,7 @@
   "dependencies": {
     "caperjs": "^2.0.6",
     "dogui-react": "^0.1.5",
+    "fast-cookie": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",

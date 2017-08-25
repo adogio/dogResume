@@ -34,7 +34,8 @@ class Description extends Component {
             { name: this.props.things.descriptionInside.fullTime, id: 1 },
             { name: this.props.things.descriptionInside.partTime, id: 2 },
             { name: this.props.things.descriptionInside.internship, id: 3 },
-            { name: this.props.things.descriptionInside.contractor, id: 4 }
+            { name: this.props.things.descriptionInside.contractor, id: 4 },
+            { name: this.props.things.descriptionInside.none, id: 5 }
         ];
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);

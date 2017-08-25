@@ -6,6 +6,7 @@ import Subtitle from '../../react/res/subtitle/subtitle';
 import Button from '../../react/res/button/button';
 import Credit from '../../react/res/credit/credit';
 import ButtonBar from '../../mains/group/buttonBar';
+import ComplexPrint from './complexPrint';
 import './nav.css';
 import a from '../../mains/printable.json';
 
@@ -65,6 +66,7 @@ class Nav extends Component {
         this.setPrintBorder = this.setPrintBorder.bind(this);
         this.setPhotoBG = this.setPhotoBG.bind(this);
         this.setPrintBorderColor = this.setPrintBorderColor.bind(this);
+        this.printComplexResume = this.printComplexResume.bind(this);
         this.inputSelected = this.inputSelected.bind(this);
         this.outputSelected = this.outputSelected.bind(this);
         this.startFromZero = this.startFromZero.bind(this);
@@ -236,7 +238,10 @@ class Nav extends Component {
                 <Subtitle>{this.props.things.complete}</Subtitle>
                 <Button style={this.buttonStyle} click={this.changeStyle}>{this.state.component ? this.props.things.style : this.props.things.componenet}</Button>
                 <Button style={this.buttonStyle} click={this.printResume}>{this.props.things.print}</Button>
-                <Button style={this.buttonStyle} click={this.printResume}>{this.props.things.mutiPrint}</Button>
+                <Button style={this.buttonStyle} click={this.printComplexResume}>
+                    <span>{this.props.things.mutiPrint}</span>
+                    <span style={{ fontSize: "10px", color: "red" }}>{this.props.things.beta}</span>
+                </Button>
                 <hr />
                 <Subtitle>{this.props.things.dogResume}</Subtitle>
                 <Button style={this.buttonNude} click={this.likeProject}>{this.props.things.like}</Button>
@@ -552,15 +557,6 @@ class Nav extends Component {
             let print = "<html><head></head>";
             print += "<body>"
             print += temp.contentDocument.documentElement.innerHTML;
-            temp.contentDocument.getElementById("mutiPrint").innerHTML = 1;
-            print += "<div style='height: 15px'></div>";
-            print += temp.contentDocument.documentElement.innerHTML;
-            temp.contentDocument.getElementById("mutiPrint").innerHTML = 2;
-            print += "<div style='height: 15px'></div>";
-            print += temp.contentDocument.documentElement.innerHTML;
-            temp.contentDocument.getElementById("mutiPrint").innerHTML = 3;
-            print += "<div style='height: 15px'></div>";
-            print += temp.contentDocument.documentElement.innerHTML;
             print += "</body>";
             print += "<style>";
             print += a;
@@ -570,12 +566,26 @@ class Nav extends Component {
             var f = document.getElementById('printf');
             f.onload = function () {
                 f.contentWindow.print();
-                temp.contentDocument.documentElement.innerHTML = "";
+                temp.contentDocument.close();
             }
             f.contentDocument.write(print);
             f.contentDocument.body.appendChild(cssLink);
             f.contentDocument.body.appendChild(cssLink2);
             f.contentDocument.close();
+        }
+    }
+
+    printComplexResume() {
+        if (!this.state.detail) {
+            alert(this.props.things.toView);
+        } else if (window.dogResume.global.selected) {
+            alert(this.props.things.toUnselect);
+        } else {
+            window.dog.pop(<ComplexPrint
+                things={this.props.things}
+                printStyling={this.printStyling}
+                a={a}
+            />);
         }
     }
 
