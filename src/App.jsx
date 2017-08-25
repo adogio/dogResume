@@ -10,6 +10,7 @@ import Button from './react/res/smallButton/smallButton';
 import strings from './strings.json';
 import Login from './navbars/login/login';
 import Zero from './navbars/zero/zero';
+import fastCookie from 'fast-cookie';
 
 import './App.css';
 
@@ -37,7 +38,19 @@ class App extends Component {
 		}
 	}
 	componentDidMount() {
-		this.startFromReallyZero();
+		let Rlanguage = fastCookie.get('resumeLanguage');
+		let Ulanguage = fastCookie.get('UILanguage');
+		if (Rlanguage === "english") {
+			this.changeToEnglish(true);
+		}
+		if (Ulanguage === "english") {
+			this.changeToEnglish(false);
+		}
+		if (Rlanguage == null && Ulanguage == null) {
+			this.startFromReallyZero();
+			fastCookie.set("resumeLanguage", "chinese", "d5");
+			fastCookie.set("UILanguage", "chinese", "d5")
+		}
 	}
 	render() {
 		const MainWithProps = (props) => {
@@ -108,8 +121,8 @@ class App extends Component {
 								</div>
 							</HashRouter>
 						</DogMain>
-						<iframe title="printf" id="printf" src="" width="0" height="0" frameBorder="0">
-						</iframe>
+						<iframe title="printf" id="printf" src="" width="0" height="0" frameBorder="0" />
+						<iframe title="printTemp" id="printTemp" src="" width="0" height="0" frameBorder="0" />
 					</Cover>
 			}</div>
 		);
@@ -159,11 +172,13 @@ class App extends Component {
 	changeToChinese(isResume) {
 		let temp = window.dogResume.outputJson();
 		if (isResume) {
+			fastCookie.set("resumeLanguage", "chinese", "d5");
 			this.setState({
 				language: strings.chinese,
 				currentResume: 0
 			}, update);
 		} else {
+			fastCookie.set("UILanguage", "chinese", "d5");
 			this.setState({
 				things: strings.chinese,
 				currentUI: 0
@@ -179,11 +194,13 @@ class App extends Component {
 	changeToEnglish(isResume) {
 		let temp = window.dogResume.outputJson();
 		if (isResume) {
+			fastCookie.set("resumeLanguage", "english", "d5");
 			this.setState({
 				language: strings.english,
 				currentResume: 1
 			}, update);
 		} else {
+			fastCookie.set("UILanguage", "english", "d5");
 			this.setState({
 				things: strings.english,
 				currentUI: 1

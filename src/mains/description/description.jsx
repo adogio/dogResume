@@ -34,7 +34,8 @@ class Description extends Component {
             { name: this.props.things.descriptionInside.fullTime, id: 1 },
             { name: this.props.things.descriptionInside.partTime, id: 2 },
             { name: this.props.things.descriptionInside.internship, id: 3 },
-            { name: this.props.things.descriptionInside.contractor, id: 4 }
+            { name: this.props.things.descriptionInside.contractor, id: 4 },
+            { name: this.props.things.descriptionInside.none, id: 5 }
         ];
         this.edit = this.edit.bind(this);
         this.changeDetail = this.changeDetail.bind(this);
@@ -60,7 +61,7 @@ class Description extends Component {
                         </div>
                     }
                     {this.props.default.company || this.props.default.position ? <div style={this.switcher} /> : null}
-                    <div className="common-detail" style={this.contentStyle}>
+                    <div className="common-detail" style={this.contentStyle} id="mutiPrint">
                         {this.state.edit ?
                             <Input
                                 value={this.props.default.company}
