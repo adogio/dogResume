@@ -1,5 +1,7 @@
 # CHANGELOG
 
+-   Version 0.7.1
+    -   Fix key make flash error
 -   Version 0.7.0
     -   finish muti print module, todo: auto detect language, login and save resume
 -   Version 0.5.0

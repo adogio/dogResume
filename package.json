@@ -1,6 +1,6 @@
 {
   "name": "dogresume",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "private": true,
   "description": "A don't write, I code/ design/ think/ analysis. I use dogResume.",
   "main": "index.js",

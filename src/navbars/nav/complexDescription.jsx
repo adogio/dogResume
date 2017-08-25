@@ -70,7 +70,7 @@ class ComplexDescription extends Component {
             style.fontWeight = "bold";
         }
         return <Button
-            key={index + Math.random()}
+            key={index}
             click={this.selectTime}
             style={style}
             args={i.id}>

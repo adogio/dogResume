@@ -38,7 +38,7 @@ class ChooseTemplate extends Component {
     renderer(i, index) {
         return <Small
             style={this.main}
-            key={index + Math.random()}
+            key={index}
             click={this.inputResume}
             args={i.template}>
             <TemplateInsider

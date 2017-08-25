@@ -62,16 +62,16 @@ class TemplateInsider extends Component {
             case "skill":
                 text = <div>
                     <div style={{ height: "2px", width: "75%", backgroundColor: "black", marginLeft: "3px" }} />
-                    <div style={{ height: "1px", width: "30%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float:"left" }} />
-                    <div style={{ height: "1px", width: "35%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float:"left" }} />
-                    <div style={{ height: "1px", width: "25%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float:"left" }} />
-                    <div style={{ height: "1px", width: "20%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float:"left" }} />
+                    <div style={{ height: "1px", width: "30%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float: "left" }} />
+                    <div style={{ height: "1px", width: "35%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float: "left" }} />
+                    <div style={{ height: "1px", width: "25%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float: "left" }} />
+                    <div style={{ height: "1px", width: "20%", backgroundColor: "green", marginLeft: "5px", marginTop: "2px", float: "left" }} />
                 </ div>;
                 break;
             default:
                 text = null;
         }
-        return <div key={index + Math.random()} style={{ textAlign: "center", paddingTop: "3px", paddingBottom: "3px" }}>{text}</div>
+        return <div key={index} style={{ textAlign: "center", paddingTop: "3px", paddingBottom: "3px" }}>{text}</div>
     }
     rendererLeft(i, index) {
         let text;
@@ -123,7 +123,7 @@ class TemplateInsider extends Component {
             default:
                 text = null;
         }
-        return <div key={index + Math.random()} style={{ textAlign: "center", paddingTop: "3px", paddingBottom: "3px" }}>{text}</div>
+        return <div key={index} style={{ textAlign: "center", paddingTop: "3px", paddingBottom: "3px" }}>{text}</div>
     }
 }
 

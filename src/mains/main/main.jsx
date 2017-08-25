@@ -398,19 +398,31 @@ class template extends Component {
             default:
         }
     }
-    changeLeft(index, content) {
+    changeLeft(index, content, isDel) {
         let b = this.state.leftComponents;
         b[index].default = content;
-        this.setState({
-            leftComponents: b
-        })
+        if (isDel) {
+            this.setState({
+                leftComponents: b
+            });
+        } else {
+            this.setState({
+                leftComponents: b
+            });
+        }
     }
-    changeRight(index, content) {
+    changeRight(index, content, isDel) {
         let b = this.state.rightComponents;
         b[index].default = content;
-        this.setState({
-            rightComponents: b
-        })
+        if (isDel) {
+            this.setState({
+                rightComponents: b
+            });
+        } else {
+            this.setState({
+                rightComponents: b
+            });
+        }
     }
     // The reason to sperate left and right is in the future left and right have different logic(maybe)
     upLeft(index) {

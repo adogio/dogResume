@@ -34,7 +34,7 @@ class SkillLeft extends Component {
     }
 
     renderQueue(i, index) {
-        return <span key={index + Math.random()}>
+        return <span key={index}>
             <Bar bars={this.props.bars} skill={i} index={index} isEdit={this.props.isEdit} onChange={this.changeBar} />
             {this.props.isEdit ? <Button click={this.delBar} args={index} style={this.delStyle}><i className="fa fa-times"></i></Button> : null}
         </span>;

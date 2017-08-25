@@ -42,7 +42,7 @@ class Details extends Component {
     }
 
     renderList(i, index) {
-        return <li key={index + Math.random()}>
+        return <li key={index}>
             {this.props.isEdit ? <span><SmallInput value={i.outer} args={index} model={this.change} />
                 <Button click={this.delOuter} args={index} style={this.delStyle}><i className="fa fa-times"></i></Button>
             </span> : i.outer}
@@ -56,7 +56,7 @@ class Details extends Component {
         </li>;
     }
     renderInner(i, index, lastIndex) {
-        return <li key={index + Math.random()}>
+        return <li key={index}>
             {this.props.isEdit ? <span><SmallInput value={i} args={[lastIndex, index]} model={this.changeInner} />
                 <Button click={this.delInner} args={[lastIndex, index]} style={this.delStyle}><i className="fa fa-times"></i></Button>
             </span> : i}

@@ -357,8 +357,8 @@ class FackButton extends Component {
     render() {
         return <div style={{
             ...this.fakeButtonStyle,
-            borderLeft: Math.random() > 0.5 ? "5px solid #c8ffc9" : "5px solid transparent",
-            borderRight: Math.random() > 0.5 ? "5px solid #c8ffc9" : "5px solid transparent"
+            borderLeft: Math.random() > 0.4 ? "5px solid #c8ffc9" : "5px solid transparent",
+            borderRight: Math.random() > 0.4 ? "5px solid #c8ffc9" : "5px solid transparent"
         }}>{this.props.things.zero.otherComponent}</div>
     }
 
