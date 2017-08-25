@@ -1,6 +1,6 @@
 {
   "name": "dogresume",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "description": "A don't write, I code/ design/ think/ analysis. I use dogResume.",
   "main": "index.js",
@@ -17,7 +17,7 @@
   "dependencies": {
     "caperjs": "^2.0.6",
     "dogui-react": "^0.1.5",
-    "fast-cookie": "^1.0.0",
+    "fast-cookie": "^1.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",

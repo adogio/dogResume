@@ -10,7 +10,7 @@ import Button from './react/res/smallButton/smallButton';
 import strings from './strings.json';
 import Login from './navbars/login/login';
 import Zero from './navbars/zero/zero';
-import fastCookie from 'fast-cookie';
+import fastCookie from './react/res/cookie/fastCookie';
 
 import './App.css';
 
