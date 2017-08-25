@@ -247,7 +247,7 @@ class Nav extends Component {
                 <Button style={this.buttonNude} click={this.likeProject}>{this.props.things.like}</Button>
                 <Button style={this.buttonNude} click={this.reportBug}>{this.props.things.bug}</Button>
                 <Credit>adog.io</Credit>
-                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.props.things.version}: {"beta 0.5.0-16800"}</span>
+                <span style={{ fontSize: "10px", color: "#cacaca" }}>{this.props.things.version}: {"beta 0.7.0-16801"}</span>
             </div>
         );
     }
