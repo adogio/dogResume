@@ -102,6 +102,7 @@
             "printBorderColor": "打印边框颜色"
         },
         "print": "打印简历",
+        "mutiPrint": "复合打印",
         "dogResume": "dogResume",
         "like": "喜欢这个项目?",
         "bug": "反馈bug",
@@ -251,6 +252,7 @@
             "printBorderColor": "Print border color"
         },
         "print": "Print Resume",
+        "mutiPrint": "Complex Print",
         "dogResume": "dogResume",
         "like": "Like this project?",
         "bug": "Report bugs",
