@@ -2411,9 +2411,9 @@ extsprintf@1.3.0, extsprintf@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.3.0.tgz#96918440e3041a7a414f8c52e3c574eb3c3e1e05"
 
-fast-cookie@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/fast-cookie/-/fast-cookie-1.0.3.tgz#1422361a05534e10dee64f20f1093fa08b67a972"
+fast-cookie@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/fast-cookie/-/fast-cookie-1.0.4.tgz#55b3a9a1c7c3f67346439918d2f0d22e72d72e6d"
 
 fast-deep-equal@^1.0.0:
   version "1.0.0"
