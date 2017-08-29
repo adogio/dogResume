@@ -142,6 +142,8 @@ class Nav extends Component {
                         </Button>
                         <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="education">{this.props.things.education}
                         </Button>
+                        <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="summary">{this.props.things.summary}
+                        </Button>
                         <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="experience">{this.props.things.experience}
                         </Button>
                         <Button style={this.buttonStyleRightOnly} click={this.clickButton} type="project">{this.props.things.project}
