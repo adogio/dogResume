@@ -15,13 +15,13 @@
     "url": "git+https://github.com/adogio/dogResume.git"
   },
   "dependencies": {
-    "caperjs": "^2.0.6",
-    "dogui-react": "^0.1.5",
+    "caperjs": "^2.1.3",
+    "dogui-react": "^0.3.3",
     "fast-cookie": "^1.0.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.11"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0"
   },
   "keywords": [
     "Resume",
